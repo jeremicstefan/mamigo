@@ -27,8 +27,8 @@ function App() {
           <div className="grid grid-cols-3 items-center h-28 gap-4">
             {/* Left: logo */}
             <div className="flex items-center justify-start min-w-0">
-              <a href="#" className="flex-shrink-0 flex items-center" aria-label="MAMIGO Hausmeister Spray - početna">
-                <img src={logo} alt="MAMIGO Hausmeister Spray" className="h-20 sm:h-24 w-auto object-contain" />
+              <a href="#" className="flex-shrink-0 flex items-center" aria-label="MAMIGO Hausmeister - početna">
+                <img src={logo} alt="MAMIGO Hausmeister" className="h-20 sm:h-24 w-auto object-contain" />
               </a>
             </div>
 

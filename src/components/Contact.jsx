@@ -119,7 +119,7 @@ const Contact = () => {
 
             {/* Logo below Germany contact info */}
             <div className="bg-surface-0 p-6 rounded-card border border-border-200 shadow-card flex flex-wrap items-start justify-center text-center py-8">
-              <img src={logo} alt="MAMIGO Hausmeister Spray" className="h-[200px] w-auto object-contain mx-auto" />
+              <img src={logo} alt="MAMIGO Hausmeister" className="h-[200px] w-auto object-contain mx-auto" />
             </div>
           </div>
 
