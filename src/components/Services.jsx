@@ -21,7 +21,7 @@ const Services = () => {
       features: [
         'Priprema prostora za prvo otvaranje',
         'Čišćenje posle renovacionih radova',
-        'Uklanjanje gradevinskog prašine i ostatala',
+        'Uklanjanje građevinske prašine i ostataka',
         'Finalno poliranje za predstavu klijentima'
       ],
       icon: LuStore,
@@ -76,18 +76,18 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-12 lg:py-20 bg-surface-0 relative overflow-hidden scroll-mt-24">
+    <section id="services" className="py-8 md:py-12 lg:py-20 bg-surface-0 relative overflow-hidden scroll-mt-16 md:scroll-mt-24">
       <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-6 leading-tight">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-text-900 mb-3 md:mb-6 leading-tight">
             Naše usluge čišćenja
           </h2>
-          <p className="text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-sm md:text-lg lg:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
             Pružamo profesionalne usluge čišćenja za sve vrste objekata sa fokusom na kvalitet i pouzdanost
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
           {services.map((service) => {
             const IconComponent = service.icon;
             const hasBeforeAfter = service.beforeSrc && service.afterSrc;
@@ -99,7 +99,7 @@ const Services = () => {
               >
                 {/* Service header: before/after slider or icon */}
                 {hasBeforeAfter ? (
-                  <div className="relative h-80 bg-surface-50 overflow-hidden rounded-t-card">
+                  <div className="relative h-56 md:h-80 bg-surface-50 overflow-hidden rounded-t-card">
                     <BeforeAfterSlider
                       beforeSrc={service.beforeSrc}
                       afterSrc={service.afterSrc}
@@ -118,20 +118,20 @@ const Services = () => {
                 )}
 
                 {/* Service Content */}
-                <div className="p-8">
-                  <h3 className="text-xl md:text-2xl font-bold text-text-900 mb-4 leading-tight">
+                <div className="p-4 md:p-8">
+                  <h3 className="text-base md:text-xl lg:text-2xl font-bold text-text-900 mb-2 md:mb-4 leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-base text-text-600 mb-6 leading-relaxed">
+                  <p className="text-sm md:text-base text-text-600 mb-4 md:mb-6 leading-relaxed">
                     {service.description}
                   </p>
 
                   {/* Features List */}
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-2 md:space-y-3 mb-4 md:mb-8">
                     {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <LuCheckCircle className="mt-0.5 flex-shrink-0 text-lg text-brand-500" />
-                        <span className="text-base text-text-600 leading-relaxed">
+                      <li key={index} className="flex items-start gap-2 md:gap-3">
+                        <LuCheckCircle className="mt-0.5 flex-shrink-0 text-base md:text-lg text-brand-500" />
+                        <span className="text-sm md:text-base text-text-600 leading-relaxed">
                           {feature}
                         </span>
                       </li>
@@ -149,11 +149,11 @@ const Services = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <p className="text-base text-text-600 mb-4 leading-relaxed">
+        <div className="text-center mt-8 md:mt-16">
+          <p className="text-sm md:text-base text-text-600 mb-3 md:mb-4 leading-relaxed">
             Sve naše usluge uključuju profesionalni pristup, poštovanje rokova i posvećenost svakom projektu.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {[
               'Nemački standardi kvaliteta',
               'Iskusni stručnjaci',
@@ -161,7 +161,7 @@ const Services = () => {
             ].map((text) => (
               <span
                 key={text}
-                className="inline-flex items-center gap-2 bg-brand-100 px-4 py-2 rounded-badge text-sm font-semibold text-text-900 border border-border-200"
+                className="inline-flex items-center gap-1.5 md:gap-2 bg-brand-100 px-3 py-1.5 md:px-4 md:py-2 rounded-badge text-xs md:text-sm font-semibold text-text-900 border border-border-200"
               >
                 <LuCheckCircle className="text-brand-500" />
                 {text}

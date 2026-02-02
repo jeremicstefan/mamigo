@@ -33,19 +33,19 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-12 lg:py-20 bg-surface-50 relative overflow-hidden scroll-mt-24">
+    <section id="about" className="py-8 md:py-12 lg:py-20 bg-surface-50 relative overflow-hidden scroll-mt-16 md:scroll-mt-24">
       <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-start">
           {/* Left Column - Text Content */}
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-6 leading-tight">
+            <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-text-900 mb-3 md:mb-6 leading-tight">
               O nama
             </h2>
-            <h3 className="text-xl md:text-2xl text-text-600 font-semibold mb-4 leading-snug">
+            <h3 className="text-base md:text-xl lg:text-2xl text-text-600 font-semibold mb-3 md:mb-4 leading-snug">
               Naša priča – Porodična kompanija sa dugogodišnjim iskustvom
             </h3>
 
-            <div className="space-y-4 text-base text-text-600 mb-6 leading-relaxed">
+            <div className="space-y-3 md:space-y-4 text-sm md:text-base text-text-600 mb-4 md:mb-6 leading-relaxed">
               <p>
                 Mamigo je porodična kompanija koja posluje od 2014. godine,
                 pružajući profesionalne usluge čišćenja po najvišim nemačkim standardima kvaliteta.
@@ -59,21 +59,21 @@ const About = () => {
             </div>
 
             {/* Trust Statement */}
-            <div className="p-6 rounded-card mb-6 border-l-4 border-l-brand-500 bg-surface-0">
-              <blockquote className="text-base text-text-900 font-medium italic leading-relaxed">
+            <div className="p-4 md:p-6 rounded-card mb-4 md:mb-6 border-l-4 border-l-brand-500 bg-surface-0">
+              <blockquote className="text-sm md:text-base text-text-900 font-medium italic leading-relaxed">
                 "Poverenje klijenata gradimo profesionalnim radom i poštovanjem dogovora.
                 Svaki projekat tretiramo sa punom pažnjom i posvećenošću."
               </blockquote>
             </div>
 
             {/* Key Values */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               {values.map(({ title, desc }) => (
-                <div key={title} className="flex items-start gap-3">
-                  <LuCheck className="mt-1 text-xl text-brand-500 flex-shrink-0" />
+                <div key={title} className="flex items-start gap-2 md:gap-3">
+                  <LuCheck className="mt-1 text-base md:text-xl text-brand-500 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-text-900">{title}</h4>
-                    <p className="text-sm text-text-600">{desc}</p>
+                    <h4 className="text-sm md:text-base font-semibold text-text-900">{title}</h4>
+                    <p className="text-xs md:text-sm text-text-600">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -82,22 +82,22 @@ const About = () => {
 
           {/* Right Column - Achievements Grid */}
           <div>
-            <h3 className="text-xl md:text-2xl font-bold text-text-900 mb-6 text-center leading-snug">
+            <h3 className="text-base md:text-xl lg:text-2xl font-bold text-text-900 mb-4 md:mb-6 text-center leading-snug">
               Naši rezultati
             </h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-2 md:gap-4">
               {achievements.map((achievement, index) => (
                 <div
                   key={index}
-                  className="bg-surface-0 p-6 rounded-card text-center shadow-card hover:shadow-card-hover transition-shadow border border-border-200"
+                  className="bg-surface-0 p-4 md:p-6 rounded-card text-center shadow-card hover:shadow-card-hover transition-shadow border border-border-200"
                 >
-                  <div className="text-3xl md:text-4xl font-bold mb-2 text-brand-500">
+                  <div className="text-xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2 text-brand-500">
                     {achievement.number}
                   </div>
-                  <div className="text-base font-semibold text-text-900 mb-1">
+                  <div className="text-sm md:text-base font-semibold text-text-900 mb-0.5 md:mb-1">
                     {achievement.label}
                   </div>
-                  <div className="text-sm text-text-600">
+                  <div className="text-xs md:text-sm text-text-600">
                     {achievement.description}
                   </div>
                 </div>
@@ -105,12 +105,12 @@ const About = () => {
             </div>
 
             {/* Location Info */}
-            <div className="mt-6 bg-surface-0 p-6 rounded-card shadow-card border border-border-200">
-              <h4 className="text-base font-semibold text-text-900 mb-3 flex items-center gap-2">
-                <span className="text-xl">📍</span>
+            <div className="mt-4 md:mt-6 bg-surface-0 p-4 md:p-6 rounded-card shadow-card border border-border-200">
+              <h4 className="text-sm md:text-base font-semibold text-text-900 mb-2 md:mb-3 flex items-center gap-2">
+                <span className="text-base md:text-xl">📍</span>
                 Sedište Beograd – sada čistimo ceo region
               </h4>
-              <p className="text-base text-text-600 leading-relaxed">
+              <p className="text-sm md:text-base text-text-600 leading-relaxed">
                 Sa našim iskustvom iz Nemačke, pokrivamo celu Srbiju pružajući
                 iste visoke standarde kvaliteta svim našim klijentima.
               </p>

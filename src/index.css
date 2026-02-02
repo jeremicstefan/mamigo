@@ -15,10 +15,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #FFFFFF;
   color: #0B0B0B;
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @keyframes scroll {

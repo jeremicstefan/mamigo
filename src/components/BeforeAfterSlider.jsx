@@ -147,12 +147,12 @@ const BeforeAfterSlider = ({
       onPointerLeave={onPointerUp}
       onPointerCancel={onPointerCancel}
     >
-      {/* Base: after image */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Base: after image - object-left ensures alignment with clip on mobile */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <img
           src={afterSrc}
           alt="Posle"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-left"
           loading="eager"
           draggable={false}
         />
@@ -166,15 +166,15 @@ const BeforeAfterSlider = ({
         )}
       </div>
 
-      {/* Top: before image, clipped */}
+      {/* Top: before image, clipped - object-left matches after for alignment */}
       <div
-        className="absolute inset-0 z-10 pointer-events-none"
+        className="absolute inset-0 z-10 pointer-events-none overflow-hidden"
         style={{ clipPath: `inset(0 ${(1 - position) * 100}% 0 0)` }}
       >
         <img
           src={beforeSrc}
           alt="Pre"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-left"
           loading="eager"
           draggable={false}
         />
@@ -188,7 +188,7 @@ const BeforeAfterSlider = ({
         )}
       </div>
 
-      {/* Handle: vertical line + circular knob; min 44px touch target for mobile */}
+      {/* Handle: center of touch area aligns with clip-path; object-left on images keeps split accurate */}
       <div
         tabIndex={0}
         role="slider"
@@ -198,7 +198,7 @@ const BeforeAfterSlider = ({
         aria-valuenow={Math.round(position * 100)}
         className={`
           absolute top-0 bottom-0 z-20 flex items-center justify-center
-          min-w-[44px] -mx-2 cursor-ew-resize touch-manipulation
+          w-11 min-w-[44px] cursor-ew-resize touch-manipulation
           focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black
           ${isDragging ? 'cursor-grabbing' : ''}
           ${!isDragging && (variant !== 'hero' || introDone) ? 'transition-[left] duration-150 ease-out' : ''}

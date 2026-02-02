@@ -33,31 +33,31 @@ const Contact = () => {
   };
 
   const inputClasses = `
-    w-full px-4 py-3 border border-border-200 rounded-input
+    w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base border border-border-200 rounded-input
     bg-surface-0 text-text-900
     focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500
     transition-all
   `.trim().replace(/\s+/g, ' ');
 
   return (
-    <section id="contact" className="py-ds-12 lg:py-ds-20 bg-surface-0 relative overflow-hidden scroll-mt-24">
+    <section id="contact" className="flex min-h-0 flex-1 flex-col py-8 md:py-ds-12 lg:py-ds-20 bg-surface-0 relative overflow-hidden scroll-mt-16 md:scroll-mt-24">
       <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header - centered */}
-        <div className="text-center mb-ds-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-6 leading-tight">
+        <div className="text-center mb-8 md:mb-ds-16">
+          <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-text-900 mb-3 md:mb-6 leading-tight">
             Kontaktirajte nas
           </h2>
-          <p className="text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-sm md:text-lg lg:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
             Spremni smo da odgovorimo na sva Vaša pitanja i pružimo besplatnu procenu za Vaše potrebe čišćenja
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-ds-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-ds-12">
           {/* Contact Information: Serbia first (active); Germany below as disabled / social proof */}
-          <div className="text-left space-y-10">
+          <div className="text-left space-y-6 md:space-y-10">
             {/* Srbija — active contact */}
-            <div className="bg-surface-0 p-6 rounded-card border border-border-200 shadow-card">
-              <h3 className="text-xl md:text-2xl font-bold text-text-900 mb-6 flex items-center gap-3">
+            <div className="bg-surface-0 p-4 md:p-6 rounded-card border border-border-200 shadow-card">
+              <h3 className="text-base md:text-xl lg:text-2xl font-bold text-text-900 mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
                 <span className="text-2xl" aria-hidden>🇷🇸</span>
                 Srbija
               </h3>
@@ -94,8 +94,8 @@ const Contact = () => {
             </div>
 
             {/* Nemačka — disabled / social proof */}
-            <div className="bg-surface-50 p-6 rounded-card border border-border-200 opacity-75 pointer-events-none select-none" aria-hidden="false">
-              <h3 className="text-xl md:text-2xl font-bold text-text-500 mb-6 flex items-center gap-3">
+            <div className="bg-surface-50 p-4 md:p-6 rounded-card border border-border-200 opacity-75 pointer-events-none select-none" aria-hidden="false">
+              <h3 className="text-base md:text-xl lg:text-2xl font-bold text-text-500 mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
                 <span className="text-2xl" aria-hidden>🇩🇪</span>
                 Nemačka
               </h3>
@@ -118,18 +118,18 @@ const Contact = () => {
             </div>
 
             {/* Logo below Germany contact info */}
-            <div className="bg-surface-0 p-6 rounded-card border border-border-200 shadow-card flex flex-wrap items-start justify-center text-center py-8">
-              <img src={logo} alt="MAMIGO Hausmeister" className="h-[200px] w-auto object-contain mx-auto" />
+            <div className="bg-surface-0 p-4 md:p-6 rounded-card border border-border-200 shadow-card flex flex-wrap items-start justify-center text-center py-6 md:py-8">
+              <img src={logo} alt="MAMIGO Hausmeister" className="h-32 md:h-[200px] w-auto object-contain mx-auto" />
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-surface-0 p-8 rounded-card border border-border-200 shadow-card">
-            <h3 className="text-xl md:text-2xl font-bold text-text-900 mb-6">
+          <div className="bg-surface-0 p-4 md:p-8 rounded-card border border-border-200 shadow-card">
+            <h3 className="text-base md:text-xl lg:text-2xl font-bold text-text-900 mb-4 md:mb-6">
               Zatražite besplatnu ponudu
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-text-900 mb-1">
                   Ime i prezime *
@@ -224,13 +224,13 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Bottom CTA - Full-width dark theme */}
-      <div className="w-full mt-ds-16 pt-16 lg:pt-24 pb-ds-12 lg:pb-ds-20 bg-text-900 border-t border-text-800">
+      {/* Bottom CTA - Full-width dark theme; flex-1 fills any gap so no white space below */}
+      <div className="mt-8 flex-1 md:mt-ds-16 w-full pt-8 md:pt-16 lg:pt-24 pb-8 md:pb-ds-12 lg:pb-ds-20 bg-text-900 border-t border-text-800 flex flex-col justify-center min-h-0">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-ds-4">
+          <h3 className="text-base md:text-xl lg:text-2xl font-bold text-white mb-3 md:mb-ds-4">
             Spremni za saradnju?
           </h3>
-          <p className="text-base text-white/80 mb-ds-6 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-white/80 mb-4 md:mb-ds-6 leading-relaxed max-w-2xl mx-auto">
             Pozovite nas odmah ili pošaljite poruku. Naši stručnjaci će Vam pružiti
             besplatnu procenu i odgovoriti na sva pitanja.
           </p>
@@ -242,6 +242,9 @@ const Contact = () => {
           >
             +381 63 33 28 33
           </MarketingButton>
+          <p className="mt-8 md:mt-12 pt-6 border-t border-white/10 text-xs md:text-sm text-white/50">
+            © {new Date().getFullYear()} MAMIGO Hausmeister. Profesionalno čišćenje – Beograd i Srbija.
+          </p>
         </div>
       </div>
     </section>

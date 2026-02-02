@@ -37,15 +37,15 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-surface-0">
+    <div className="flex min-h-screen flex-col bg-surface-0">
       {/* Navigation Header: logo left, nav center, phone + lang right */}
       <nav className="fixed top-0 w-full bg-surface-0/60 backdrop-blur-sm border-b border-border-200/50 z-50">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 items-center h-28 gap-4">
+          <div className="grid grid-cols-3 items-center h-12 md:h-24 gap-2 md:gap-4">
             {/* Left: logo */}
             <div className="flex items-center justify-start min-w-0">
               <a href="#" className="flex-shrink-0 flex items-center" aria-label="MAMIGO Hausmeister - početna">
-                <img src={logo} alt="MAMIGO Hausmeister" className="h-20 sm:h-24 w-auto object-contain" />
+                <img src={logo} alt="MAMIGO Hausmeister" className="h-10 md:h-24 w-auto object-contain" />
               </a>
             </div>
 
@@ -61,7 +61,7 @@ function App() {
             </div>
 
             {/* Right: phone + language switcher + mobile menu button */}
-            <div className="flex items-center justify-end gap-4 min-w-0">
+            <div className="flex items-center justify-end gap-2 md:gap-4 min-w-0">
               <a href="tel:+38163332833" className="hidden sm:inline-flex text-sm font-semibold text-text-900 hover:text-brand-500 transition-colors whitespace-nowrap">
                 +381 63 33 28 33
               </a>
@@ -80,7 +80,7 @@ function App() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen((o) => !o)}
-                className="md:hidden p-2 -m-2 rounded-button text-text-900 hover:bg-surface-50 touch-manipulation"
+                className="md:hidden ml-auto p-2 -m-2 rounded-button text-text-900 hover:bg-surface-50 touch-manipulation"
                 aria-label={mobileMenuOpen ? 'Zatvori meni' : 'Otvori meni'}
                 aria-expanded={mobileMenuOpen}
               >
@@ -91,25 +91,25 @@ function App() {
         </div>
       </nav>
 
-      {/* Mobile menu overlay */}
+      {/* Mobile menu - drops below nav */}
       {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-40 md:hidden"
-          aria-hidden="false"
-        >
+        <>
           <button
             type="button"
             onClick={() => setMobileMenuOpen(false)}
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/20 md:hidden"
             aria-label="Zatvori meni"
           />
-          <div className="absolute top-0 right-0 bottom-0 w-full max-w-xs bg-surface-0 shadow-xl pt-24 px-6 pb-8 flex flex-col gap-2">
+          <div
+            className="fixed left-0 right-0 top-12 z-50 md:hidden bg-surface-0 shadow-xl border-b border-border-200 px-4 py-3 flex flex-col gap-1"
+            aria-hidden="false"
+          >
             {NAV_LINKS.map(({ href, label }) => (
               <a
                 key={href}
                 href={href}
                 onClick={(e) => { e.preventDefault(); scrollToSection(href); }}
-                className="block py-3 px-4 text-base font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
+                className="block py-2.5 px-3 text-sm font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
               >
                 {label}
               </a>
@@ -117,16 +117,16 @@ function App() {
             <a
               href="tel:+38163332833"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 py-3 px-4 text-base font-semibold text-brand-500 hover:bg-surface-50 rounded-button touch-manipulation"
+              className="mt-1 py-2.5 px-3 text-sm font-semibold text-brand-500 hover:bg-surface-50 rounded-button touch-manipulation border-t border-border-200 pt-3"
             >
               +381 63 33 28 33
             </a>
           </div>
-        </div>
+        </>
       )}
 
       {/* Main Content */}
-      <main className="pt-28">
+      <main className="flex min-h-0 flex-1 flex-col pt-12 md:pt-24">
         <Hero onContactClick={scrollToContact} />
         <Services />
         <About />

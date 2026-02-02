@@ -37,25 +37,25 @@ const Hero = ({ onContactClick }) => {
         {/* Content layer: pointer-events-none so slider receives drag; only the text block captures events */}
         <div className="relative z-10 flex flex-col justify-center min-h-[55vh] lg:min-h-[70vh] px-4 sm:px-6 lg:px-8 pointer-events-none">
           <div className="max-w-container mx-auto w-full">
-            <div className="max-w-xl pt-10 pb-10 lg:pt-12 lg:pb-12 pointer-events-auto">
+            <div className="max-w-xl pt-6 pb-6 md:pt-10 md:pb-10 lg:pt-12 lg:pb-12 pointer-events-auto">
               {/* German standard above headline */}
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md">
-                <span className="text-xl" aria-hidden>🇩🇪</span>
-                <span className="text-sm font-semibold text-white/90 tracking-wide">
+              <div className="inline-flex items-center gap-1.5 mb-3 px-3 py-1.5 md:mb-4 md:px-4 md:py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md">
+                <span className="text-base md:text-xl" aria-hidden>🇩🇪</span>
+                <span className="text-xs md:text-sm font-semibold text-white/90 tracking-wide">
                   Nemački standard
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-5">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-3 md:mb-5">
                 Profesionalno čišćenje{' '}
                 <span className="text-brand-500">bez nerviranja.</span>
               </h1>
-              <p className="text-lg sm:text-xl text-white/90 font-light leading-relaxed mb-6 max-w-xl">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 font-light leading-relaxed mb-4 md:mb-6 max-w-xl">
                 Garaže, poslovni prostori, magacini i zgrade — Beograd i cela Srbija. Dođemo, očistimo, organizujemo, završimo.
               </p>
 
               {/* Trust badges */}
-              <div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 mb-4 md:mb-6">
                 {[
                   { label: 'Od 2014', icon: LuCalendar },
                   { label: '30+ zaposlenih', icon: LuUsers },
@@ -63,16 +63,16 @@ const Hero = ({ onContactClick }) => {
                 ].map(({ label, icon: Icon }) => (
                   <span
                     key={label}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-badge text-sm font-semibold bg-white/5 backdrop-blur-md border border-white/40 text-white"
+                    className="inline-flex items-center gap-1.5 px-2 py-1 md:px-3 md:py-1.5 sm:px-4 sm:py-2 rounded-badge text-xs md:text-sm font-semibold bg-white/5 backdrop-blur-md border border-white/40 text-white"
                   >
-                    <Icon className="w-4 h-4 text-brand-500" />
+                    <Icon className="w-3 h-3 md:w-4 md:h-4 text-brand-500" />
                     {label}
                   </span>
                 ))}
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-3">
+              <div className="flex flex-col sm:flex-row gap-2 md:gap-3 mb-2 md:mb-3">
                 <MarketingButton onClick={onContactClick}>
                   Zatraži ponudu
                 </MarketingButton>
@@ -94,10 +94,10 @@ const Hero = ({ onContactClick }) => {
       </section>
 
       {/* Companies Carousel */}
-      <section className="bg-surface-0 py-12 border-t border-border-200 overflow-hidden relative">
+      <section className="bg-surface-0 py-6 md:py-12 border-t border-border-200 overflow-hidden relative">
         <div className="relative max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <p className="text-sm text-text-600 font-medium uppercase tracking-wide">
+          <div className="text-center mb-4 md:mb-8">
+            <p className="text-xs md:text-sm text-text-600 font-medium uppercase tracking-wide">
               Saradjujemo sa
             </p>
           </div>
