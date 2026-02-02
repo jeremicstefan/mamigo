@@ -12,83 +12,98 @@ const Hero = ({ onContactClick }) => {
     'Rinker-Areal', 'Siemens', 'Transnafta', 'Airport Nikola Tesla',
   ];
 
+  const heroContent = (
+    <>
+      {/* German standard above headline */}
+      <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md">
+        <span className="text-xl" aria-hidden>🇩🇪</span>
+        <span className="text-sm font-semibold text-white/90 tracking-wide">
+          Nemački standard
+        </span>
+      </div>
+
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-5">
+        Profesionalno čišćenje{' '}
+        <span className="text-brand-500">bez nerviranja.</span>
+      </h1>
+      <p className="text-lg sm:text-xl text-white/90 font-light leading-relaxed mb-6 max-w-xl">
+        Garaže, poslovni prostori, magacini i zgrade — Beograd i cela Srbija. Dođemo, očistimo, organizujemo, završimo.
+      </p>
+
+      {/* Trust badges */}
+      <div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
+        {[
+          { label: 'Od 2014', icon: LuCalendar },
+          { label: '30+ zaposlenih', icon: LuUsers },
+          { label: '100% zadovoljstvo', icon: LuCheckCircle },
+        ].map(({ label, icon: Icon }) => (
+          <span
+            key={label}
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-badge text-sm font-semibold bg-white/5 backdrop-blur-md border border-white/40 text-white"
+          >
+            <Icon className="w-4 h-4 text-brand-500" />
+            {label}
+          </span>
+        ))}
+      </div>
+
+      {/* CTAs */}
+      <div className="flex flex-col sm:flex-row gap-3 mb-3">
+        <MarketingButton onClick={onContactClick}>
+          Zatraži ponudu
+        </MarketingButton>
+        <MarketingButton
+          variant="secondary"
+          href="tel:+38163332833"
+          icon={<LuPhone className="w-5 h-5 text-brand-500" />}
+          className="!bg-white/10 !backdrop-blur-md !border !border-white/40 !text-white hover:!bg-white/20"
+        >
+          +381 63 33 28 33
+        </MarketingButton>
+      </div>
+      <p className="text-sm text-white/80">
+        Odgovaramo u roku od 24h.
+      </p>
+    </>
+  );
+
   return (
     <>
-      {/* HERO: full-width background with overlaid content */}
-      <section className="relative w-full overflow-hidden min-h-[55vh] lg:min-h-[70vh]">
-        {/* Background: full-bleed before/after slider */}
-        <div className="absolute inset-0 z-0">
-          <BeforeAfterSlider
-            beforeSrc={heroPair.beforeSrc}
-            afterSrc={heroPair.afterSrc}
-            initialPosition={75}
-            variant="hero"
+      {/* HERO: on mobile = slider only (full touch), then content below; on desktop = overlay */}
+      <section className="relative w-full overflow-hidden">
+        {/* Slider: full-bleed, no overlay on mobile so it's fully touchable */}
+        <div className="relative min-h-[50vh] md:min-h-[55vh] lg:min-h-[70vh]">
+          <div className="absolute inset-0 z-0">
+            <BeforeAfterSlider
+              beforeSrc={heroPair.beforeSrc}
+              afterSrc={heroPair.afterSrc}
+              initialPosition={75}
+              variant="hero"
+            />
+          </div>
+
+          {/* Overlay: desktop only - gradient so text is readable; mobile has content below */}
+          <div
+            className="absolute inset-0 z-[1] pointer-events-none hidden md:block"
+            style={{
+              background: 'linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.04) 100%)',
+            }}
           />
+
+          {/* Desktop: overlaid content (pointer-events-none so slider receives drag in dark area) */}
+          <div className="hidden md:flex relative z-10 flex-col justify-center min-h-[55vh] lg:min-h-[70vh] px-4 sm:px-6 lg:px-8 pointer-events-none">
+            <div className="max-w-container mx-auto w-full">
+              <div className="max-w-xl pt-10 pb-10 lg:pt-16 lg:pb-16 pointer-events-auto">
+                {heroContent}
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Overlay: left-to-right gradient, stronger on left so text is more prominent */}
-        <div
-          className="absolute inset-0 z-[1] pointer-events-none"
-          style={{
-            background: 'linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.04) 100%)',
-          }}
-        />
-
-        {/* Content layer: pointer-events-none so slider receives drag; only the text block captures events */}
-        <div className="relative z-10 flex flex-col justify-center min-h-[55vh] lg:min-h-[70vh] px-4 sm:px-6 lg:px-8 pointer-events-none">
-          <div className="max-w-container mx-auto w-full">
-            <div className="max-w-xl pt-10 pb-10 lg:pt-16 lg:pb-16 pointer-events-auto">
-              {/* German standard above headline */}
-              <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md">
-                <span className="text-xl" aria-hidden>🇩🇪</span>
-                <span className="text-sm font-semibold text-white/90 tracking-wide">
-                  Nemački standard
-                </span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-5">
-                Profesionalno čišćenje{' '}
-                <span className="text-brand-500">bez nerviranja.</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-white/90 font-light leading-relaxed mb-6 max-w-xl">
-                Garaže, poslovni prostori, magacini i zgrade — Beograd i cela Srbija. Dođemo, očistimo, organizujemo, završimo.
-              </p>
-
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
-                {[
-                  { label: 'Od 2014', icon: LuCalendar },
-                  { label: '30+ zaposlenih', icon: LuUsers },
-                  { label: '100% zadovoljstvo', icon: LuCheckCircle },
-                ].map(({ label, icon: Icon }) => (
-                  <span
-                    key={label}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-badge text-sm font-semibold bg-white/5 backdrop-blur-md border border-white/40 text-white"
-                  >
-                    <Icon className="w-4 h-4 text-brand-500" />
-                    {label}
-                  </span>
-                ))}
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 mb-3">
-                <MarketingButton onClick={onContactClick}>
-                  Zatraži ponudu
-                </MarketingButton>
-                <MarketingButton
-                  variant="secondary"
-                  href="tel:+38163332833"
-                  icon={<LuPhone className="w-5 h-5 text-brand-500" />}
-                  className="!bg-white/10 !backdrop-blur-md !border !border-white/40 !text-white hover:!bg-white/20"
-                >
-                  +381 63 33 28 33
-                </MarketingButton>
-              </div>
-              <p className="text-sm text-white/80">
-                Odgovaramo u roku od 24h.
-              </p>
-            </div>
+        {/* Mobile: content below slider so slider has full touch access */}
+        <div className="md:hidden bg-text-900 px-4 py-8 -mt-1">
+          <div className="max-w-container mx-auto max-w-xl">
+            {heroContent}
           </div>
         </div>
       </section>

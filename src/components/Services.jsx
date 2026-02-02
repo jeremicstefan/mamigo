@@ -76,7 +76,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-12 lg:py-20 bg-surface-0 relative overflow-hidden scroll-mt-24">
+    <section id="services" className="py-12 lg:py-20 bg-surface-0 relative overflow-hidden scroll-mt-14 md:scroll-mt-20">
       <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-6 leading-tight">

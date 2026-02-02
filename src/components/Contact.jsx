@@ -40,7 +40,7 @@ const Contact = () => {
   `.trim().replace(/\s+/g, ' ');
 
   return (
-    <section id="contact" className="flex min-h-0 flex-1 flex-col py-ds-12 lg:py-ds-20 bg-surface-0 relative overflow-hidden scroll-mt-24">
+    <section id="contact" className="flex min-h-0 flex-1 flex-col pt-ds-12 lg:pt-ds-20 pb-0 bg-surface-0 relative overflow-hidden scroll-mt-14 md:scroll-mt-20">
       <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header - centered */}
         <div className="text-center mb-ds-16">

@@ -33,7 +33,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-12 lg:py-20 bg-surface-50 relative overflow-hidden scroll-mt-24">
+    <section id="about" className="py-12 lg:py-20 bg-surface-50 relative overflow-hidden scroll-mt-14 md:scroll-mt-20">
       <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Text Content */}
