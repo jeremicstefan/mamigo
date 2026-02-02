@@ -136,11 +136,11 @@ const BeforeAfterSlider = ({
     <div
       ref={containerRef}
       className={`
-        relative w-full overflow-hidden select-none touch-manipulation
+        relative w-full overflow-hidden select-none touch-none
         ${isHero ? 'absolute inset-0 h-full' : cardFill ? 'h-full' : 'aspect-[3/4]'}
         ${!isHero && !cardFill ? 'rounded-card bg-black' : ''}
       `}
-      style={!isHero ? { maxWidth: '100%' } : {}}
+      style={!isHero ? { maxWidth: '100%' } : undefined}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
@@ -188,7 +188,7 @@ const BeforeAfterSlider = ({
         )}
       </div>
 
-      {/* Handle: vertical line + circular knob; only handle is focusable and gets col-resize */}
+      {/* Handle: vertical line + circular knob; min 44px touch target for mobile */}
       <div
         tabIndex={0}
         role="slider"
@@ -198,7 +198,7 @@ const BeforeAfterSlider = ({
         aria-valuenow={Math.round(position * 100)}
         className={`
           absolute top-0 bottom-0 z-20 flex items-center justify-center
-          min-w-[32px] cursor-ew-resize
+          min-w-[44px] -mx-2 cursor-ew-resize touch-manipulation
           focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black
           ${isDragging ? 'cursor-grabbing' : ''}
           ${!isDragging && (variant !== 'hero' || introDone) ? 'transition-[left] duration-150 ease-out' : ''}

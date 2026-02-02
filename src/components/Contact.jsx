@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LuPhone, LuMail } from 'react-icons/lu';
 import MarketingButton from './MarketingButton';
-import logo from '../assets/hero/mamigo-hausmeister-spray-logo 1.png';
+import logo from '../assets/hero/mamigo-hausmeister-logo 1.png';
 
 const Contact = () => {
   const [formData, setFormData] = useState({

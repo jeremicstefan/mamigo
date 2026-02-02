@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { LuMenu, LuX } from 'react-icons/lu';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
 import MarketingButton from './components/MarketingButton';
-import logo from './assets/hero/mamigo-hausmeister-spray-logo 1.png';
+import logo from './assets/hero/mamigo-hausmeister-logo 1.png';
 
 const LANGUAGES = [
   { code: 'sr', label: '🇷🇸' },
@@ -12,9 +13,25 @@ const LANGUAGES = [
   { code: 'en', label: '🇬🇧' },
 ];
 
+const NAV_LINKS = [
+  { href: '#services', label: 'Usluge' },
+  { href: '#about', label: 'O nama' },
+  { href: '#contact', label: 'Kontakt' },
+];
+
 function App() {
   const [lang, setLang] = useState('sr');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (href) => {
+    setMobileMenuOpen(false);
+    const id = href.slice(1);
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const scrollToContact = () => {
+    setMobileMenuOpen(false);
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -32,27 +49,23 @@ function App() {
               </a>
             </div>
 
-            {/* Center: nav links - fixed width, centered */}
+            {/* Center: nav links - fixed width, centered (desktop) */}
             <div className="hidden md:flex flex-1 items-center justify-center min-w-0">
               <div className="flex items-center gap-1">
-                <a href="#services" className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center">
-                  Usluge
-                </a>
-                <a href="#about" className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center">
-                  O nama
-                </a>
-                <a href="#contact" className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center">
-                  Kontakt
-                </a>
+                {NAV_LINKS.map(({ href, label }) => (
+                  <a key={href} href={href} className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center">
+                    {label}
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Right: phone + language switcher */}
+            {/* Right: phone + language switcher + mobile menu button */}
             <div className="flex items-center justify-end gap-4 min-w-0">
               <a href="tel:+38163332833" className="hidden sm:inline-flex text-sm font-semibold text-text-900 hover:text-brand-500 transition-colors whitespace-nowrap">
                 +381 63 33 28 33
               </a>
-              <div className="flex rounded-lg border border-border-200 overflow-hidden bg-surface-50" role="group" aria-label="Jezik">
+              <div className="hidden sm:flex rounded-lg border border-border-200 overflow-hidden bg-surface-50" role="group" aria-label="Jezik">
                 {LANGUAGES.map(({ code, label }) => (
                   <button
                     key={code}
@@ -64,15 +77,53 @@ function App() {
                   </button>
                 ))}
               </div>
-              <div className="md:hidden">
-                <MarketingButton onClick={scrollToContact} size="compact">
-                  Kontakt
-                </MarketingButton>
-              </div>
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen((o) => !o)}
+                className="md:hidden p-2 -m-2 rounded-button text-text-900 hover:bg-surface-50 touch-manipulation"
+                aria-label={mobileMenuOpen ? 'Zatvori meni' : 'Otvori meni'}
+                aria-expanded={mobileMenuOpen}
+              >
+                {mobileMenuOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}
+              </button>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Mobile menu overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          aria-hidden="false"
+        >
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(false)}
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            aria-label="Zatvori meni"
+          />
+          <div className="absolute top-0 right-0 bottom-0 w-full max-w-xs bg-surface-0 shadow-xl pt-24 px-6 pb-8 flex flex-col gap-2">
+            {NAV_LINKS.map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                onClick={(e) => { e.preventDefault(); scrollToSection(href); }}
+                className="block py-3 px-4 text-base font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
+              >
+                {label}
+              </a>
+            ))}
+            <a
+              href="tel:+38163332833"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-4 py-3 px-4 text-base font-semibold text-brand-500 hover:bg-surface-50 rounded-button touch-manipulation"
+            >
+              +381 63 33 28 33
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <main className="pt-28">
