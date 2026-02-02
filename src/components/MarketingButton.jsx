@@ -27,8 +27,8 @@ const MarketingButton = ({
   `.trim().replace(/\s+/g, ' ');
 
   const sizeStyles = {
-    default: 'px-4 py-2.5 md:px-6 md:py-3 text-sm md:text-base font-semibold',
-    compact: 'px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-semibold',
+    default: 'px-6 py-3 text-base font-semibold',
+    compact: 'px-4 py-2 text-sm font-semibold',
   };
 
   const variants = {
