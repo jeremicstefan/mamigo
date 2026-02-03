@@ -73,9 +73,11 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-ds-12 h-fit w-full">
-          {/* Contact Information: Serbia first (active); Germany below as disabled / social proof */}
-          <div className="flex flex-col justify-start gap-5 sm:gap-6 lg:gap-8 w-full max-w-lg lg:max-w-none text-left">
+        {/* Stacked & centered below lg; two columns (info | form) at lg (~1000px)+. */}
+        <div className="w-full max-w-2xl mx-auto lg:max-w-none lg:mx-0">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-6 sm:gap-8 lg:gap-ds-12 h-fit w-full">
+            {/* Left column: Serbia, Germany, logo (vertical stack) */}
+            <div className="flex flex-col justify-start gap-5 sm:gap-6 lg:gap-8 w-full lg:max-w-md lg:flex-shrink-0 text-left">
             {/* Srbija — active contact */}
             <div className="bg-surface-0 p-4 sm:p-5 lg:p-6 rounded-card border border-border-200 shadow-card">
               <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-text-900 mb-4 sm:mb-5 lg:mb-6 flex items-center gap-2 sm:gap-3">
@@ -142,10 +144,10 @@ const Contact = () => {
             <div className="bg-surface-0 p-4 sm:p-5 lg:p-6 rounded-card border border-border-200 shadow-card flex flex-wrap items-start justify-center text-center py-5 sm:py-6 mt-0">
               <img src={logo} alt="MAMIGO Hausmeister" className="h-24 sm:h-28 lg:h-[140px] w-auto object-contain mx-auto" loading="lazy" />
             </div>
-          </div>
+            </div>
 
-          {/* Contact Form */}
-          <div className="bg-surface-0 p-4 sm:p-5 lg:p-8 rounded-card border border-border-200 shadow-card h-fit w-full max-w-lg lg:max-w-none">
+            {/* Right column: Contact Form */}
+            <div className="bg-surface-0 p-4 sm:p-5 lg:p-8 rounded-card border border-border-200 shadow-card h-fit w-full lg:flex-1 lg:min-w-0">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-text-900 mb-4 sm:mb-6">
               Zatražite besplatnu ponudu
             </h3>
@@ -241,6 +243,7 @@ const Contact = () => {
                 Pošalji poruku
               </MarketingButton>
             </form>
+            </div>
           </div>
         </div>
 

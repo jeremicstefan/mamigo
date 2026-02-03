@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="flex min-h-screen flex-col bg-surface-0">
       {/* Navigation Header: logo left, nav center, phone + lang right */}
-      <nav className="fixed top-0 w-full bg-surface-0/60 backdrop-blur-sm border-b border-border-200/50 z-50">
+      <nav className={`fixed top-0 w-full z-[60] bg-surface-0 md:bg-surface-0/60 md:backdrop-blur-sm ${mobileMenuOpen ? 'border-b-0' : 'border-b border-border-200/50'}`}>
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 md:h-20 gap-2">
             {/* Left: logo - wrapper has no bg so transparent logo assets show correctly */}
@@ -101,11 +101,11 @@ function App() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(false)}
-            className="fixed inset-0 z-40 bg-black/20 md:hidden"
+            className="fixed inset-0 z-[45] bg-black/20 md:hidden"
             aria-label="Zatvori meni"
           />
           <div
-            className="fixed left-0 right-0 top-14 z-50 md:hidden bg-surface-0 shadow-xl border-b border-border-200 px-4 py-3 flex flex-col gap-1"
+            className="fixed left-0 right-0 top-14 z-[50] md:hidden bg-surface-0 rounded-b-2xl border border-t-0 border-border-200 shadow-[0_8px_24px_rgba(0,0,0,0.08)] px-4 py-3 flex flex-col gap-1"
             aria-hidden="false"
           >
             {NAV_LINKS.map(({ href, label }) => (
@@ -121,7 +121,7 @@ function App() {
             <a
               href="tel:+38163332833"
               onClick={() => setMobileMenuOpen(false)}
-              className="py-3 px-4 text-sm font-semibold text-brand-500 hover:bg-surface-50 rounded-button touch-manipulation border-t border-border-200"
+              className="py-3 px-4 text-sm font-semibold text-brand-500 hover:bg-surface-50 rounded-button touch-manipulation"
             >
               +381 63 33 28 33
             </a>

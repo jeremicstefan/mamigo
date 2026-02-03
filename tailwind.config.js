@@ -47,6 +47,10 @@ export default {
       maxWidth: {
         container: '1280px',
       },
+      screens: {
+        'contact-stack': '560px', // single-col contact section: center content above this, full width below
+        'contact-row': '1000px',  // contact section: column below, row (info | form) at or above
+      },
       spacing: {
         'ds-1': '0.25rem',
         'ds-2': '0.5rem',

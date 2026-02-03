@@ -35,7 +35,7 @@ const About = () => {
   return (
     <section className="py-10 sm:py-12 lg:py-20 bg-surface-50 relative overflow-hidden scroll-mt-14 md:scroll-mt-20" aria-label="O nama">
       <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
           {/* Left Column - Text Content */}
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-4 sm:mb-6 leading-tight">

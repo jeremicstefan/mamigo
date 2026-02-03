@@ -8,7 +8,7 @@ const ServiceTypeSection = ({ onContactClick }) => (
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-6 sm:mb-8 lg:mb-12 text-center">
         Jednokratno ili ugovorno čišćenje
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 w-full">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,280px),1fr))] lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 w-full">
         <div className="bg-surface-0 p-4 sm:p-5 lg:p-8 xl:p-10 rounded-card border border-border-200 flex flex-col justify-center">
           <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5 min-h-[3rem]">
             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-100 text-brand-500 flex-shrink-0">

@@ -25,7 +25,7 @@ const ProcessSteps = () => (
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-6 sm:mb-8 lg:mb-12 text-center">
         Kako funkcioniše
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+      <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-12 [&>*]:min-w-[200px] [&>*]:flex-1 [&>*]:max-w-[360px]">
         {steps.map(({ icon: Icon, title, description }, index) => (
           <div key={index} className="flex flex-col items-center text-center">
             <div className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-brand-100 text-brand-500 mb-3 sm:mb-4">

@@ -87,7 +87,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] gap-5 sm:gap-6 lg:gap-8">
           {services.map((service) => {
             const IconComponent = service.icon;
             const hasBeforeAfter = service.beforeSrc && service.afterSrc;
