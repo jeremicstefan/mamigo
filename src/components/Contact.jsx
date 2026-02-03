@@ -61,7 +61,7 @@ const Contact = () => {
   `.trim().replace(/\s+/g, ' ');
 
   return (
-    <section id="contact" className="flex min-h-0 flex-1 flex-col justify-start items-center pt-10 sm:pt-12 lg:pt-ds-20 pb-0 bg-surface-0 relative overflow-hidden scroll-mt-14 md:scroll-mt-20">
+    <section className="flex min-h-0 flex-1 flex-col justify-start items-center pt-10 sm:pt-12 lg:pt-ds-20 pb-0 bg-surface-0 relative overflow-hidden scroll-mt-14 md:scroll-mt-20" aria-label="Kontakt">
       <div className="relative z-10 flex flex-col justify-start items-center w-full max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header - centered */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-ds-16">
@@ -140,7 +140,7 @@ const Contact = () => {
 
             {/* Logo below Germany contact info */}
             <div className="bg-surface-0 p-4 sm:p-5 lg:p-6 rounded-card border border-border-200 shadow-card flex flex-wrap items-start justify-center text-center py-5 sm:py-6 mt-0">
-              <img src={logo} alt="MAMIGO Hausmeister" className="h-24 sm:h-28 lg:h-[140px] w-auto object-contain mx-auto" />
+              <img src={logo} alt="MAMIGO Hausmeister" className="h-24 sm:h-28 lg:h-[140px] w-auto object-contain mx-auto" loading="lazy" />
             </div>
           </div>
 

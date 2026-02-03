@@ -8,6 +8,7 @@ import ServiceGuarantee from './components/ServiceGuarantee';
 import About from './components/About';
 import Contact from './components/Contact';
 import MarketingButton from './components/MarketingButton';
+import LazySection from './components/UI/LazySection';
 import logo from './assets/hero/mamigo-hausmeister-logo.png';
 
 const LANGUAGES = [
@@ -48,7 +49,7 @@ function App() {
             {/* Left: logo - wrapper has no bg so transparent logo assets show correctly */}
             <div className="flex items-center justify-start min-w-0 bg-transparent">
               <a href="#" className="flex-shrink-0 flex items-center bg-transparent" aria-label="MAMIGO Hausmeister - početna">
-                <img src={logo} alt="MAMIGO Hausmeister" className="h-12 sm:h-14 md:h-20 w-auto object-contain" />
+                <img src={logo} alt="MAMIGO Hausmeister" className="h-12 sm:h-14 md:h-20 w-auto object-contain" loading="eager" />
               </a>
             </div>
 
@@ -143,12 +144,24 @@ function App() {
       {/* Main Content */}
       <main className="flex min-h-0 flex-1 flex-col pt-14 md:pt-20">
         <Hero onContactClick={scrollToContact} />
-        <ProcessSteps />
-        <Services />
-        <ServiceTypeSection onContactClick={scrollToContact} />
-        <ServiceGuarantee />
-        <About />
-        <Contact />
+        <LazySection placeholderClassName="min-h-[280px]">
+          <ProcessSteps />
+        </LazySection>
+        <LazySection id="services" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[420px]">
+          <Services />
+        </LazySection>
+        <LazySection placeholderClassName="min-h-[320px]">
+          <ServiceTypeSection onContactClick={scrollToContact} />
+        </LazySection>
+        <LazySection placeholderClassName="min-h-[220px]">
+          <ServiceGuarantee />
+        </LazySection>
+        <LazySection id="about" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[480px]">
+          <About />
+        </LazySection>
+        <LazySection id="contact" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[520px]">
+          <Contact />
+        </LazySection>
       </main>
     </div>
   );

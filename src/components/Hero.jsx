@@ -128,6 +128,7 @@ const Hero = ({ onContactClick }) => {
                     alt=""
                     className="max-h-full max-w-full w-auto h-auto object-contain object-center"
                     style={{ height: LOGO_HEIGHT, width: LOGO_WIDTH }}
+                    loading="lazy"
                     aria-hidden
                   />
                 </a>

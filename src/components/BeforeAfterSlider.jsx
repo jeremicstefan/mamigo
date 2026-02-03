@@ -27,7 +27,10 @@ const BeforeAfterSlider = ({
   variant = 'card',
   /** Optional: skip intro animation (e.g. for cards) */
   skipIntro = false,
+  /** Optional: 'eager' for hero (above fold), 'lazy' for cards */
+  imageLoading = undefined,
 }) => {
+  const loading = imageLoading ?? (variant === 'hero' ? 'eager' : 'lazy');
   const initialValue = initialPosition != null ? initialPosition / 100 : initial;
   // Hero intro: start at 1 (all before), then animate right→left to 0 (all after), then jump to middle
   const heroIntroStart = 1;
@@ -165,7 +168,7 @@ const BeforeAfterSlider = ({
           src={afterSrc}
           alt="Posle"
           className={`w-full h-full object-cover ${objectPos}`}
-          loading="eager"
+          loading={loading}
           draggable={false}
         />
         {afterLabel && (
@@ -187,7 +190,7 @@ const BeforeAfterSlider = ({
           src={beforeSrc}
           alt="Pre"
           className={`w-full h-full object-cover ${objectPos}`}
-          loading="eager"
+          loading={loading}
           draggable={false}
         />
         {beforeLabel && (
