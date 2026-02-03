@@ -1,9 +1,30 @@
-import React, { useState } from 'react';
-import { LuPhone, LuMail } from 'react-icons/lu';
+import React, { useState, useEffect } from 'react';
+import { LuPhone, LuHelpCircle, LuCheckCircle } from 'react-icons/lu';
 import MarketingButton from './MarketingButton';
-import logo from '../assets/hero/mamigo-hausmeister-logo 1.png';
+import logo from '../assets/hero/mamigo-hausmeister-logo.webp';
+
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Da li radite vikendom?', acceptedAnswer: { '@type': 'Answer', text: 'Da, po dogovoru radimo i vikendom.' } },
+    { '@type': 'Question', name: 'Da li izdajete fakturu?', acceptedAnswer: { '@type': 'Answer', text: 'Da, izdajemo fakturu za sve izvršene usluge.' } },
+    { '@type': 'Question', name: 'Koliko traje čišćenje garaže?', acceptedAnswer: { '@type': 'Answer', text: 'U zavisnosti od veličine i stanja, od nekoliko sati do jednog dana.' } },
+  ],
+};
 
 const Contact = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(FAQ_SCHEMA);
+    script.id = 'faq-schema';
+    if (!document.getElementById('faq-schema')) document.head.appendChild(script);
+    return () => {
+      const el = document.getElementById('faq-schema');
+      if (el) el.remove();
+    };
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,8 +61,8 @@ const Contact = () => {
   `.trim().replace(/\s+/g, ' ');
 
   return (
-    <section id="contact" className="flex min-h-0 flex-1 flex-col pt-ds-12 lg:pt-ds-20 pb-0 bg-surface-0 relative overflow-hidden scroll-mt-14 md:scroll-mt-20">
-      <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="flex min-h-0 flex-1 flex-col justify-start items-center pt-ds-12 lg:pt-ds-20 pb-0 bg-surface-0 relative overflow-hidden scroll-mt-14 md:scroll-mt-20">
+      <div className="relative z-10 flex flex-col justify-start items-center w-full mx-0 px-0">
         {/* Section header - centered */}
         <div className="text-center mb-ds-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-6 leading-tight">
@@ -52,9 +73,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-ds-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-ds-12 h-fit">
           {/* Contact Information: Serbia first (active); Germany below as disabled / social proof */}
-          <div className="text-left space-y-10">
+          <div className="flex flex-col justify-start gap-8 w-fit text-left">
             {/* Srbija — active contact */}
             <div className="bg-surface-0 p-6 rounded-card border border-border-200 shadow-card">
               <h3 className="text-xl md:text-2xl font-bold text-text-900 mb-6 flex items-center gap-3">
@@ -94,7 +115,7 @@ const Contact = () => {
             </div>
 
             {/* Nemačka — disabled / social proof */}
-            <div className="bg-surface-50 p-6 rounded-card border border-border-200 opacity-75 pointer-events-none select-none" aria-hidden="false">
+            <div className="bg-surface-50 p-6 rounded-card border border-border-200 opacity-75 pointer-events-none select-none mt-0" aria-hidden="false">
               <h3 className="text-xl md:text-2xl font-bold text-text-500 mb-6 flex items-center gap-3">
                 <span className="text-2xl" aria-hidden>🇩🇪</span>
                 Nemačka
@@ -118,13 +139,13 @@ const Contact = () => {
             </div>
 
             {/* Logo below Germany contact info */}
-            <div className="bg-surface-0 p-6 rounded-card border border-border-200 shadow-card flex flex-wrap items-start justify-center text-center py-8">
-              <img src={logo} alt="MAMIGO Hausmeister" className="h-[200px] w-auto object-contain mx-auto" />
+            <div className="bg-surface-0 p-6 rounded-card border border-border-200 shadow-card flex flex-wrap items-start justify-center text-center py-6 mt-0">
+              <img src={logo} alt="MAMIGO Hausmeister" className="h-[140px] w-auto object-contain mx-auto" />
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-surface-0 p-8 rounded-card border border-border-200 shadow-card">
+          <div className="bg-surface-0 p-8 rounded-card border border-border-200 shadow-card h-fit w-[504px]">
             <h3 className="text-xl md:text-2xl font-bold text-text-900 mb-6">
               Zatražite besplatnu ponudu
             </h3>
@@ -179,20 +200,21 @@ const Contact = () => {
 
               <div>
                 <label htmlFor="service" className="block text-sm font-medium text-text-900 mb-1">
-                  Vrsta usluge
+                  Vrsta usluge čišćenja
                 </label>
                 <select
                   id="service"
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className={inputClasses}
+                  className={`${inputClasses} pr-10`}
                 >
-                  <option value="">Izaberite uslugu</option>
-                  <option value="pre-opening">Čišćenje maloprodajnih objekata</option>
-                  <option value="residential-buildings">Čišćenje stambenih zgrada</option>
-                  <option value="warehouse">Čišćenje magacinskih prostora i hala</option>
-                  <option value="garage">Čišćenje garažnih prostora</option>
+                  <option value="">Izaberite vrstu usluge čišćenja</option>
+                  <option value="pre-opening">Maloprodajni objekti</option>
+                  <option value="residential-buildings">Stambene zgrade</option>
+                  <option value="warehouse">Magacinski prostori i hale</option>
+                  <option value="garage">Garažni prostori</option>
+                  <option value="commercial">Poslovni prostor</option>
                   <option value="other">Ostalo</option>
                 </select>
               </div>
@@ -216,11 +238,62 @@ const Contact = () => {
                 Pošalji poruku
               </MarketingButton>
             </form>
-
-            <p className="text-sm text-text-600 mt-4">
-              * Obavezna polja. Kontaktiraćemo Vas u roku od 24 sata.
-            </p>
           </div>
+        </div>
+
+        {/* Full width under both columns: checkmarked badges */}
+        <div className="flex flex-wrap justify-center gap-2 mt-6 w-fit">
+          {['Odgovaramo u roku od 24h', 'Bez obaveze', 'Moguće je poslati i slike prostora', 'Pouzdan i profesionalan servis'].map((text) => (
+            <span
+              key={text}
+              className="inline-flex items-center gap-2 bg-brand-100 px-4 py-2 rounded-badge text-sm font-semibold text-text-900 border border-border-200"
+            >
+              <LuCheckCircle className="w-4 h-4 text-brand-500 flex-shrink-0" />
+              {text}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* FAQ - full width, lots of space above/below */}
+      <div className="max-w-container max-w-[1280px] w-full mx-auto px-0 pt-16 pb-0 mt-16 mb-16 border-t border-border-200">
+        <h2 className="text-2xl md:text-3xl font-bold text-text-900 mb-10 text-left">
+          Često postavljana pitanja
+        </h2>
+        <div className="w-full max-w-full divide-y divide-border-200">
+          <article className="flex gap-4 py-6 first:pt-0" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+            <div className="flex-shrink-0 mt-1">
+              <LuHelpCircle className="w-6 h-6 text-brand-500" aria-hidden />
+            </div>
+            <div className="min-w-0">
+              <h3 className="text-xl font-semibold text-text-900 mb-2" itemProp="name">Da li radite vikendom?</h3>
+              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                <p className="text-base text-text-600 leading-relaxed" itemProp="text">Da, po dogovoru radimo i vikendom.</p>
+              </div>
+            </div>
+          </article>
+          <article className="flex gap-4 py-6" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+            <div className="flex-shrink-0 mt-1">
+              <LuHelpCircle className="w-6 h-6 text-brand-500" aria-hidden />
+            </div>
+            <div className="min-w-0">
+              <h3 className="text-xl font-semibold text-text-900 mb-2" itemProp="name">Da li izdajete fakturu?</h3>
+              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                <p className="text-base text-text-600 leading-relaxed" itemProp="text">Da, izdajemo fakturu za sve izvršene usluge.</p>
+              </div>
+            </div>
+          </article>
+          <article className="flex gap-4 py-6 last:pb-0" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+            <div className="flex-shrink-0 mt-1">
+              <LuHelpCircle className="w-6 h-6 text-brand-500" aria-hidden />
+            </div>
+            <div className="min-w-0">
+              <h3 className="text-xl font-semibold text-text-900 mb-2" itemProp="name">Koliko traje čišćenje garaže?</h3>
+              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                <p className="text-base text-text-600 leading-relaxed" itemProp="text">U zavisnosti od veličine i stanja, od nekoliko sati do jednog dana.</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
 

@@ -2,20 +2,20 @@ import React from 'react';
 import { LuCheckCircle, LuStore, LuBuilding2, LuWarehouse, LuCar } from 'react-icons/lu';
 import MarketingButton from './MarketingButton';
 import BeforeAfterSlider from './BeforeAfterSlider';
-import shopBefore from '../assets/hero/shop-before-1.png';
-import shopAfter from '../assets/hero/shop-after-1.png';
-import residentialBefore from '../assets/hero/residential-building-before-1.png';
-import residentialAfter from '../assets/hero/residential-building-after-1.png';
-import storageUnitBefore from '../assets/hero/storage-unit-before-1.png';
-import storageUnitAfter from '../assets/hero/storage-unit-after-1.png';
-import garageBefore from '../assets/hero/garage-before-1.png';
-import garageAfter from '../assets/hero/garage-after-1.png';
+import shopBefore from '../assets/hero/shop-before-1.webp';
+import shopAfter from '../assets/hero/shop-after-1.webp';
+import residentialBefore from '../assets/hero/residential-building-before-1.webp';
+import residentialAfter from '../assets/hero/residential-building-after-1.webp';
+import storageUnitBefore from '../assets/hero/storage-unit-before-1.webp';
+import storageUnitAfter from '../assets/hero/storage-unit-after-1.webp';
+import garageBefore from '../assets/hero/garage-before-1.webp';
+import garageAfter from '../assets/hero/garage-after-1.webp';
 
 const Services = () => {
   const services = [
     {
       id: 'pre-opening',
-      title: 'Čišćenje maloprodajnih objekata',
+      title: 'Maloprodajni objekti',
       subtitle: 'Pre-Opening & Post-Renovation',
       description: 'Profesionalno čišćenje prostora pred otvaranja ili nakon renoviranja marketa, prodavnica ili lokala.',
       features: [
@@ -30,7 +30,7 @@ const Services = () => {
     },
     {
       id: 'residential-buildings',
-      title: 'Čišćenje stambenih zgrada',
+      title: 'Stambene zgrade',
       subtitle: 'Residential Building Cleaning',
       description: 'Kompletno čišćenje stambenih zgrada od ulaza do krova, zajedničkih prostora, liftova, stepeništa i fasada.',
       features: [
@@ -45,7 +45,7 @@ const Services = () => {
     },
     {
       id: 'warehouse',
-      title: 'Čišćenje magacinskih prostora i hala',
+      title: 'Magacinski prostori i hale',
       subtitle: 'Warehouse & Hall Cleaning',
       description: 'Specijalizovano čišćenje magacina, skladišta i industrijskih hala po najvišim standardima.',
       features: [
@@ -60,9 +60,9 @@ const Services = () => {
     },
     {
       id: 'garage',
-      title: 'Čišćenje garažnih prostora',
+      title: 'Garažni prostori',
       subtitle: 'Garage Cleaning',
-      description: 'Profesionalno čišćenje garaža, podzemnih parkinga i garažnih prostora.',
+      description: 'Profesionalno čišćenje svih vrsta garaža, podzemnih parkinga i garažnih prostora.',
       features: [
         'Čišćenje podzemnih i nadzemnih garaža',
         'Održavanje parking prostora',
@@ -77,7 +77,7 @@ const Services = () => {
 
   return (
     <section id="services" className="py-12 lg:py-20 bg-surface-0 relative overflow-hidden scroll-mt-14 md:scroll-mt-20">
-      <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-container mx-auto pl-0 pr-0">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-6 leading-tight">
             Naše usluge čišćenja
@@ -146,28 +146,6 @@ const Services = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <p className="text-base text-text-600 mb-4 leading-relaxed">
-            Sve naše usluge uključuju profesionalni pristup, poštovanje rokova i posvećenost svakom projektu.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              'Nemački standardi kvaliteta',
-              'Iskusni stručnjaci',
-              'Pouzdan i profesionalan servis'
-            ].map((text) => (
-              <span
-                key={text}
-                className="inline-flex items-center gap-2 bg-brand-100 px-4 py-2 rounded-badge text-sm font-semibold text-text-900 border border-border-200"
-              >
-                <LuCheckCircle className="text-brand-500" />
-                {text}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

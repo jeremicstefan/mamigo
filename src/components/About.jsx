@@ -41,8 +41,9 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-6 leading-tight">
               O nama
             </h2>
-            <h3 className="text-xl md:text-2xl text-text-600 font-semibold mb-4 leading-snug">
-              Naša priča – Porodična kompanija sa dugogodišnjim iskustvom
+
+            <h3 className="text-xl md:text-2xl text-brand-600 font-semibold mb-4 leading-snug">
+              Porodična kompanija sa dugogodišnjim iskustvom
             </h3>
 
             <div className="space-y-4 text-base text-text-600 mb-6 leading-relaxed">
@@ -112,7 +113,7 @@ const About = () => {
               </h4>
               <p className="text-sm md:text-base text-text-600 leading-relaxed">
                 Sa našim iskustvom iz Nemačke, pokrivamo celu Srbiju pružajući
-                iste visoke standarde kvaliteta svim našim klijentima.
+                iste visoke standarde kvaliteta svim našim klijentima. Radimo sa stambenim zajednicama, upravnicima zgrada, maloprodajnim objektima i firmama.
               </p>
             </div>
           </div>

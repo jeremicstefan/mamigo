@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { LuMenu, LuX } from 'react-icons/lu';
 import Hero from './components/Hero';
+import ProcessSteps from './components/ProcessSteps';
 import Services from './components/Services';
+import ServiceTypeSection from './components/ServiceTypeSection';
+import ServiceGuarantee from './components/ServiceGuarantee';
 import About from './components/About';
 import Contact from './components/Contact';
 import MarketingButton from './components/MarketingButton';
-import logo from './assets/hero/mamigo-hausmeister-logo 1.png';
+import logo from './assets/hero/mamigo-hausmeister-logo.webp';
 
 const LANGUAGES = [
   { code: 'sr', label: '🇷🇸' },
@@ -40,7 +43,7 @@ function App() {
     <div className="flex min-h-screen flex-col bg-surface-0">
       {/* Navigation Header: logo left, nav center, phone + lang right */}
       <nav className="fixed top-0 w-full bg-surface-0/60 backdrop-blur-sm border-b border-border-200/50 z-50">
-        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-container mx-auto px-0">
           <div className="flex items-center justify-between h-14 md:h-20">
             {/* Left: logo */}
             <div className="flex items-center justify-start min-w-0">
@@ -140,7 +143,10 @@ function App() {
       {/* Main Content */}
       <main className="flex min-h-0 flex-1 flex-col pt-14 md:pt-20">
         <Hero onContactClick={scrollToContact} />
+        <ProcessSteps />
         <Services />
+        <ServiceTypeSection onContactClick={scrollToContact} />
+        <ServiceGuarantee />
         <About />
         <Contact />
       </main>

@@ -12,6 +12,8 @@ const INTRO_SETTLE_MS = 700; // smooth move from end (0) to middle (0.5)
 // Ease-in-out cubic for smoother start/end
 const INTRO_EASE = (t) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
 
+const HINT_VISIBLE_MS = 2000;
+
 const BeforeAfterSlider = ({
   beforeSrc,
   afterSrc,
@@ -32,8 +34,16 @@ const BeforeAfterSlider = ({
   const [position, setPosition] = useState(skipIntro || variant !== 'hero' ? initialValue : heroIntroStart);
   const [isDragging, setIsDragging] = useState(false);
   const [introDone, setIntroDone] = useState(skipIntro || variant !== 'hero');
+  const [hintVisible, setHintVisible] = useState(variant === 'hero');
   const containerRef = useRef(null);
   const rafRef = useRef(null);
+
+  // Hero: hide hint after 2s or on first interaction
+  useEffect(() => {
+    if (variant !== 'hero' || !hintVisible) return;
+    const t = setTimeout(() => setHintVisible(false), HINT_VISIBLE_MS);
+    return () => clearTimeout(t);
+  }, [variant, hintVisible]);
 
   const clamp = useCallback((p) => Math.max(0, Math.min(1, p)), []);
 
@@ -91,6 +101,7 @@ const BeforeAfterSlider = ({
   const onPointerDown = useCallback(
     (e) => {
       e.preventDefault();
+      setHintVisible(false);
       setIsDragging(true);
       containerRef.current?.setPointerCapture(e.pointerId);
       updateFromClientX(e.clientX);
@@ -222,6 +233,14 @@ const BeforeAfterSlider = ({
           className="relative z-10 w-10 h-10 rounded-full border-2 border-white bg-white/10 shadow-[0_0_8px_rgba(0,0,0,0.6),inset_0_0_0_1px_rgba(255,255,255,0.3)]"
           aria-hidden
         />
+        {variant === 'hero' && hintVisible && (
+          <span
+            className="absolute top-full mt-2 left-1/2 -translate-x-1/2 text-xs text-white/90 whitespace-nowrap px-2 py-1 rounded bg-black/40 backdrop-blur-sm transition-opacity duration-300"
+            aria-hidden
+          >
+            Prevuci levo / desno
+          </span>
+        )}
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 import React from 'react';
-import { LuCalendar, LuUsers, LuCheckCircle, LuPhone } from 'react-icons/lu';
+import { LuPhone } from 'react-icons/lu';
 import BeforeAfterSlider from './BeforeAfterSlider';
 import MarketingButton from './MarketingButton';
 import { beforeAfterPairs } from '../data/beforeAfterPairs';
-import belgradeAirportGrayscale from '../assets/partners/belgrade-airport-grayscale.png';
-import transnaftaLogo from '../assets/partners/transnafta.png';
-import siemensLogo from '../assets/partners/siemens.png';
-import savaCentarLogo from '../assets/partners/sava-centar.png';
+import belgradeAirportGrayscale from '../assets/partners/belgrade-airport-grayscale.webp';
+import transnaftaLogo from '../assets/partners/transnafta.webp';
+import siemensLogo from '../assets/partners/siemens.webp';
+import savaCentarLogo from '../assets/partners/sava-centar.webp';
 
 const LOGO_HEIGHT = 176;
 const LOGO_WIDTH = 300;
@@ -31,32 +31,17 @@ const Hero = ({ onContactClick }) => {
       </div>
 
       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-5">
-        Profesionalno čišćenje{' '}
-        <span className="text-brand-500">bez komplikacija.</span>
+        Profesionalno čišćenje bez nerviranja.
       </h1>
-      <p className="text-lg sm:text-xl text-white/90 font-light leading-relaxed mb-6 max-w-xl">
-        Garaže, poslovni prostori, magacini i zgrade — Beograd i cela Srbija. Dođemo, očistimo, organizujemo, završimo.
+      <p className="text-lg sm:text-xl text-white/90 font-light leading-relaxed mb-2 max-w-xl">
+        Garaže, zgrade, poslovni i industrijski prostori — Beograd i cela Srbija.
+      </p>
+      <p className="text-sm text-white/90 font-medium mb-6">
+        Dolazak za 24h · Besplatna procena · Račun za firme
       </p>
 
-      {/* Trust badges */}
-      <div className="flex flex-wrap gap-2 sm:gap-3 mb-6">
-        {[
-          { label: 'Od 2014', icon: LuCalendar },
-          { label: '30+ zaposlenih', icon: LuUsers },
-          { label: '100% zadovoljstvo', icon: LuCheckCircle },
-        ].map(({ label, icon: Icon }) => (
-          <span
-            key={label}
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-badge text-sm font-semibold bg-white/5 backdrop-blur-md border border-white/40 text-white"
-          >
-            <Icon className="w-4 h-4 text-brand-500" />
-            {label}
-          </span>
-        ))}
-      </div>
-
       {/* CTAs */}
-      <div className="flex flex-col sm:flex-row gap-3 mb-3">
+      <div className="flex flex-col sm:flex-row gap-3">
         <MarketingButton onClick={onContactClick}>
           Zatraži ponudu
         </MarketingButton>
@@ -66,12 +51,9 @@ const Hero = ({ onContactClick }) => {
           icon={<LuPhone className="w-5 h-5 text-brand-500" />}
           className="!bg-white/10 !backdrop-blur-md !border !border-white/40 !text-white hover:!bg-white/20"
         >
-          +381 63 33 28 33
+          Pozovi odmah
         </MarketingButton>
       </div>
-      <p className="text-sm text-white/80">
-        Odgovaramo u roku od 24h.
-      </p>
     </>
   );
 
