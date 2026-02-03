@@ -20,19 +20,19 @@ const steps = [
 ];
 
 const ProcessSteps = () => (
-  <section className="py-12 lg:py-20 bg-surface-0 border-t border-border-200">
+  <section className="py-10 sm:py-12 lg:py-20 bg-surface-0 border-t border-border-200">
     <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-2xl md:text-3xl font-bold text-text-900 mb-10 lg:mb-12 text-center">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-6 sm:mb-8 lg:mb-12 text-center">
         Kako funkcioniše
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
         {steps.map(({ icon: Icon, title, description }, index) => (
           <div key={index} className="flex flex-col items-center text-center">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-100 text-brand-500 mb-4">
-              <Icon className="w-6 h-6" />
+            <div className="flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-brand-100 text-brand-500 mb-3 sm:mb-4">
+              <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <h3 className="text-lg font-semibold text-text-900 mb-2">{title}</h3>
-            <p className="text-base text-text-600 leading-relaxed">{description}</p>
+            <h3 className="text-base sm:text-lg font-semibold text-text-900 mb-1.5 sm:mb-2">{title}</h3>
+            <p className="text-sm sm:text-base text-text-600 leading-relaxed">{description}</p>
           </div>
         ))}
       </div>

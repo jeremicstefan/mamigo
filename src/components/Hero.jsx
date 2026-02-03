@@ -31,7 +31,7 @@ const Hero = ({ onContactClick }) => {
       </div>
 
       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-5">
-        Profesionalno čišćenje bez nerviranja.
+        Profesionalno čišćenje <span className="text-brand-500">bez nerviranja</span><span className="text-brand-500">.</span>
       </h1>
       <p className="text-lg sm:text-xl text-white/90 font-light leading-relaxed mb-2 max-w-xl">
         Garaže, zgrade, poslovni i industrijski prostori — Beograd i cela Srbija.
@@ -67,7 +67,7 @@ const Hero = ({ onContactClick }) => {
             <img
               src={heroPair.afterSrc}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover object-left"
+              className="absolute inset-0 w-full h-full object-cover object-center"
               loading="eager"
             />
           </div>
@@ -102,9 +102,9 @@ const Hero = ({ onContactClick }) => {
       </section>
 
       {/* Companies Carousel */}
-      <section className="bg-surface-0 py-12 border-t border-border-200 overflow-hidden relative">
+      <section className="bg-surface-0 py-8 sm:py-10 lg:py-12 border-t border-border-200 overflow-hidden relative">
         <div className="relative max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
+          <div className="text-center mb-5 sm:mb-6 lg:mb-8">
             <p className="text-sm text-text-600 font-medium uppercase tracking-wide">
               Saradjujemo sa
             </p>

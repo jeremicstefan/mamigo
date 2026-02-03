@@ -142,6 +142,7 @@ const BeforeAfterSlider = ({
 
   const isHero = variant === 'hero';
   const cardFill = variant === 'card' && fillHeight;
+  const objectPos = isHero ? 'object-center' : 'object-left';
 
   return (
     <div
@@ -158,12 +159,12 @@ const BeforeAfterSlider = ({
       onPointerLeave={onPointerUp}
       onPointerCancel={onPointerCancel}
     >
-      {/* Base: after image - object-left ensures alignment with clip on mobile */}
+      {/* Base: after image - object-center for hero, object-left for cards */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <img
           src={afterSrc}
           alt="Posle"
-          className="w-full h-full object-cover object-left"
+          className={`w-full h-full object-cover ${objectPos}`}
           loading="eager"
           draggable={false}
         />
@@ -177,7 +178,7 @@ const BeforeAfterSlider = ({
         )}
       </div>
 
-      {/* Top: before image, clipped - object-left matches after for alignment */}
+      {/* Top: before image, clipped - object position matches after for alignment */}
       <div
         className="absolute inset-0 z-10 pointer-events-none overflow-hidden"
         style={{ clipPath: `inset(0 ${(1 - position) * 100}% 0 0)` }}
@@ -185,7 +186,7 @@ const BeforeAfterSlider = ({
         <img
           src={beforeSrc}
           alt="Pre"
-          className="w-full h-full object-cover object-left"
+          className={`w-full h-full object-cover ${objectPos}`}
           loading="eager"
           draggable={false}
         />

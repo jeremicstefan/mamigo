@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { LuPhone, LuHelpCircle, LuCheckCircle } from 'react-icons/lu';
+import { LuPhone, LuHelpCircle, LuCheckCircle, LuChevronDown } from 'react-icons/lu';
 import MarketingButton from './MarketingButton';
-import logo from '../assets/hero/mamigo-hausmeister-logo.webp';
+import logo from '../assets/hero/mamigo-hausmeister-logo.png';
 
 const FAQ_SCHEMA = {
   '@context': 'https://schema.org',
@@ -61,28 +61,28 @@ const Contact = () => {
   `.trim().replace(/\s+/g, ' ');
 
   return (
-    <section id="contact" className="flex min-h-0 flex-1 flex-col justify-start items-center pt-ds-12 lg:pt-ds-20 pb-0 bg-surface-0 relative overflow-hidden scroll-mt-14 md:scroll-mt-20">
-      <div className="relative z-10 flex flex-col justify-start items-center w-full mx-0 px-0">
+    <section id="contact" className="flex min-h-0 flex-1 flex-col justify-start items-center pt-10 sm:pt-12 lg:pt-ds-20 pb-0 bg-surface-0 relative overflow-hidden scroll-mt-14 md:scroll-mt-20">
+      <div className="relative z-10 flex flex-col justify-start items-center w-full max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header - centered */}
-        <div className="text-center mb-ds-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-6 leading-tight">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-ds-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-4 sm:mb-6 leading-tight">
             Kontaktirajte nas
           </h2>
-          <p className="text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
             Spremni smo da odgovorimo na sva Vaša pitanja i pružimo besplatnu procenu za Vaše potrebe čišćenja
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-ds-12 h-fit">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-ds-12 h-fit w-full">
           {/* Contact Information: Serbia first (active); Germany below as disabled / social proof */}
-          <div className="flex flex-col justify-start gap-8 w-fit text-left">
+          <div className="flex flex-col justify-start gap-5 sm:gap-6 lg:gap-8 w-full max-w-lg lg:max-w-none text-left">
             {/* Srbija — active contact */}
-            <div className="bg-surface-0 p-6 rounded-card border border-border-200 shadow-card">
-              <h3 className="text-xl md:text-2xl font-bold text-text-900 mb-6 flex items-center gap-3">
-                <span className="text-2xl" aria-hidden>🇷🇸</span>
+            <div className="bg-surface-0 p-4 sm:p-5 lg:p-6 rounded-card border border-border-200 shadow-card">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-text-900 mb-4 sm:mb-5 lg:mb-6 flex items-center gap-2 sm:gap-3">
+                <span className="text-xl sm:text-2xl" aria-hidden>🇷🇸</span>
                 Srbija
               </h3>
-              <dl className="space-y-3">
+              <dl className="space-y-2 sm:space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
                   <dt className="text-sm font-medium text-text-600 sm:w-24 flex-shrink-0">Sedište</dt>
                   <dd className="text-base text-text-900">
@@ -115,12 +115,12 @@ const Contact = () => {
             </div>
 
             {/* Nemačka — disabled / social proof */}
-            <div className="bg-surface-50 p-6 rounded-card border border-border-200 opacity-75 pointer-events-none select-none mt-0" aria-hidden="false">
-              <h3 className="text-xl md:text-2xl font-bold text-text-500 mb-6 flex items-center gap-3">
-                <span className="text-2xl" aria-hidden>🇩🇪</span>
+            <div className="bg-surface-50 p-4 sm:p-5 lg:p-6 rounded-card border border-border-200 opacity-75 pointer-events-none select-none mt-0" aria-hidden="false">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-text-500 mb-4 sm:mb-5 lg:mb-6 flex items-center gap-2 sm:gap-3">
+                <span className="text-xl sm:text-2xl" aria-hidden>🇩🇪</span>
                 Nemačka
               </h3>
-              <dl className="space-y-3 text-text-500">
+              <dl className="space-y-2 sm:space-y-3 text-text-500">
                 <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
                   <dt className="text-sm font-medium text-text-500 sm:w-24 flex-shrink-0">Adresa</dt>
                   <dd className="text-base">
@@ -139,18 +139,18 @@ const Contact = () => {
             </div>
 
             {/* Logo below Germany contact info */}
-            <div className="bg-surface-0 p-6 rounded-card border border-border-200 shadow-card flex flex-wrap items-start justify-center text-center py-6 mt-0">
-              <img src={logo} alt="MAMIGO Hausmeister" className="h-[140px] w-auto object-contain mx-auto" />
+            <div className="bg-surface-0 p-4 sm:p-5 lg:p-6 rounded-card border border-border-200 shadow-card flex flex-wrap items-start justify-center text-center py-5 sm:py-6 mt-0">
+              <img src={logo} alt="MAMIGO Hausmeister" className="h-24 sm:h-28 lg:h-[140px] w-auto object-contain mx-auto" />
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-surface-0 p-8 rounded-card border border-border-200 shadow-card h-fit w-[504px]">
-            <h3 className="text-xl md:text-2xl font-bold text-text-900 mb-6">
+          <div className="bg-surface-0 p-4 sm:p-5 lg:p-8 rounded-card border border-border-200 shadow-card h-fit w-full max-w-lg lg:max-w-none">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-text-900 mb-4 sm:mb-6">
               Zatražite besplatnu ponudu
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-text-900 mb-1">
                   Ime i prezime *
@@ -202,21 +202,24 @@ const Contact = () => {
                 <label htmlFor="service" className="block text-sm font-medium text-text-900 mb-1">
                   Vrsta usluge čišćenja
                 </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  className={`${inputClasses} pr-10`}
-                >
-                  <option value="">Izaberite vrstu usluge čišćenja</option>
-                  <option value="pre-opening">Maloprodajni objekti</option>
-                  <option value="residential-buildings">Stambene zgrade</option>
-                  <option value="warehouse">Magacinski prostori i hale</option>
-                  <option value="garage">Garažni prostori</option>
-                  <option value="commercial">Poslovni prostor</option>
-                  <option value="other">Ostalo</option>
-                </select>
+                <div className="relative">
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className={`${inputClasses} pr-10 appearance-none`}
+                  >
+                    <option value="">Izaberite vrstu usluge čišćenja</option>
+                    <option value="pre-opening">Maloprodajni objekti</option>
+                    <option value="residential-buildings">Stambene zgrade</option>
+                    <option value="warehouse">Magacinski prostori i hale</option>
+                    <option value="garage">Garažni prostori</option>
+                    <option value="commercial">Poslovni prostor</option>
+                    <option value="other">Ostalo</option>
+                  </select>
+                  <LuChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text-600 pointer-events-none" aria-hidden />
+                </div>
               </div>
 
               <div>
@@ -242,11 +245,11 @@ const Contact = () => {
         </div>
 
         {/* Full width under both columns: checkmarked badges */}
-        <div className="flex flex-wrap justify-center gap-2 mt-6 w-fit">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 w-full">
           {['Odgovaramo u roku od 24h', 'Bez obaveze', 'Moguće je poslati i slike prostora', 'Pouzdan i profesionalan servis'].map((text) => (
             <span
               key={text}
-              className="inline-flex items-center gap-2 bg-brand-100 px-4 py-2 rounded-badge text-sm font-semibold text-text-900 border border-border-200"
+              className="inline-flex items-center gap-2 bg-brand-100 px-3 py-1.5 sm:px-4 sm:py-2 rounded-badge text-xs sm:text-sm font-semibold text-text-900 border border-border-200"
             >
               <LuCheckCircle className="w-4 h-4 text-brand-500 flex-shrink-0" />
               {text}
@@ -256,39 +259,39 @@ const Contact = () => {
       </div>
 
       {/* FAQ - full width, lots of space above/below */}
-      <div className="max-w-container max-w-[1280px] w-full mx-auto px-0 pt-16 pb-0 mt-16 mb-16 border-t border-border-200">
-        <h2 className="text-2xl md:text-3xl font-bold text-text-900 mb-10 text-left">
+      <div className="max-w-container w-full mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 lg:pt-16 pb-0 mt-10 sm:mt-12 lg:mt-16 mb-10 sm:mb-12 lg:mb-16 border-t border-border-200">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-6 sm:mb-8 lg:mb-10 text-left">
           Često postavljana pitanja
         </h2>
         <div className="w-full max-w-full divide-y divide-border-200">
-          <article className="flex gap-4 py-6 first:pt-0" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+          <article className="flex gap-3 sm:gap-4 py-4 sm:py-5 lg:py-6 first:pt-0" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
             <div className="flex-shrink-0 mt-1">
-              <LuHelpCircle className="w-6 h-6 text-brand-500" aria-hidden />
+              <LuHelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-brand-500" aria-hidden />
             </div>
             <div className="min-w-0">
-              <h3 className="text-xl font-semibold text-text-900 mb-2" itemProp="name">Da li radite vikendom?</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-text-900 mb-1.5 sm:mb-2" itemProp="name">Da li radite vikendom?</h3>
               <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
                 <p className="text-base text-text-600 leading-relaxed" itemProp="text">Da, po dogovoru radimo i vikendom.</p>
               </div>
             </div>
           </article>
-          <article className="flex gap-4 py-6" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+          <article className="flex gap-3 sm:gap-4 py-4 sm:py-5 lg:py-6" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
             <div className="flex-shrink-0 mt-1">
-              <LuHelpCircle className="w-6 h-6 text-brand-500" aria-hidden />
+              <LuHelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-brand-500" aria-hidden />
             </div>
             <div className="min-w-0">
-              <h3 className="text-xl font-semibold text-text-900 mb-2" itemProp="name">Da li izdajete fakturu?</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-text-900 mb-1.5 sm:mb-2" itemProp="name">Da li izdajete fakturu?</h3>
               <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
                 <p className="text-base text-text-600 leading-relaxed" itemProp="text">Da, izdajemo fakturu za sve izvršene usluge.</p>
               </div>
             </div>
           </article>
-          <article className="flex gap-4 py-6 last:pb-0" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+          <article className="flex gap-3 sm:gap-4 py-4 sm:py-5 lg:py-6 last:pb-0" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
             <div className="flex-shrink-0 mt-1">
-              <LuHelpCircle className="w-6 h-6 text-brand-500" aria-hidden />
+              <LuHelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-brand-500" aria-hidden />
             </div>
             <div className="min-w-0">
-              <h3 className="text-xl font-semibold text-text-900 mb-2" itemProp="name">Koliko traje čišćenje garaže?</h3>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-text-900 mb-1.5 sm:mb-2" itemProp="name">Koliko traje čišćenje garaže?</h3>
               <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
                 <p className="text-base text-text-600 leading-relaxed" itemProp="text">U zavisnosti od veličine i stanja, od nekoliko sati do jednog dana.</p>
               </div>
@@ -298,12 +301,12 @@ const Contact = () => {
       </div>
 
       {/* Bottom CTA - Full-width dark theme; flex-1 fills any gap so no white space below */}
-      <div className="mt-ds-16 flex-1 w-full pt-16 lg:pt-24 pb-ds-12 lg:pb-ds-20 bg-text-900 border-t border-text-800 flex flex-col justify-center min-h-0">
+      <div className="mt-10 sm:mt-12 lg:mt-ds-16 flex-1 w-full pt-10 sm:pt-12 lg:pt-16 xl:pt-24 pb-10 sm:pb-12 lg:pb-ds-12 xl:pb-ds-20 bg-text-900 border-t border-text-800 flex flex-col justify-center min-h-0">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-ds-4">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-ds-4">
             Spremni za saradnju?
           </h3>
-          <p className="text-base text-white/80 mb-ds-6 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-white/80 mb-4 sm:mb-ds-6 leading-relaxed max-w-2xl mx-auto">
             Pozovite nas odmah ili pošaljite poruku. Naši stručnjaci će Vam pružiti
             besplatnu procenu i odgovoriti na sva pitanja.
           </p>
@@ -315,7 +318,7 @@ const Contact = () => {
           >
             +381 63 33 28 33
           </MarketingButton>
-          <p className="mt-8 md:mt-12 pt-6 border-t border-white/10 text-xs md:text-sm text-white/50">
+          <p className="mt-6 sm:mt-8 md:mt-12 pt-4 sm:pt-6 border-t border-white/10 text-xs md:text-sm text-white/50">
             © {new Date().getFullYear()} MAMIGO Hausmeister. Profesionalno čišćenje – Beograd i Srbija.
           </p>
         </div>

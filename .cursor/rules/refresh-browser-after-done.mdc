@@ -1,0 +1,16 @@
+---
+description: Refresh browser after each completed task so UI changes are visible
+alwaysApply: true
+---
+
+# Refresh Browser After Completing Tasks
+
+When you finish a task that changes the frontend (UI, styles, components, assets):
+
+1. **Refresh the browser** so the user sees the updated app.
+   - If MCP browser tools are available: navigate to the app URL (e.g. `http://localhost:5173/`) or trigger a refresh so the page reloads.
+   - If not: at the end of your response, briefly remind the user to refresh (e.g. "Refresh the browser (Cmd+Shift+R) to see the changes.").
+
+2. Do this **after each "done" / completed prompt** so the latest code is visible without the user having to remember to refresh.
+
+Keep the reminder short and at the end of your reply when you don't have browser automation available.

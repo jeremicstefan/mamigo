@@ -8,7 +8,7 @@ import ServiceGuarantee from './components/ServiceGuarantee';
 import About from './components/About';
 import Contact from './components/Contact';
 import MarketingButton from './components/MarketingButton';
-import logo from './assets/hero/mamigo-hausmeister-logo.webp';
+import logo from './assets/hero/mamigo-hausmeister-logo.png';
 
 const LANGUAGES = [
   { code: 'sr', label: '🇷🇸' },
@@ -43,11 +43,11 @@ function App() {
     <div className="flex min-h-screen flex-col bg-surface-0">
       {/* Navigation Header: logo left, nav center, phone + lang right */}
       <nav className="fixed top-0 w-full bg-surface-0/60 backdrop-blur-sm border-b border-border-200/50 z-50">
-        <div className="max-w-container mx-auto px-0">
-          <div className="flex items-center justify-between h-14 md:h-20">
-            {/* Left: logo */}
-            <div className="flex items-center justify-start min-w-0">
-              <a href="#" className="flex-shrink-0 flex items-center" aria-label="MAMIGO Hausmeister - početna">
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 md:h-20 gap-2">
+            {/* Left: logo - wrapper has no bg so transparent logo assets show correctly */}
+            <div className="flex items-center justify-start min-w-0 bg-transparent">
+              <a href="#" className="flex-shrink-0 flex items-center bg-transparent" aria-label="MAMIGO Hausmeister - početna">
                 <img src={logo} alt="MAMIGO Hausmeister" className="h-12 sm:h-14 md:h-20 w-auto object-contain" />
               </a>
             </div>
@@ -68,7 +68,7 @@ function App() {
               <a href="tel:+38163332833" className="hidden md:inline-flex text-sm font-semibold text-text-900 hover:text-brand-500 transition-colors whitespace-nowrap">
                 +381 63 33 28 33
               </a>
-              <div className="hidden md:flex rounded-lg border border-border-200 overflow-hidden bg-surface-50" role="group" aria-label="Jezik">
+              <div className="hidden rounded-lg border border-border-200 overflow-hidden bg-surface-50" role="group" aria-label="Jezik">
                 {LANGUAGES.map(({ code, label }) => (
                   <button
                     key={code}
@@ -124,7 +124,7 @@ function App() {
             >
               +381 63 33 28 33
             </a>
-            <div className="flex rounded-lg border border-border-200 overflow-hidden bg-surface-50 mt-2" role="group" aria-label="Jezik">
+            <div className="hidden flex rounded-lg border border-border-200 overflow-hidden bg-surface-50 mt-2" role="group" aria-label="Jezik">
               {LANGUAGES.map(({ code, label }) => (
                 <button
                   key={code}

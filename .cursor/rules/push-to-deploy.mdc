@@ -1,0 +1,18 @@
+---
+description: When user asks to push to Git, stage, commit, and push so the app deploys
+alwaysApply: true
+---
+
+# Push to Git = Deploy
+
+This project is connected to Git and a website domain; pushing to the remote triggers deployment.
+
+When the user says to **push to Git**, **deploy**, **go live**, or similar:
+
+1. **Stage** all changes: `git add -A` (or `git add .`).
+2. **Commit** with a clear message. If the user gave a message, use it; otherwise use a short summary of recent changes (e.g. "Hide language switch, update hero").
+3. **Push** to the remote: `git push` (use the current branch, typically `main`).
+
+Request `git_write` and `network` permissions when running these commands.
+
+After pushing, briefly confirm that the push succeeded and that the site will update after the deployment finishes.
