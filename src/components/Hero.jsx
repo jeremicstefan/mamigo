@@ -24,7 +24,7 @@ const Hero = ({ onContactClick }) => {
 
       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-5">
         Profesionalno čišćenje{' '}
-        <span className="text-brand-500">bez nerviranja.</span>
+        <span className="text-brand-500">bez komplikacija.</span>
       </h1>
       <p className="text-lg sm:text-xl text-white/90 font-light leading-relaxed mb-6 max-w-xl">
         Garaže, poslovni prostori, magacini i zgrade — Beograd i cela Srbija. Dođemo, očistimo, organizujemo, završimo.
@@ -69,11 +69,21 @@ const Hero = ({ onContactClick }) => {
 
   return (
     <>
-      {/* HERO: on mobile = slider only (full touch), then content below; on desktop = overlay */}
+      {/* HERO: mobile = static image + overlay + content; desktop = slider + overlay + content */}
       <section className="relative w-full overflow-hidden">
-        {/* Slider: full-bleed, no overlay on mobile so it's fully touchable */}
         <div className="relative min-h-[50vh] md:min-h-[55vh] lg:min-h-[70vh]">
-          <div className="absolute inset-0 z-0">
+          {/* Mobile: static hero image (slider disabled) */}
+          <div className="absolute inset-0 z-0 md:hidden">
+            <img
+              src={heroPair.afterSrc}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover object-left"
+              loading="eager"
+            />
+          </div>
+
+          {/* Desktop: before/after slider */}
+          <div className="absolute inset-0 z-0 hidden md:block">
             <BeforeAfterSlider
               beforeSrc={heroPair.beforeSrc}
               afterSrc={heroPair.afterSrc}
@@ -82,28 +92,21 @@ const Hero = ({ onContactClick }) => {
             />
           </div>
 
-          {/* Overlay: desktop only - gradient so text is readable; mobile has content below */}
+          {/* Overlay: gradient so text is readable on both mobile and desktop */}
           <div
-            className="absolute inset-0 z-[1] pointer-events-none hidden md:block"
+            className="absolute inset-0 z-[1] pointer-events-none"
             style={{
-              background: 'linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.04) 100%)',
+              background: 'linear-gradient(to bottom right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,0.08) 100%)',
             }}
           />
 
-          {/* Desktop: overlaid content (pointer-events-none so slider receives drag in dark area) */}
-          <div className="hidden md:flex relative z-10 flex-col justify-center min-h-[55vh] lg:min-h-[70vh] px-4 sm:px-6 lg:px-8 pointer-events-none">
+          {/* Hero content: overlaid on both mobile and desktop */}
+          <div className="relative z-10 flex flex-col justify-center min-h-[50vh] md:min-h-[55vh] lg:min-h-[70vh] px-4 sm:px-6 lg:px-8 pointer-events-none">
             <div className="max-w-container mx-auto w-full">
               <div className="max-w-xl pt-10 pb-10 lg:pt-16 lg:pb-16 pointer-events-auto">
                 {heroContent}
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Mobile: content below slider so slider has full touch access */}
-        <div className="md:hidden bg-text-900 px-4 py-8 -mt-1">
-          <div className="max-w-container mx-auto max-w-xl">
-            {heroContent}
           </div>
         </div>
       </section>

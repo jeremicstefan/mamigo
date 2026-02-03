@@ -41,7 +41,7 @@ function App() {
       {/* Navigation Header: logo left, nav center, phone + lang right */}
       <nav className="fixed top-0 w-full bg-surface-0/60 backdrop-blur-sm border-b border-border-200/50 z-50">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 items-center h-14 md:h-20 gap-4">
+          <div className="flex items-center justify-between h-14 md:h-20">
             {/* Left: logo */}
             <div className="flex items-center justify-start min-w-0">
               <a href="#" className="flex-shrink-0 flex items-center" aria-label="MAMIGO Hausmeister - početna">
@@ -80,7 +80,7 @@ function App() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen((o) => !o)}
-                className="md:hidden ml-auto p-2 -m-2 rounded-button text-text-900 hover:bg-surface-50 touch-manipulation shrink-0"
+                className="md:hidden ml-2 p-2 -m-2 rounded-button text-text-900 hover:bg-surface-50 touch-manipulation shrink-0"
                 aria-label={mobileMenuOpen ? 'Zatvori meni' : 'Otvori meni'}
                 aria-expanded={mobileMenuOpen}
               >
