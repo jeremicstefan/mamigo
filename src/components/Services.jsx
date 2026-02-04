@@ -106,7 +106,7 @@ const Services = () => {
                       initialPosition={75}
                       variant="card"
                       fillHeight
-                      skipIntro
+                      introWhenVisible
                     />
                   </div>
                 ) : (

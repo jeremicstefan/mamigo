@@ -25,18 +25,23 @@ const BeforeAfterSlider = ({
   fillHeight = false,
   /** Optional: use as full-bleed hero (absolute inset-0 in parent) */
   variant = 'card',
-  /** Optional: skip intro animation (e.g. for cards) */
+  /** Optional: skip intro animation (e.g. for cards without intro) */
   skipIntro = false,
+  /** Optional: run hero-style intro when slider scrolls into view (for cards) */
+  introWhenVisible = false,
   /** Optional: 'eager' for hero (above fold), 'lazy' for cards */
   imageLoading = undefined,
 }) => {
   const loading = imageLoading ?? (variant === 'hero' ? 'eager' : 'lazy');
   const initialValue = initialPosition != null ? initialPosition / 100 : initial;
-  // Hero intro: start at 1 (all before), then animate right→left to 0 (all after), then jump to middle
   const heroIntroStart = 1;
-  const [position, setPosition] = useState(skipIntro || variant !== 'hero' ? initialValue : heroIntroStart);
+  const runIntroOnMount = variant === 'hero' && !skipIntro;
+  const runIntroWhenVisible = variant === 'card' && introWhenVisible;
+  const startAtIntro = runIntroOnMount || runIntroWhenVisible;
+  const [position, setPosition] = useState(startAtIntro ? heroIntroStart : initialValue);
   const [isDragging, setIsDragging] = useState(false);
-  const [introDone, setIntroDone] = useState(skipIntro || variant !== 'hero');
+  const [introDone, setIntroDone] = useState(!startAtIntro);
+  const [introTriggered, setIntroTriggered] = useState(runIntroOnMount);
   const [hintVisible, setHintVisible] = useState(variant === 'hero');
   const containerRef = useRef(null);
   const rafRef = useRef(null);
@@ -50,9 +55,11 @@ const BeforeAfterSlider = ({
 
   const clamp = useCallback((p) => Math.max(0, Math.min(1, p)), []);
 
-  // Hero intro: smooth right→left (1 → 0), then smooth settle to middle (0.5)
+  // Hero or card intro: smooth 1 → 0 (reveal after), then settle to middle (0.5)
   useEffect(() => {
-    if (introDone || variant !== 'hero' || skipIntro) return;
+    if (introDone || !introTriggered) return;
+    if (variant === 'hero' && skipIntro) return;
+    if (variant === 'card' && !introWhenVisible) return;
     const start = performance.now();
     const totalMs = INTRO_DURATION_MS + INTRO_SETTLE_MS;
     const tick = (now) => {
@@ -76,7 +83,22 @@ const BeforeAfterSlider = ({
     return () => {
       if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
     };
-  }, [variant, skipIntro, introDone]);
+  }, [variant, skipIntro, introWhenVisible, introDone, introTriggered]);
+
+  // Card: when introWhenVisible, trigger intro when slider scrolls into view
+  useEffect(() => {
+    if (!runIntroWhenVisible || !containerRef.current) return;
+    const el = containerRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !introTriggered) setIntroTriggered(true);
+      },
+      { rootMargin: '80px', threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [runIntroWhenVisible, introTriggered]);
 
   // Card sliders: reset to middle when they leave the viewport so before/after are always visible when you come back
   useEffect(() => {

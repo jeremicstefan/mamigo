@@ -48,3 +48,19 @@ html {
 .animate-hero-after-bounce {
   animation: hero-after-bounce 1.2s ease-out 0.5s both;
 }
+
+/* Scroll-triggered reveal: sections fade in and slide up when they enter viewport */
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal-in {
+  animation: reveal-in 0.55s ease-out forwards;
+}

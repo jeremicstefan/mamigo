@@ -40,7 +40,13 @@ const LazySection = ({
 
   return (
     <Component ref={ref} className={className} {...props}>
-      {isVisible ? children : <div className={placeholderClassName} aria-hidden />}
+      {isVisible ? (
+        <div className="animate-reveal-in">
+          {children}
+        </div>
+      ) : (
+        <div className={placeholderClassName} aria-hidden />
+      )}
     </Component>
   );
 };

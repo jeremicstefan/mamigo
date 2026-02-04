@@ -30,7 +30,7 @@ const Hero = ({ onContactClick }) => {
         </span>
       </div>
 
-      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white mb-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-none sm:leading-tight tracking-tight text-white mb-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
         Profesionalno čišćenje <span className="text-brand-500">bez komplikacija</span><span className="text-brand-500">.</span>
       </h1>
       <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
@@ -62,21 +62,11 @@ const Hero = ({ onContactClick }) => {
 
   return (
     <>
-      {/* HERO: mobile = static image + overlay + content; desktop = slider + overlay + content */}
+      {/* HERO: before/after slider on all viewports + overlay + content */}
       <section className="relative w-full overflow-hidden">
         <div className="relative min-h-[50vh] md:min-h-[55vh] lg:min-h-[70vh]">
-          {/* Mobile: static hero image (slider disabled) */}
-          <div className="absolute inset-0 z-0 md:hidden">
-            <img
-              src={heroPair.afterSrc}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover object-center"
-              loading="eager"
-            />
-          </div>
-
-          {/* Desktop: before/after slider */}
-          <div className="absolute inset-0 z-0 hidden md:block">
+          {/* Before/after slider – mobile and desktop */}
+          <div className="absolute inset-0 z-0">
             <BeforeAfterSlider
               beforeSrc={heroPair.beforeSrc}
               afterSrc={heroPair.afterSrc}
@@ -85,12 +75,10 @@ const Hero = ({ onContactClick }) => {
             />
           </div>
 
-          {/* Overlay: 70% at center, fading to 50%, 25%, 0% toward edges */}
+          {/* Overlay: uniform 40% dark across the whole hero */}
           <div
             className="absolute inset-0 z-[1] pointer-events-none"
-            style={{
-              background: 'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.25) 80%, rgba(0,0,0,0) 100%)',
-            }}
+            style={{ background: 'rgba(0,0,0,0.4)' }}
           />
 
           {/* Hero content: centered on both mobile and desktop */}
