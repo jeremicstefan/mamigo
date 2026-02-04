@@ -247,7 +247,7 @@ const BeforeAfterSlider = ({
           ${isHero ? 'justify-end pb-3' : 'justify-center'}
           focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black
           ${isDragging ? 'cursor-grabbing' : ''}
-          ${!isDragging && (variant !== 'hero' || introDone) ? 'transition-[left] duration-150 ease-out' : ''}
+          ${!isDragging && introDone ? 'transition-[left] duration-150 ease-out' : ''}
         `}
         style={{
           left: `${position * 100}%`,
