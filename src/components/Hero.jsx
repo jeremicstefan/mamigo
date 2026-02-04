@@ -23,25 +23,25 @@ const Hero = ({ onContactClick }) => {
   const heroContent = (
     <>
       {/* German standard above headline */}
-      <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full border border-white/40 bg-white/5 backdrop-blur-md">
+      <div className="inline-flex items-center justify-center gap-2 mb-4 px-4 py-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-md drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]">
         <span className="text-xl" aria-hidden>🇩🇪</span>
         <span className="text-sm font-semibold text-white/90 tracking-wide">
           Nemački standard
         </span>
       </div>
 
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-5">
+      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white mb-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
         Profesionalno čišćenje <span className="text-brand-500">bez nerviranja</span><span className="text-brand-500">.</span>
       </h1>
-      <p className="text-lg sm:text-xl text-white/90 font-light leading-relaxed mb-2 max-w-xl">
-        Garaže, zgrade, poslovni i industrijski prostori — Beograd i cela Srbija.
+      <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
+        Garaže zgrade poslovni industrijski prostori
       </p>
-      <p className="text-sm text-white/90 font-medium mb-6">
-        Dolazak za 24h · Besplatna procena · Račun za firme
+      <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed mb-2 max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
+        Belgrade i ostatak Srbije
       </p>
 
       {/* CTAs */}
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
         <MarketingButton onClick={onContactClick}>
           Zatraži ponudu
         </MarketingButton>
@@ -54,6 +54,9 @@ const Hero = ({ onContactClick }) => {
           Pozovi odmah
         </MarketingButton>
       </div>
+      <p className="text-sm text-white font-bold [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
+        Dolazak za 24h · Besplatna procena · Račun za firme
+      </p>
     </>
   );
 
@@ -77,23 +80,23 @@ const Hero = ({ onContactClick }) => {
             <BeforeAfterSlider
               beforeSrc={heroPair.beforeSrc}
               afterSrc={heroPair.afterSrc}
-              initialPosition={75}
+              initialPosition={50}
               variant="hero"
             />
           </div>
 
-          {/* Overlay: gradient so text is readable on both mobile and desktop */}
+          {/* Overlay: 70% at center, fading to 50%, 25%, 0% toward edges */}
           <div
             className="absolute inset-0 z-[1] pointer-events-none"
             style={{
-              background: 'linear-gradient(to bottom right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,0.08) 100%)',
+              background: 'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.25) 80%, rgba(0,0,0,0) 100%)',
             }}
           />
 
-          {/* Hero content: overlaid on both mobile and desktop */}
-          <div className="relative z-10 flex flex-col justify-center min-h-[50vh] md:min-h-[55vh] lg:min-h-[70vh] px-4 sm:px-6 lg:px-8 pointer-events-none">
-            <div className="max-w-container mx-auto w-full">
-              <div className="max-w-xl pt-10 pb-10 lg:pt-16 lg:pb-16 pointer-events-auto">
+          {/* Hero content: centered on both mobile and desktop */}
+          <div className="relative z-10 flex flex-col justify-center items-center min-h-[50vh] md:min-h-[55vh] lg:min-h-[70vh] px-4 sm:px-6 lg:px-8 pointer-events-none">
+            <div className="max-w-container mx-auto w-full flex flex-col items-center text-center">
+              <div className="max-w-xl pt-10 pb-10 lg:pt-16 lg:pb-16 pointer-events-auto flex flex-col items-center text-center">
                 {heroContent}
               </div>
             </div>

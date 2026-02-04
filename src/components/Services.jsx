@@ -2,14 +2,14 @@ import React from 'react';
 import { LuCheckCircle, LuStore, LuBuilding2, LuWarehouse, LuCar } from 'react-icons/lu';
 import MarketingButton from './MarketingButton';
 import BeforeAfterSlider from './BeforeAfterSlider';
-import shopBefore from '../assets/hero/shop-before-1.webp';
-import shopAfter from '../assets/hero/shop-after-1.webp';
-import residentialBefore from '../assets/hero/residential-building-before-1.webp';
-import residentialAfter from '../assets/hero/residential-building-after-1.webp';
-import storageUnitBefore from '../assets/hero/storage-unit-before-1.webp';
-import storageUnitAfter from '../assets/hero/storage-unit-after-1.webp';
-import garageBefore from '../assets/hero/garage-before-1.webp';
-import garageAfter from '../assets/hero/garage-after-1.webp';
+import shopBefore from '../assets/services/shop-before-1.webp';
+import shopAfter from '../assets/services/shop-after-1.webp';
+import residentialBefore from '../assets/services/residential-building-before-1.webp';
+import residentialAfter from '../assets/services/residential-building-after-1.webp';
+import storageUnitBefore from '../assets/services/storage-unit-before-1.webp';
+import storageUnitAfter from '../assets/services/storage-unit-after-1.webp';
+import garageBefore from '../assets/services/garage-before-1.webp';
+import garageAfter from '../assets/services/garage-after-1.webp';
 
 const Services = () => {
   const services = [
@@ -87,7 +87,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] gap-5 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {services.map((service) => {
             const IconComponent = service.icon;
             const hasBeforeAfter = service.beforeSrc && service.afterSrc;

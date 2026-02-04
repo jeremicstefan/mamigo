@@ -203,7 +203,15 @@ const BeforeAfterSlider = ({
         )}
       </div>
 
-      {/* Handle: center of touch area aligns with clip-path; object-left on images keeps split accurate */}
+      {/* Hero only: full-width bottom track (same height as circle) – whole bar is draggable */}
+      {isHero && (
+        <div
+          className="absolute bottom-0 left-0 right-0 h-12 z-10 cursor-ew-resize touch-manipulation bg-black/30 border-t border-white/20"
+          aria-hidden
+        />
+      )}
+
+      {/* Handle: full-height line; hero = circle on bottom track, cards = circle centered */}
       <div
         tabIndex={0}
         role="slider"
@@ -212,8 +220,9 @@ const BeforeAfterSlider = ({
         aria-valuemax={100}
         aria-valuenow={Math.round(position * 100)}
         className={`
-          absolute top-0 bottom-0 z-20 flex items-center justify-center
+          absolute top-0 bottom-0 z-20 flex flex-col items-center
           w-11 min-w-[44px] cursor-ew-resize touch-manipulation
+          ${isHero ? 'justify-end pb-3' : 'justify-center'}
           focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black
           ${isDragging ? 'cursor-grabbing' : ''}
           ${!isDragging && (variant !== 'hero' || introDone) ? 'transition-[left] duration-150 ease-out' : ''}
