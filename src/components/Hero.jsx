@@ -31,13 +31,13 @@ const Hero = ({ onContactClick }) => {
       </div>
 
       <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-white mb-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-        Profesionalno čišćenje <span className="text-brand-500">bez nerviranja</span><span className="text-brand-500">.</span>
+        Profesionalno čišćenje <span className="text-brand-500">bez komplikacija</span><span className="text-brand-500">.</span>
       </h1>
       <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Garaže zgrade poslovni industrijski prostori
+        Garaže, zgrade, poslovni, industrijski prostori.
       </p>
       <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed mb-2 max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Belgrade i ostatak Srbije
+        Beograd i ostatak Srbije.
       </p>
 
       {/* CTAs */}
