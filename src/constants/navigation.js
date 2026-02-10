@@ -7,6 +7,6 @@ export const LANGUAGES = [
 export const NAV_LINKS = [
   { href: '#services', label: 'Usluge' },
   { href: '#about', label: 'O nama' },
-  { href: '/blog', label: 'Blog', isRoute: true },
+  { href: '#blog', label: 'Blog' },
   { href: '#contact', label: 'Kontakt' },
 ];

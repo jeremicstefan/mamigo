@@ -4,20 +4,15 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { SERBIA_CONTACT } from '../../constants/contact';
 import { NAV_LINKS, LANGUAGES } from '../../constants/navigation';
 
-const MobileNavLink = ({ href, label, isRoute, onClose }) => {
+const MobileNavLink = ({ href, label, onClose }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const handleClick = useCallback(
     (e) => {
       onClose();
-      if (isRoute) {
-        window.scrollTo(0, 0);
-        return;
-      }
       e.preventDefault();
       if (pathname === '/') {
-        // Already on homepage — scroll directly without React Router navigation
         const id = href.startsWith('#') ? href.slice(1) : href;
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -26,11 +21,10 @@ const MobileNavLink = ({ href, label, isRoute, onClose }) => {
         navigate(`/${href}`);
       }
     },
-    [href, isRoute, pathname, navigate, onClose]
+    [href, pathname, navigate, onClose]
   );
 
-  // On homepage, use plain <a> to avoid React Router re-render
-  if (!isRoute && pathname === '/') {
+  if (pathname === '/') {
     return (
       <a
         href={href}
@@ -44,7 +38,7 @@ const MobileNavLink = ({ href, label, isRoute, onClose }) => {
 
   return (
     <Link
-      to={isRoute ? href : `/${href}`}
+      to={`/${href}`}
       onClick={handleClick}
       className="block py-2.5 px-3 text-sm font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
     >
@@ -56,7 +50,6 @@ const MobileNavLink = ({ href, label, isRoute, onClose }) => {
 MobileNavLink.propTypes = {
   href: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  isRoute: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
 };
 
@@ -72,8 +65,8 @@ const MobileMenu = ({ lang, onLangChange, onClose }) => (
       className="fixed left-0 right-0 top-14 z-[50] md:hidden bg-surface-0 rounded-b-2xl border border-t-0 border-border-200 shadow-[0_8px_24px_rgba(0,0,0,0.08)] px-4 py-3 flex flex-col gap-1"
       aria-hidden="false"
     >
-      {NAV_LINKS.map(({ href, label, isRoute }) => (
-        <MobileNavLink key={href} href={href} label={label} isRoute={isRoute} onClose={onClose} />
+      {NAV_LINKS.map(({ href, label }) => (
+        <MobileNavLink key={href} href={href} label={label} onClose={onClose} />
       ))}
       <a
         href={SERBIA_CONTACT.phone.href}

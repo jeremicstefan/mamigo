@@ -6,35 +6,26 @@ import { SERBIA_CONTACT } from '../../constants/contact';
 import { NAV_LINKS, LANGUAGES } from '../../constants/navigation';
 import logo from '../../assets/hero/mamigo-hausmeister-logo.png';
 
-const NavLink = ({ href, label, isRoute }) => {
+const NavLink = ({ href, label }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
   const handleClick = useCallback(
     (e) => {
-      if (isRoute) {
-        // Route link (e.g. /blog) — scroll to top instantly before React renders
-        window.scrollTo(0, 0);
-        return;
-      }
       e.preventDefault();
       if (pathname === '/') {
-        // Already on homepage — scroll directly, don't change URL via React Router
         const id = href.startsWith('#') ? href.slice(1) : href;
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
-        // Update URL hash without triggering React Router navigation
         window.history.replaceState(null, '', `/${href}`);
       } else {
-        // On another page — navigate home with hash (ScrollToTop handles scroll)
         navigate(`/${href}`);
       }
     },
-    [href, isRoute, pathname, navigate]
+    [href, pathname, navigate]
   );
 
-  // On homepage, use a plain <a> to avoid React Router re-render on hash click
-  if (!isRoute && pathname === '/') {
+  if (pathname === '/') {
     return (
       <a
         href={href}
@@ -48,7 +39,7 @@ const NavLink = ({ href, label, isRoute }) => {
 
   return (
     <Link
-      to={isRoute ? href : `/${href}`}
+      to={`/${href}`}
       onClick={handleClick}
       className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center"
     >
@@ -60,7 +51,6 @@ const NavLink = ({ href, label, isRoute }) => {
 NavLink.propTypes = {
   href: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  isRoute: PropTypes.bool,
 };
 
 const Navbar = ({ lang, onLangChange, mobileMenuOpen, onToggleMobileMenu }) => (
@@ -91,8 +81,8 @@ const Navbar = ({ lang, onLangChange, mobileMenuOpen, onToggleMobileMenu }) => (
         {/* Center: nav links (desktop) */}
         <div className="hidden md:flex flex-1 items-center justify-center min-w-0">
           <div className="flex items-center gap-1">
-            {NAV_LINKS.map(({ href, label, isRoute }) => (
-              <NavLink key={href} href={href} label={label} isRoute={isRoute} />
+            {NAV_LINKS.map(({ href, label }) => (
+              <NavLink key={href} href={href} label={label} />
             ))}
           </div>
         </div>

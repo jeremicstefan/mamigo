@@ -24,7 +24,9 @@ const HomePage = ({ onContactClick }) => (
       <About />
     </div>
     <Testimonials />
-    <BlogPreview />
+    <div id="blog" className="scroll-mt-14 md:scroll-mt-20">
+      <BlogPreview />
+    </div>
     <div id="contact" className="scroll-mt-14 md:scroll-mt-20">
       <Contact />
     </div>
