@@ -4,7 +4,7 @@ import { LuZap, LuCalendarCheck } from 'react-icons/lu';
 import MarketingButton from './MarketingButton';
 
 const ServiceTypeSection = ({ onContactClick }) => (
-  <section className="py-10 sm:py-12 lg:py-20 bg-surface-50 border-t border-border-200">
+  <section className="py-10 sm:py-12 lg:py-20 bg-surface-0">
     <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-6 sm:mb-8 lg:mb-12 text-center">
         Jednokratno ili ugovorno čišćenje
