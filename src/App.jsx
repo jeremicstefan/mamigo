@@ -7,18 +7,26 @@ import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import SEOHead from './seo/SEOHead';
 
-/** Scroll to top on route change, or to hash anchor if present */
+/** Scroll to top on route change; hash scrolling on same page is handled by NavLink */
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
+  const prevPathname = React.useRef(pathname);
+
   useEffect(() => {
+    const pathChanged = prevPathname.current !== pathname;
+    prevPathname.current = pathname;
+
+    if (!pathChanged) return; // Same page hash change — NavLink already handles scroll
+
     if (hash) {
-      // Small delay to let the route render before scrolling
+      // Came from another page with a hash (e.g. /blog → /#about)
       const timer = setTimeout(() => {
         const el = document.getElementById(hash.slice(1));
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 80);
       return () => clearTimeout(timer);
     }
+    // New page without hash — scroll to top
     window.scrollTo(0, 0);
   }, [pathname, hash]);
   return null;

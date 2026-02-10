@@ -14,14 +14,30 @@ const MobileNavLink = ({ href, label, isRoute, onClose }) => {
       if (isRoute) return;
       e.preventDefault();
       if (pathname === '/') {
-        const el = document.getElementById(href.slice(1));
+        // Already on homepage — scroll directly without React Router navigation
+        const id = href.startsWith('#') ? href.slice(1) : href;
+        const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
+        window.history.replaceState(null, '', `/${href}`);
       } else {
         navigate(`/${href}`);
       }
     },
     [href, isRoute, pathname, navigate, onClose]
   );
+
+  // On homepage, use plain <a> to avoid React Router re-render
+  if (!isRoute && pathname === '/') {
+    return (
+      <a
+        href={href}
+        onClick={handleClick}
+        className="block py-2.5 px-3 text-sm font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
+      >
+        {label}
+      </a>
+    );
+  }
 
   return (
     <Link
