@@ -13,20 +13,22 @@ const About = () => (
           </h2>
 
           <h3 className="text-lg sm:text-xl md:text-2xl text-brand-600 font-semibold mb-3 sm:mb-4 leading-snug">
-            Nemački standardi čistoće – sada u Srbiji
+            Tradicija, sigurnost i nemačka preciznost
           </h3>
 
           <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-text-600 mb-4 sm:mb-6 leading-relaxed">
             <p>
-              Mamigo je porodična kompanija osnovana 2014. godine, sa direktnim iskustvom
-              u nemačkoj industriji profesionalnog čišćenja. Koristimo opremu i sredstva
-              renomiranih nemačkih proizvođača – iste koje koriste vodeće firme u Evropi.
+              Osnovani kao porodična firma 2014. godine, na put smo krenuli
+              vođeni jednom vizijom: podići standarde čišćenja na Balkanu na nivo
+              zapadnoevropskog kvaliteta.
             </p>
             <p>
-              Naš tim broji preko 30 obučenih profesionalaca koji rade po jasno
-              definisanim protokolima sa ček-listama, tačnim terminima i dokumentacijom
-              svake intervencije. Svaki projekat tretiramo sa punom pažnjom – bez
-              kompromisa po pitanju kvaliteta i bezbednosti.
+              Ono što nas izdvaja od konkurencije je implementacija direktnog
+              nemačkog iskustva u svakom segmentu našeg poslovanja – od najsavremenije
+              opreme renomiranih nemačkih proizvođača, preko rigoroznih protokola
+              zaštite na radu, do isključive upotrebe biorazgradivih i ekološki
+              sertifikovanih sredstava. Svaki proces je dokumentovan i proveren,
+              garantujući konstantan nivo kvaliteta bez obzira na veličinu objekta.
             </p>
           </div>
 

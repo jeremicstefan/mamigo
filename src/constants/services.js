@@ -79,12 +79,12 @@ export const SERVICES = [
   },
   {
     id: 'hospitality',
-    title: 'Hoteli i restorani',
-    subtitle: 'Hospitality Cleaning',
-    description: 'Prilagođeni programi čišćenja za ugostiteljske objekte gde je higijena direktan faktor poverenja vaših gostiju.',
+    title: 'Hoteli i smeštajni objekti',
+    subtitle: 'Hotel & Accommodation Cleaning',
+    description: 'Prilagođeni programi čišćenja za hotele, hostele, apartmane i druge smeštajne objekte gde je higijena direktan faktor poverenja gostiju.',
     features: [
       'Održavanje lobija, hodnika i smeštajnih jedinica',
-      'Dubinska higijena kuhinjskih zona bezbednim sredstvima',
+      'Čišćenje soba između gostiju po hotelskim standardima',
       'Dezinfekcija kritičnih tačaka – kvake, pultovi, rukohvati',
       'Diskretni rad van radnog vremena ili u noćnim smenama',
     ],
@@ -94,9 +94,9 @@ export const SERVICES = [
   },
   {
     id: 'restaurants',
-    title: 'Restorani i kuhinje',
-    subtitle: 'Restaurant & Kitchen Cleaning',
-    description: 'Dubinska higijena kuhinjskih zona, trpezarija i ugostiteljskih prostora – bezbednim sredstvima za kontakt sa hranom.',
+    title: 'Restorani i ugostiteljski objekti',
+    subtitle: 'Restaurant & Catering Cleaning',
+    description: 'Dubinska higijena kuhinja, trpezarija, kafića i drugih ugostiteljskih prostora – sredstvima bezbednim za kontakt sa hranom.',
     features: [
       'Čišćenje profesionalnih kuhinja i priprema za inspekciju',
       'Odmašćivanje napa, ventilacije i radnih površina',

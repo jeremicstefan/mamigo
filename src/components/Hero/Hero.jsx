@@ -20,14 +20,14 @@ const Hero = ({ onContactClick }) => {
         </span>
       </div>
 
-      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-none sm:leading-tight tracking-tight text-white mb-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-        Profesionalno čišćenje <span className="text-brand-500">bez komplikacija</span><span className="text-brand-500">.</span>
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+        Besprekorna higijena po <span className="text-brand-500">nemačkim standardima</span><span className="text-brand-500">.</span>
       </h1>
       <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Zgrade, poslovni i industrijski prostori, garaže, hoteli i restorani.
+        Profesionalno čišćenje poslovnih prostora i industrijskih objekata.
       </p>
       <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed mb-2 max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Oprema i standardi iz Nemačke – Beograd i cela Srbija.
+        Porodična tradicija od 2014. – Beograd i cela Srbija.
       </p>
 
       {/* CTAs */}
