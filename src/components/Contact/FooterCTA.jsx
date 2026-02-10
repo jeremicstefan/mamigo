@@ -12,10 +12,10 @@ const FooterCTA = () => (
       <p className="text-sm sm:text-base text-white/80 mb-4 sm:mb-ds-6 leading-relaxed max-w-2xl mx-auto">
         Poveravaju nam svoju higijenu još od 2014. godine. Do čiste kancelarije vas deli samo jedan&nbsp;klik.
       </p>
-      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+      <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md sm:max-w-none mx-auto">
         <MarketingButton
           href="#contact"
-          className="!bg-brand-500 !text-white hover:!bg-brand-600 !border-brand-500"
+          className="w-full sm:w-auto !bg-brand-500 !text-white hover:!bg-brand-600 !border-brand-500"
         >
           Pošaljite zahtev za saradnju
         </MarketingButton>
@@ -23,7 +23,7 @@ const FooterCTA = () => (
           variant="secondary"
           href={SERBIA_CONTACT.phone.href}
           icon={<LuPhone className="w-5 h-5 text-brand-500" />}
-          className="!border-white/30 !text-white hover:!bg-white/10"
+          className="w-full sm:w-auto !border-white/30 !text-white hover:!bg-white/10"
         >
           {SERBIA_CONTACT.phone.display}
         </MarketingButton>
