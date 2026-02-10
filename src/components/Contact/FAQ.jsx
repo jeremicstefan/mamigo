@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { LuChevronDown } from 'react-icons/lu';
+import { LuHelpCircle, LuChevronDown } from 'react-icons/lu';
 import { FAQ_ITEMS, FAQ_SCHEMA } from '../../constants/faq';
 
 const FAQ = () => {
@@ -30,12 +30,15 @@ const FAQ = () => {
             itemType="https://schema.org/Question"
           >
             <summary className="flex items-center justify-between gap-3 sm:gap-4 py-4 sm:py-5 lg:py-6 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
-              <h3
-                className="text-base sm:text-lg md:text-xl font-semibold text-text-900"
-                itemProp="name"
-              >
-                {item.question}
-              </h3>
+              <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                <LuHelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-brand-500 flex-shrink-0" aria-hidden />
+                <h3
+                  className="text-base sm:text-lg md:text-xl font-semibold text-text-900"
+                  itemProp="name"
+                >
+                  {item.question}
+                </h3>
+              </div>
               <LuChevronDown
                 className="w-5 h-5 text-text-600 flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
                 aria-hidden
