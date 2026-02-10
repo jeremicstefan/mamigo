@@ -1,15 +1,20 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import MobileMenu from './components/Navbar/MobileMenu';
-import Hero from './components/Hero/Hero';
-import ProcessSteps from './components/ProcessSteps';
-import Services from './components/Services';
-import ServiceTypeSection from './components/ServiceTypeSection';
-import About from './components/About';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact/Contact';
-import LazySection from './components/UI/LazySection';
+import HomePage from './pages/HomePage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
 import SEOHead from './seo/SEOHead';
+
+/** Scroll to top on route change */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   const [lang, setLang] = useState('sr');
@@ -37,47 +42,36 @@ function App() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col bg-surface-0">
-      <SEOHead />
-      <Navbar
-        lang={lang}
-        onLangChange={setLang}
-        mobileMenuOpen={mobileMenuOpen}
-        onToggleMobileMenu={toggleMobileMenu}
-      />
-
-      {mobileMenuOpen && (
-        <MobileMenu
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="flex min-h-screen flex-col bg-surface-0">
+        <SEOHead />
+        <Navbar
           lang={lang}
           onLangChange={setLang}
-          onClose={closeMobileMenu}
-          onNavigate={scrollToSection}
+          mobileMenuOpen={mobileMenuOpen}
+          onToggleMobileMenu={toggleMobileMenu}
         />
-      )}
 
-      {/* Main Content */}
-      <main className="flex min-h-0 flex-1 flex-col pt-14 md:pt-20">
-        <Hero onContactClick={scrollToContact} />
-        <LazySection placeholderClassName="min-h-[280px]">
-          <ProcessSteps />
-        </LazySection>
-        <LazySection id="services" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[420px]">
-          <Services />
-        </LazySection>
-        <LazySection placeholderClassName="min-h-[320px]">
-          <ServiceTypeSection onContactClick={scrollToContact} />
-        </LazySection>
-        <LazySection id="about" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[480px]">
-          <About />
-        </LazySection>
-        <LazySection placeholderClassName="min-h-[320px]">
-          <Testimonials />
-        </LazySection>
-        <LazySection id="contact" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[520px]">
-          <Contact />
-        </LazySection>
-      </main>
-    </div>
+        {mobileMenuOpen && (
+          <MobileMenu
+            lang={lang}
+            onLangChange={setLang}
+            onClose={closeMobileMenu}
+            onNavigate={scrollToSection}
+          />
+        )}
+
+        <Routes>
+          <Route
+            path="/"
+            element={<HomePage onContactClick={scrollToContact} />}
+          />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

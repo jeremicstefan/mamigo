@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { LuMenu, LuX } from 'react-icons/lu';
 import { SERBIA_CONTACT } from '../../constants/contact';
 import { NAV_LINKS, LANGUAGES } from '../../constants/navigation';
@@ -15,8 +16,8 @@ const Navbar = ({ lang, onLangChange, mobileMenuOpen, onToggleMobileMenu }) => (
       <div className="flex items-center justify-between h-14 md:h-20 gap-2">
         {/* Left: logo */}
         <div className="flex items-center justify-start min-w-0 bg-transparent">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="flex-shrink-0 flex items-center bg-transparent"
             aria-label="MAMIGO Hausmeister - početna"
           >
@@ -26,21 +27,31 @@ const Navbar = ({ lang, onLangChange, mobileMenuOpen, onToggleMobileMenu }) => (
               className="h-12 sm:h-14 md:h-20 w-auto object-contain"
               loading="eager"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Center: nav links (desktop) */}
         <div className="hidden md:flex flex-1 items-center justify-center min-w-0">
           <div className="flex items-center gap-1">
-            {NAV_LINKS.map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
-                className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center"
-              >
-                {label}
-              </a>
-            ))}
+            {NAV_LINKS.map(({ href, label, isRoute }) =>
+              isRoute ? (
+                <Link
+                  key={href}
+                  to={href}
+                  className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center"
+                >
+                  {label}
+                </Link>
+              ) : (
+                <a
+                  key={href}
+                  href={href}
+                  className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center"
+                >
+                  {label}
+                </a>
+              )
+            )}
           </div>
         </div>
 
