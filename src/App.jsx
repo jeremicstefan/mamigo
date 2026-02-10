@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useLayoutEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import MobileMenu from './components/Navbar/MobileMenu';
@@ -11,24 +11,29 @@ import SEOHead from './seo/SEOHead';
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   const prevPathname = React.useRef(pathname);
+  const pathDidChange = React.useRef(false);
 
-  useEffect(() => {
-    const pathChanged = prevPathname.current !== pathname;
+  // Instant scroll-to-top BEFORE paint when navigating to a new page (no hash)
+  useLayoutEffect(() => {
+    pathDidChange.current = prevPathname.current !== pathname;
     prevPathname.current = pathname;
 
-    if (!pathChanged) return; // Same page hash change — NavLink already handles scroll
+    if (pathDidChange.current && !hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
-    if (hash) {
-      // Came from another page with a hash (e.g. /blog → /#about)
+  // Smooth scroll to hash anchor AFTER render — only when coming from another page
+  useEffect(() => {
+    if (pathDidChange.current && hash) {
       const timer = setTimeout(() => {
         const el = document.getElementById(hash.slice(1));
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 80);
       return () => clearTimeout(timer);
     }
-    // New page without hash — scroll to top
-    window.scrollTo(0, 0);
   }, [pathname, hash]);
+
   return null;
 }
 
