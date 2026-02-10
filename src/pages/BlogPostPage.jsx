@@ -4,11 +4,13 @@ import { LuArrowLeft, LuClock, LuCalendar, LuPhone } from 'react-icons/lu';
 import { BLOG_POSTS, blogPostingSchema } from '../constants/blog';
 import { SERBIA_CONTACT } from '../constants/contact';
 import BlogContent from '../components/Blog/BlogContent';
+import BlogCard from '../components/Blog/BlogCard';
 import MarketingButton from '../components/MarketingButton';
 
 const BlogPostPage = () => {
   const { slug } = useParams();
   const post = BLOG_POSTS.find((p) => p.slug === slug);
+  const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 2);
 
   useEffect(() => {
     if (!post) return;
@@ -131,6 +133,22 @@ const BlogPostPage = () => {
           </div>
         </div>
       </article>
+
+      {/* Related posts */}
+      {relatedPosts.length > 0 && (
+        <section className="bg-surface-50 border-t border-border-200 py-10 sm:py-12 lg:py-16">
+          <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-6 sm:mb-8">
+              Pročitajte još
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
+              {relatedPosts.map((related) => (
+                <BlogCard key={related.slug} post={related} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </main>
   );
 };
