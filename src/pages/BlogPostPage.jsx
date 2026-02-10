@@ -58,6 +58,7 @@ const BlogPostPage = () => {
           </h1>
           <Link
             to="/blog"
+            onClick={() => window.scrollTo(0, 0)}
             className="text-brand-600 hover:text-brand-500 font-medium"
           >
             &larr; Nazad na blog
@@ -82,6 +83,7 @@ const BlogPostPage = () => {
         {/* Back link */}
         <Link
           to="/blog"
+          onClick={() => window.scrollTo(0, 0)}
           className="inline-flex items-center gap-1.5 text-sm text-text-600 hover:text-brand-600 font-medium mb-6 transition-colors"
         >
           <LuArrowLeft className="w-4 h-4" />

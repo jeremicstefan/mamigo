@@ -19,6 +19,7 @@ const BlogPreview = () => (
         </div>
         <Link
           to="/blog"
+          onClick={() => window.scrollTo(0, 0)}
           className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-500 transition-colors"
         >
           Svi članci
@@ -35,6 +36,7 @@ const BlogPreview = () => (
       <div className="mt-6 text-center sm:hidden">
         <Link
           to="/blog"
+          onClick={() => window.scrollTo(0, 0)}
           className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-500 transition-colors"
         >
           Svi članci

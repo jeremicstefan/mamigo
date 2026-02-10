@@ -6,6 +6,7 @@ import { LuClock, LuCalendar } from 'react-icons/lu';
 const BlogCard = ({ post }) => (
   <Link
     to={`/blog/${post.slug}`}
+    onClick={() => window.scrollTo(0, 0)}
     className="group bg-surface-0 rounded-card border border-border-200 overflow-hidden shadow-card hover:shadow-card-hover transition-shadow"
   >
     <div className="aspect-[16/9] overflow-hidden">
