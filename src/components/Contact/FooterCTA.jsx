@@ -7,11 +7,11 @@ const FooterCTA = () => (
   <div className="mt-10 sm:mt-12 lg:mt-ds-16 flex-1 w-full pt-10 sm:pt-12 lg:pt-16 xl:pt-24 pb-10 sm:pb-12 lg:pb-ds-12 xl:pb-ds-20 bg-text-900 border-t border-text-800 flex flex-col justify-center min-h-0">
     <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-ds-4">
-        Spremni za saradnju?
+        Pridružite se zadovoljnim klijentima
       </h3>
       <p className="text-sm sm:text-base text-white/80 mb-4 sm:mb-ds-6 leading-relaxed max-w-2xl mx-auto">
-        Pozovite nas odmah ili pošaljite poruku. Naši stručnjaci će Vam pružiti
-        besplatnu procenu i odgovoriti na sva pitanja.
+        Pozovite nas ili pošaljite poruku – besplatna procena, dolazak u roku od 24h
+        i profesionalan pristup garantovani.
       </p>
       <MarketingButton
         variant="secondary"

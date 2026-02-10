@@ -24,10 +24,10 @@ const Hero = ({ onContactClick }) => {
         Profesionalno čišćenje <span className="text-brand-500">bez komplikacija</span><span className="text-brand-500">.</span>
       </h1>
       <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Garaže, zgrade, poslovni, industrijski prostori.
+        Zgrade, poslovni i industrijski prostori, garaže, hoteli i restorani.
       </p>
       <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed mb-2 max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Beograd i ostatak Srbije.
+        Oprema i standardi iz Nemačke – Beograd i cela Srbija.
       </p>
 
       {/* CTAs */}
@@ -45,7 +45,7 @@ const Hero = ({ onContactClick }) => {
         </MarketingButton>
       </div>
       <p className="text-sm text-white font-bold [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Dolazak za 24h · Besplatna procena · Račun za firme
+        Dolazak za 24h · Besplatna procena · Izdajemo fakturu
       </p>
     </>
   );

@@ -24,7 +24,7 @@ const Contact = () => (
           Kontaktirajte nas
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
-          Spremni smo da odgovorimo na sva Vaša pitanja i pružimo besplatnu procenu za Vaše potrebe čišćenja
+          Besplatna procena, dolazak u roku od 24h i odgovor na sva Vaša pitanja
         </p>
       </div>
 

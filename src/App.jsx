@@ -7,6 +7,7 @@ import Services from './components/Services';
 import ServiceTypeSection from './components/ServiceTypeSection';
 import ServiceGuarantee from './components/ServiceGuarantee';
 import About from './components/About';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact/Contact';
 import LazySection from './components/UI/LazySection';
 import SEOHead from './seo/SEOHead';
@@ -72,6 +73,9 @@ function App() {
         </LazySection>
         <LazySection id="about" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[480px]">
           <About />
+        </LazySection>
+        <LazySection placeholderClassName="min-h-[320px]">
+          <Testimonials />
         </LazySection>
         <LazySection id="contact" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[520px]">
           <Contact />

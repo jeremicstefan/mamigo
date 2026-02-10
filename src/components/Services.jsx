@@ -12,7 +12,7 @@ const Services = () => (
           Naše usluge čišćenja
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed px-0">
-          Pružamo profesionalne usluge čišćenja za sve vrste objekata sa fokusom na kvalitet i pouzdanost
+          Specijalizovani za industrijske, poslovne i stambene objekte – sa opremom i standardima iz Nemačke
         </p>
       </div>
 

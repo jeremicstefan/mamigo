@@ -3,7 +3,7 @@ import { SERBIA_CONTACT, COMPANY_NAME } from './contact';
 export const SITE_META = {
   title: `${COMPANY_NAME} - Profesionalno čišćenje`,
   description:
-    'Profesionalno čišćenje garaža, zgrada, poslovnih i industrijskih prostora. Beograd i ostatak Srbije. Nemački standard kvaliteta.',
+    'Profesionalno čišćenje zgrada, poslovnih i industrijskih prostora, garaža, hotela i restorana. Oprema i standardi iz Nemačke. Beograd i cela Srbija.',
   url: 'https://mamigo.rs',
   locale: 'sr_RS',
   type: 'website',
@@ -25,6 +25,19 @@ export const LOCAL_BUSINESS_SCHEMA = {
   },
   areaServed: { '@type': 'Country', name: 'Serbia' },
   priceRange: '$$',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Usluge profesionalnog čišćenja',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čišćenje industrijskih objekata i magacina' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čišćenje poslovnih prostora' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Održavanje stambenih zgrada' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čišćenje garažnih prostora' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čišćenje hotela i restorana' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čišćenje teretana i sportskih centara' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čišćenje klinika i ordinacija' } },
+    ],
+  },
 };
 
 export const ORGANIZATION_SCHEMA = {

@@ -2,7 +2,7 @@ export const ACHIEVEMENTS = [
   {
     number: '2014',
     label: 'Godina osnivanja',
-    description: 'Početak naše priče sa fokusom na kvalitet',
+    description: 'Porodična firma sa vizijom kvaliteta',
   },
   {
     number: '30+',
@@ -12,18 +12,45 @@ export const ACHIEVEMENTS = [
   {
     number: '🇩🇪',
     label: 'Nemački standardi',
-    description: 'Kvalitet i preciznost u svakom detalju',
+    description: 'Direktno iskustvo iz Nemačke',
   },
   {
     number: '100%',
     label: 'Zadovoljnih klijenata',
-    description: 'Pouzdanost i poverenje koje gradimo',
+    description: 'Bez ijednog bezbednosnog incidenta',
   },
 ];
 
 export const VALUES = [
-  { title: 'Profesionalni pristup', desc: 'Sistematičan i pažljiv rad' },
-  { title: 'Poštovanje rokova', desc: 'Pouzdanost i tačnost' },
-  { title: 'Posvećenost projektu', desc: 'Fokus na rezultate' },
-  { title: 'Nemački standardi', desc: 'Kvalitet iznad svega' },
+  { title: 'Napredna tehnologija', desc: 'Oprema renomiranih nemačkih proizvođača' },
+  { title: 'Bezbednost na prvom mestu', desc: 'Rigorozni protokoli zaštite na radu' },
+  { title: 'Ekološka svest', desc: 'Biorazgradiva i sertifikovana sredstva' },
+  { title: 'Sistematizacija rada', desc: 'Svaki proces dokumentovan i proveren' },
+];
+
+export const TESTIMONIALS = [
+  {
+    quote: 'Besprekorno mašinsko čišćenje hale nakon gradnje.',
+    source: 'Logistički centar',
+  },
+  {
+    quote: 'Konačno servis koji razume važnost eko-materijala.',
+    source: 'IT kompanija',
+  },
+  {
+    quote: 'Ulaz i liftovi sijaju. Tačni, brzi i veoma ljubazni.',
+    source: 'Stambena zajednica',
+  },
+  {
+    quote: 'Pouzdan partner na duge staze. Diskrecija, tačnost i pedantnost.',
+    source: 'Advokatska kancelarija',
+  },
+  {
+    quote: 'Savršena priprema prostora nakon adaptacije. Uklonili su najsitniju prašinu bez tragova.',
+    source: 'Arhitektonski biro',
+  },
+  {
+    quote: 'Efikasno održavanje prodajnog prostora pre otvaranja.',
+    source: 'Maloprodajni lanac',
+  },
 ];

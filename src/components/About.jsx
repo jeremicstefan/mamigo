@@ -13,27 +13,29 @@ const About = () => (
           </h2>
 
           <h3 className="text-lg sm:text-xl md:text-2xl text-brand-600 font-semibold mb-3 sm:mb-4 leading-snug">
-            Porodična kompanija sa dugogodišnjim iskustvom
+            Nemački standardi čistoće – sada u Srbiji
           </h3>
 
           <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-text-600 mb-4 sm:mb-6 leading-relaxed">
             <p>
-              Mamigo je porodična kompanija koja posluje od 2014. godine,
-              pružajući profesionalne usluge čišćenja po najvišim nemačkim standardima kvaliteta.
+              Mamigo je porodična kompanija osnovana 2014. godine, sa direktnim iskustvom
+              u nemačkoj industriji profesionalnog čišćenja. Koristimo opremu i sredstva
+              renomiranih nemačkih proizvođača – iste koje koriste vodeće firme u Evropi.
             </p>
             <p>
-              Sa dugogodišnjim iskustvom u Nemačkoj, sada donosimo istu posvećenost,
-              profesionalni pristup i poštovanje rokova u Srbiji. Naš tim od preko 30
-              stručnih zaposlenih garantuje da svaki projekat bude završen na vreme i
-              po najvišim standardima.
+              Naš tim broji preko 30 obučenih profesionalaca koji rade po jasno
+              definisanim protokolima sa ček-listama, tačnim terminima i dokumentacijom
+              svake intervencije. Svaki projekat tretiramo sa punom pažnjom – bez
+              kompromisa po pitanju kvaliteta i bezbednosti.
             </p>
           </div>
 
           {/* Trust Statement */}
           <div className="p-4 sm:p-5 lg:p-6 rounded-card mb-4 sm:mb-6 border-l-4 border-l-brand-500 bg-surface-0">
             <blockquote className="text-base text-text-900 font-medium italic leading-relaxed">
-              "Poverenje klijenata gradimo profesionalnim radom i poštovanjem dogovora.
-              Svaki projekat tretiramo sa punom pažnjom i posvećenošću."
+              &ldquo;Klijentima obezbeđujemo nivo čistoće koji su navikli da vide
+              samo u Nemačkoj – sa istom opremom, istim standardima i istom
+              odgovornošću.&rdquo;
             </blockquote>
           </div>
 
@@ -79,11 +81,12 @@ const About = () => (
           <div className="mt-4 sm:mt-6 bg-surface-0 p-4 sm:p-5 lg:p-6 rounded-card shadow-card border border-border-200">
             <h4 className="text-sm sm:text-base font-semibold text-text-900 mb-2 sm:mb-3 flex items-center gap-2">
               <span className="text-base md:text-xl">📍</span>
-              Sedište Beograd – sada čistimo ceo region
+              Sedište Beograd – pokrivamo celu Srbiju
             </h4>
             <p className="text-sm md:text-base text-text-600 leading-relaxed">
-              Sa našim iskustvom iz Nemačke, pokrivamo celu Srbiju pružajući
-              iste visoke standarde kvaliteta svim našim klijentima. Radimo sa stambenim zajednicama, upravnicima zgrada, maloprodajnim objektima i firmama.
+              Radimo sa stambenim zajednicama, upravnicima zgrada, firmama,
+              maloprodajnim lancima, hotelima i industrijskim pogonima. Isti
+              nemački standardi kvaliteta – gde god da se nalazite.
             </p>
           </div>
         </div>
