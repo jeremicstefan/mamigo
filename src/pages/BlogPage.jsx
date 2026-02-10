@@ -30,14 +30,14 @@ const BlogPage = () => (
         {/* CTA */}
         <div className="mt-12 sm:mt-16 text-center py-10 sm:py-12 bg-surface-50 rounded-card border border-border-200">
           <h2 className="text-xl sm:text-2xl font-bold text-text-900 mb-3">
-            Potrebno vam je profesionalno čišćenje?
+            Želite čistiji i zdraviji prostor?
           </h2>
           <p className="text-base text-text-600 mb-6 max-w-xl mx-auto leading-relaxed">
-            Besplatna procena, dolazak u roku od 24h i oprema iz Nemačke.
+            Kontaktirajte nas za stručni savet ili zakažite besplatan uvid u objekat.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link to="/#contact">
-              <MarketingButton>Zatraži ponudu</MarketingButton>
+              <MarketingButton>Zatražite besplatnu ponudu</MarketingButton>
             </Link>
             <MarketingButton
               variant="secondary"

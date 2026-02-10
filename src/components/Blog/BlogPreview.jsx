@@ -14,7 +14,7 @@ const BlogPreview = () => (
             Blog
           </h2>
           <p className="text-base sm:text-lg text-text-600 font-light leading-relaxed">
-            Saveti za održavanje i zanimljivosti iz sveta čistoće
+            Želite čistiji i zdraviji prostor? Pročitajte naše vodiče ili nas kontaktirajte za stručni savet.
           </p>
         </div>
         <Link

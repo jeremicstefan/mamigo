@@ -6,9 +6,12 @@ import MarketingButton from './MarketingButton';
 const ServiceTypeSection = ({ onContactClick }) => (
   <section className="py-10 sm:py-12 lg:py-20 bg-surface-0">
     <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-6 sm:mb-8 lg:mb-12 text-center">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-3 sm:mb-4 text-center">
         Jednokratno ili ugovorno čišćenje
       </h2>
+      <p className="text-base sm:text-lg text-text-600 font-light leading-relaxed text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-12">
+        Svaki prostor je priča za sebe. Kreiramo personalizovan plan čišćenja po nemačkim standardima, prilagođen vašem budžetu i dinamici rada.
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 w-full">
         <div className="bg-surface-0 p-4 sm:p-5 lg:p-8 xl:p-10 rounded-card border border-border-200 flex flex-col justify-center">
           <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5 min-h-[3rem]">
@@ -38,7 +41,7 @@ const ServiceTypeSection = ({ onContactClick }) => (
         </div>
       </div>
       <div className="text-center mt-6 sm:mt-8 lg:mt-10">
-        <MarketingButton onClick={onContactClick}>Zatraži ponudu</MarketingButton>
+        <MarketingButton onClick={onContactClick}>Kreirajmo vaš plan održavanja</MarketingButton>
       </div>
     </div>
   </section>

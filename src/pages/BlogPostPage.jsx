@@ -114,14 +114,14 @@ const BlogPostPage = () => {
         {/* CTA */}
         <div className="mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-border-200 text-center">
           <h3 className="text-xl sm:text-2xl font-bold text-text-900 mb-3">
-            Potrebno vam je profesionalno čišćenje?
+            Želite čistiji i zdraviji prostor?
           </h3>
           <p className="text-base text-text-600 mb-6 max-w-xl mx-auto leading-relaxed">
-            Javite nam se za besplatnu procenu – dolazimo u roku od 24h.
+            Kontaktirajte nas za stručni savet ili zakažite besplatan uvid u objekat.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link to="/#contact">
-              <MarketingButton>Zatraži ponudu</MarketingButton>
+              <MarketingButton>Zatražite besplatnu ponudu</MarketingButton>
             </Link>
             <MarketingButton
               variant="secondary"

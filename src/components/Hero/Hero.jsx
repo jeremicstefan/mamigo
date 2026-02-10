@@ -24,7 +24,7 @@ const Hero = ({ onContactClick }) => {
         Besprekorna higijena po <span className="text-brand-500">najvišim standardima</span><span className="text-brand-500">.</span>
       </h1>
       <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed mb-2 max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Čišćenje poslovnih i industrijskih prostora, zgrada i objekata.
+        Obezbedite svom timu radni prostor koji zaslužuju.
         <br className="hidden sm:block" />
         Porodična tradicija od 2014. – Beograd i cela Srbija.
       </p>
@@ -32,7 +32,7 @@ const Hero = ({ onContactClick }) => {
       {/* CTAs */}
       <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
         <MarketingButton onClick={onContactClick}>
-          Zatraži ponudu
+          Zatražite besplatnu ponudu
         </MarketingButton>
         <MarketingButton
           variant="secondary"
