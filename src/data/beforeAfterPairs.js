@@ -5,10 +5,10 @@
  */
 import heroBefore from '../assets/hero/hero-before-option-2-flipped.webp';
 import heroAfter from '../assets/hero/hero-after-option-2-flipped.webp';
-import beforeGarage from '../assets/services/garage-before-1.webp';
-import afterGarage from '../assets/services/garage-after-1.webp';
-import beforeStorage from '../assets/services/storage-before-1.webp';
-import afterStorage from '../assets/services/storage-after-1.webp';
+import beforeGarage from '../assets/services/garage-before.webp';
+import afterGarage from '../assets/services/garage-after.webp';
+import beforeStorage from '../assets/services/storage-before.webp';
+import afterStorage from '../assets/services/storage-after.webp';
 
 export const beforeAfterPairs = [
   {

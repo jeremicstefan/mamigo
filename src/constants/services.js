@@ -1,12 +1,20 @@
 import { LuStore, LuBuilding2, LuWarehouse, LuCar, LuHotel, LuDumbbell, LuHeartPulse } from 'react-icons/lu';
-import shopBefore from '../assets/services/shop-before-1.webp';
-import shopAfter from '../assets/services/shop-after-1.webp';
-import residentialBefore from '../assets/services/residential-building-before-1.webp';
-import residentialAfter from '../assets/services/residential-building-after-1.webp';
-import storageUnitBefore from '../assets/services/storage-unit-before-1.webp';
-import storageUnitAfter from '../assets/services/storage-unit-after-1.webp';
-import garageBefore from '../assets/services/garage-before-1.webp';
-import garageAfter from '../assets/services/garage-after-1.webp';
+import shopBefore from '../assets/services/shop-before.webp';
+import shopAfter from '../assets/services/shop-after.webp';
+import residentialBefore from '../assets/services/residential-building-before.webp';
+import residentialAfter from '../assets/services/residential-building-after.webp';
+import storageUnitBefore from '../assets/services/storage-unit-before.webp';
+import storageUnitAfter from '../assets/services/storage-unit-after.webp';
+import garageBefore from '../assets/services/garage-before.webp';
+import garageAfter from '../assets/services/garage-after.webp';
+import hotelBefore from '../assets/services/hotel-before.webp';
+import hotelAfter from '../assets/services/hotel-after.webp';
+import kitchenBefore from '../assets/services/kitchen-before.webp';
+import kitchenAfter from '../assets/services/kitchen-after.webp';
+import gymBefore from '../assets/services/gym-before.webp';
+import gymAfter from '../assets/services/gym-after.webp';
+import clinicBefore from '../assets/services/clinic-before.webp';
+import clinicAfter from '../assets/services/clinic-after.webp';
 
 export const SERVICES = [
   {
@@ -81,9 +89,23 @@ export const SERVICES = [
       'Diskretni rad van radnog vremena ili u noćnim smenama',
     ],
     icon: LuHotel,
-    // Slike će biti dodate kad budu spremne
-    beforeSrc: null,
-    afterSrc: null,
+    beforeSrc: hotelBefore,
+    afterSrc: hotelAfter,
+  },
+  {
+    id: 'restaurants',
+    title: 'Restorani i kuhinje',
+    subtitle: 'Restaurant & Kitchen Cleaning',
+    description: 'Dubinska higijena kuhinjskih zona, trpezarija i ugostiteljskih prostora – bezbednim sredstvima za kontakt sa hranom.',
+    features: [
+      'Čišćenje profesionalnih kuhinja i priprema za inspekciju',
+      'Odmašćivanje napa, ventilacije i radnih površina',
+      'Dezinfekcija podova i sanitarnih čvorova',
+      'Sredstva bezbedna za kontakt sa hranom',
+    ],
+    icon: LuStore,
+    beforeSrc: kitchenBefore,
+    afterSrc: kitchenAfter,
   },
   {
     id: 'fitness',
@@ -97,8 +119,8 @@ export const SERVICES = [
       'Sredstva bez agresivnih mirisa, bezbedna za korisnike',
     ],
     icon: LuDumbbell,
-    beforeSrc: null,
-    afterSrc: null,
+    beforeSrc: gymBefore,
+    afterSrc: gymAfter,
   },
   {
     id: 'medical',
@@ -112,8 +134,8 @@ export const SERVICES = [
       'Redovno održavanje sa evidentiranjem svake intervencije',
     ],
     icon: LuHeartPulse,
-    beforeSrc: null,
-    afterSrc: null,
+    beforeSrc: clinicBefore,
+    afterSrc: clinicAfter,
   },
 ];
 
