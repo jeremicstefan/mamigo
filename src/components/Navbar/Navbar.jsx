@@ -1,10 +1,47 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { LuMenu, LuX } from 'react-icons/lu';
 import { SERBIA_CONTACT } from '../../constants/contact';
 import { NAV_LINKS, LANGUAGES } from '../../constants/navigation';
 import logo from '../../assets/hero/mamigo-hausmeister-logo.png';
+
+const NavLink = ({ href, label, isRoute }) => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const handleClick = useCallback(
+    (e) => {
+      if (isRoute) return; // Let React Router handle route links normally
+      e.preventDefault();
+      if (pathname === '/') {
+        // Already on homepage — scroll directly
+        const el = document.getElementById(href.slice(1));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // On another page — navigate home with hash
+        navigate(`/${href}`);
+      }
+    },
+    [href, isRoute, pathname, navigate]
+  );
+
+  return (
+    <Link
+      to={isRoute ? href : `/${href}`}
+      onClick={handleClick}
+      className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center"
+    >
+      {label}
+    </Link>
+  );
+};
+
+NavLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  isRoute: PropTypes.bool,
+};
 
 const Navbar = ({ lang, onLangChange, mobileMenuOpen, onToggleMobileMenu }) => (
   <nav
@@ -34,13 +71,7 @@ const Navbar = ({ lang, onLangChange, mobileMenuOpen, onToggleMobileMenu }) => (
         <div className="hidden md:flex flex-1 items-center justify-center min-w-0">
           <div className="flex items-center gap-1">
             {NAV_LINKS.map(({ href, label, isRoute }) => (
-              <Link
-                key={href}
-                to={isRoute ? href : `/${href}`}
-                className="text-text-600 hover:text-text-900 px-4 py-2 rounded-button text-sm font-medium transition-colors hover:bg-surface-50 w-24 text-center"
-              >
-                {label}
-              </Link>
+              <NavLink key={href} href={href} label={label} isRoute={isRoute} />
             ))}
           </div>
         </div>

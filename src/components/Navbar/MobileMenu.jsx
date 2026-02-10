@@ -1,8 +1,45 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { SERBIA_CONTACT } from '../../constants/contact';
 import { NAV_LINKS, LANGUAGES } from '../../constants/navigation';
+
+const MobileNavLink = ({ href, label, isRoute, onClose }) => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const handleClick = useCallback(
+    (e) => {
+      onClose();
+      if (isRoute) return;
+      e.preventDefault();
+      if (pathname === '/') {
+        const el = document.getElementById(href.slice(1));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate(`/${href}`);
+      }
+    },
+    [href, isRoute, pathname, navigate, onClose]
+  );
+
+  return (
+    <Link
+      to={isRoute ? href : `/${href}`}
+      onClick={handleClick}
+      className="block py-2.5 px-3 text-sm font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
+    >
+      {label}
+    </Link>
+  );
+};
+
+MobileNavLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  isRoute: PropTypes.bool,
+  onClose: PropTypes.func.isRequired,
+};
 
 const MobileMenu = ({ lang, onLangChange, onClose }) => (
   <>
@@ -17,14 +54,7 @@ const MobileMenu = ({ lang, onLangChange, onClose }) => (
       aria-hidden="false"
     >
       {NAV_LINKS.map(({ href, label, isRoute }) => (
-        <Link
-          key={href}
-          to={isRoute ? href : `/${href}`}
-          onClick={onClose}
-          className="block py-2.5 px-3 text-sm font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
-        >
-          {label}
-        </Link>
+        <MobileNavLink key={href} href={href} label={label} isRoute={isRoute} onClose={onClose} />
       ))}
       <a
         href={SERBIA_CONTACT.phone.href}
