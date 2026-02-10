@@ -5,7 +5,6 @@ import Hero from './components/Hero/Hero';
 import ProcessSteps from './components/ProcessSteps';
 import Services from './components/Services';
 import ServiceTypeSection from './components/ServiceTypeSection';
-import ServiceGuarantee from './components/ServiceGuarantee';
 import About from './components/About';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact/Contact';
@@ -67,9 +66,6 @@ function App() {
         </LazySection>
         <LazySection placeholderClassName="min-h-[320px]">
           <ServiceTypeSection onContactClick={scrollToContact} />
-        </LazySection>
-        <LazySection placeholderClassName="min-h-[220px]">
-          <ServiceGuarantee />
         </LazySection>
         <LazySection id="about" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[480px]">
           <About />

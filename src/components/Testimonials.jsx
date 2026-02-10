@@ -1,19 +1,36 @@
 import React from 'react';
 import { LuQuote } from 'react-icons/lu';
 import { TESTIMONIALS } from '../constants/about';
+import CheckBadge from './UI/CheckBadge';
+
+const TRUST_POINTS = [
+  'Standardizovane procedure i kontrolne liste',
+  'Oprema i sredstva iz Nemačke',
+  'Iskusni i stalno zaposleni tim',
+  'Bez ijednog bezbednosnog incidenta',
+];
 
 const Testimonials = () => (
   <section className="py-10 sm:py-12 lg:py-20 bg-surface-0 border-t border-border-200">
     <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+      {/* Header */}
+      <div className="text-center mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-4 sm:mb-6 leading-tight">
-          Šta kažu naši klijenti
+          Zašto nam klijenti veruju
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
-          Poverenje desetina kompanija i stambenih zajednica širom Srbije
+          Poverenje gradimo profesionalnim radom, poštovanjem rokova i dokazanim rezultatima
         </p>
       </div>
 
+      {/* Trust badges */}
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 lg:mb-12">
+        {TRUST_POINTS.map((text) => (
+          <CheckBadge key={text} text={text} />
+        ))}
+      </div>
+
+      {/* Testimonial cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
         {TESTIMONIALS.map((testimonial, index) => (
           <div
