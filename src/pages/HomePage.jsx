@@ -16,24 +16,18 @@ const HomePage = ({ onContactClick }) => (
     <LazySection placeholderClassName="min-h-[280px]">
       <ProcessSteps />
     </LazySection>
-    <LazySection id="services" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[420px]">
+    <div id="services" className="scroll-mt-14 md:scroll-mt-20">
       <Services />
-    </LazySection>
-    <LazySection placeholderClassName="min-h-[320px]">
-      <ServiceTypeSection onContactClick={onContactClick} />
-    </LazySection>
-    <LazySection id="about" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[480px]">
+    </div>
+    <ServiceTypeSection onContactClick={onContactClick} />
+    <div id="about" className="scroll-mt-14 md:scroll-mt-20">
       <About />
-    </LazySection>
-    <LazySection placeholderClassName="min-h-[320px]">
-      <Testimonials />
-    </LazySection>
-    <LazySection placeholderClassName="min-h-[280px]">
-      <BlogPreview />
-    </LazySection>
-    <LazySection id="contact" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[520px]">
+    </div>
+    <Testimonials />
+    <BlogPreview />
+    <div id="contact" className="scroll-mt-14 md:scroll-mt-20">
       <Contact />
-    </LazySection>
+    </div>
   </main>
 );
 

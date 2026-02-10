@@ -12,22 +12,12 @@ function ScrollToTop() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     if (hash) {
-      const id = hash.slice(1);
-      let cancelled = false;
-      let attempts = 0;
-      // Retry because LazySection may not have rendered the target yet
-      const tryScroll = () => {
-        if (cancelled) return;
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        } else if (attempts < 10) {
-          attempts += 1;
-          setTimeout(tryScroll, 100);
-        }
-      };
-      setTimeout(tryScroll, 50);
-      return () => { cancelled = true; };
+      // Small delay to let the route render before scrolling
+      const timer = setTimeout(() => {
+        const el = document.getElementById(hash.slice(1));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 80);
+      return () => clearTimeout(timer);
     }
     window.scrollTo(0, 0);
   }, [pathname, hash]);
