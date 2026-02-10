@@ -12,7 +12,7 @@ if ('scrollRestoration' in window.history) {
   window.history.scrollRestoration = 'manual';
 }
 
-/** Scroll to hash anchor when coming from another page */
+/** Handle scroll on route changes */
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   const prevPathname = React.useRef(pathname);
@@ -21,14 +21,19 @@ function ScrollToTop() {
     const pathChanged = prevPathname.current !== pathname;
     prevPathname.current = pathname;
 
-    // Only handle cross-page hash navigation (e.g. /blog → /#about)
-    if (pathChanged && hash) {
+    if (!pathChanged) return; // Same-page hash change — NavLink handles it
+
+    if (hash) {
+      // Cross-page with hash (e.g. /blog → /#about)
       const timer = setTimeout(() => {
         const el = document.getElementById(hash.slice(1));
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 80);
       return () => clearTimeout(timer);
     }
+
+    // New page without hash — always start at top
+    window.scrollTo(0, 0);
   }, [pathname, hash]);
 
   return null;
