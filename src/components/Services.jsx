@@ -68,7 +68,7 @@ const Services = () => (
                 </ul>
 
                 {/* CTA Button */}
-                <MarketingButton className="w-full mt-auto">
+                <MarketingButton href="#contact" className="w-full mt-auto">
                   Zatraži ponudu
                 </MarketingButton>
               </div>

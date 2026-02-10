@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { SERBIA_CONTACT } from '../../constants/contact';
 import { NAV_LINKS, LANGUAGES } from '../../constants/navigation';
 
-const MobileMenu = ({ lang, onLangChange, onClose, onNavigate }) => (
+const MobileMenu = ({ lang, onLangChange, onClose }) => (
   <>
     <button
       type="button"
@@ -16,30 +16,16 @@ const MobileMenu = ({ lang, onLangChange, onClose, onNavigate }) => (
       className="fixed left-0 right-0 top-14 z-[50] md:hidden bg-surface-0 rounded-b-2xl border border-t-0 border-border-200 shadow-[0_8px_24px_rgba(0,0,0,0.08)] px-4 py-3 flex flex-col gap-1"
       aria-hidden="false"
     >
-      {NAV_LINKS.map(({ href, label, isRoute }) =>
-        isRoute ? (
-          <Link
-            key={href}
-            to={href}
-            onClick={onClose}
-            className="block py-2.5 px-3 text-sm font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
-          >
-            {label}
-          </Link>
-        ) : (
-          <a
-            key={href}
-            href={href}
-            onClick={(e) => {
-              e.preventDefault();
-              onNavigate(href);
-            }}
-            className="block py-2.5 px-3 text-sm font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
-          >
-            {label}
-          </a>
-        )
-      )}
+      {NAV_LINKS.map(({ href, label, isRoute }) => (
+        <Link
+          key={href}
+          to={isRoute ? href : `/${href}`}
+          onClick={onClose}
+          className="block py-2.5 px-3 text-sm font-medium text-text-900 hover:bg-surface-50 rounded-button touch-manipulation"
+        >
+          {label}
+        </Link>
+      ))}
       <a
         href={SERBIA_CONTACT.phone.href}
         onClick={onClose}
@@ -75,7 +61,6 @@ MobileMenu.propTypes = {
   lang: PropTypes.string.isRequired,
   onLangChange: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
-  onNavigate: PropTypes.func.isRequired,
 };
 
 export default React.memo(MobileMenu);

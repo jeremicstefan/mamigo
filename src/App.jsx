@@ -7,25 +7,36 @@ import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import SEOHead from './seo/SEOHead';
 
-/** Scroll to top on route change */
+/** Scroll to top on route change, or to hash anchor if present */
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const id = hash.slice(1);
+      let cancelled = false;
+      let attempts = 0;
+      // Retry because LazySection may not have rendered the target yet
+      const tryScroll = () => {
+        if (cancelled) return;
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        } else if (attempts < 10) {
+          attempts += 1;
+          setTimeout(tryScroll, 100);
+        }
+      };
+      setTimeout(tryScroll, 50);
+      return () => { cancelled = true; };
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 
 function App() {
   const [lang, setLang] = useState('sr');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const scrollToSection = useCallback((href) => {
-    setMobileMenuOpen(false);
-    const id = href.slice(1);
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth' });
-  }, []);
 
   const scrollToContact = useCallback(() => {
     setMobileMenuOpen(false);
@@ -58,7 +69,6 @@ function App() {
             lang={lang}
             onLangChange={setLang}
             onClose={closeMobileMenu}
-            onNavigate={scrollToSection}
           />
         )}
 
