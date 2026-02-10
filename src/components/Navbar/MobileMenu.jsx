@@ -11,7 +11,10 @@ const MobileNavLink = ({ href, label, isRoute, onClose }) => {
   const handleClick = useCallback(
     (e) => {
       onClose();
-      if (isRoute) return;
+      if (isRoute) {
+        window.scrollTo(0, 0);
+        return;
+      }
       e.preventDefault();
       if (pathname === '/') {
         // Already on homepage — scroll directly without React Router navigation

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import MobileMenu from './components/Navbar/MobileMenu';
@@ -7,25 +7,22 @@ import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import SEOHead from './seo/SEOHead';
 
-/** Scroll to top on route change; hash scrolling on same page is handled by NavLink */
+// Disable browser's automatic scroll restoration so we control it fully
+if ('scrollRestoration' in window.history) {
+  window.history.scrollRestoration = 'manual';
+}
+
+/** Scroll to hash anchor when coming from another page */
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
   const prevPathname = React.useRef(pathname);
-  const pathDidChange = React.useRef(false);
 
-  // Instant scroll-to-top BEFORE paint when navigating to a new page (no hash)
-  useLayoutEffect(() => {
-    pathDidChange.current = prevPathname.current !== pathname;
+  useEffect(() => {
+    const pathChanged = prevPathname.current !== pathname;
     prevPathname.current = pathname;
 
-    if (pathDidChange.current && !hash) {
-      window.scrollTo(0, 0);
-    }
-  }, [pathname, hash]);
-
-  // Smooth scroll to hash anchor AFTER render — only when coming from another page
-  useEffect(() => {
-    if (pathDidChange.current && hash) {
+    // Only handle cross-page hash navigation (e.g. /blog → /#about)
+    if (pathChanged && hash) {
       const timer = setTimeout(() => {
         const el = document.getElementById(hash.slice(1));
         if (el) el.scrollIntoView({ behavior: 'smooth' });

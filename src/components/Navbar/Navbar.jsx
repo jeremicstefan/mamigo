@@ -12,7 +12,11 @@ const NavLink = ({ href, label, isRoute }) => {
 
   const handleClick = useCallback(
     (e) => {
-      if (isRoute) return; // Let React Router handle route links normally
+      if (isRoute) {
+        // Route link (e.g. /blog) — scroll to top instantly before React renders
+        window.scrollTo(0, 0);
+        return;
+      }
       e.preventDefault();
       if (pathname === '/') {
         // Already on homepage — scroll directly, don't change URL via React Router
@@ -71,6 +75,7 @@ const Navbar = ({ lang, onLangChange, mobileMenuOpen, onToggleMobileMenu }) => (
         <div className="flex items-center justify-start min-w-0 bg-transparent">
           <Link
             to="/"
+            onClick={() => window.scrollTo(0, 0)}
             className="flex-shrink-0 flex items-center bg-transparent"
             aria-label="MAMIGO Hausmeister - početna"
           >
