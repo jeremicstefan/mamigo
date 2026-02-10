@@ -10,7 +10,7 @@ const FooterCTA = () => (
         Pridružite se desetinama zadovoljnih kompanija
       </h3>
       <p className="text-sm sm:text-base text-white/80 mb-4 sm:mb-ds-6 leading-relaxed max-w-2xl mx-auto">
-        Poveravaju nam svoju higijenu još od 2014. godine. Do čiste kancelarije vas deli samo jedan klik.
+        Poveravaju nam svoju higijenu još od 2014. godine. Do čiste kancelarije vas deli samo jedan&nbsp;klik.
       </p>
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         <MarketingButton

@@ -16,7 +16,7 @@ const BlogPage = () => (
             Blog
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
-            Saveti za održavanje i zanimljivosti iz sveta čistoće – vaš centar za edukaciju i najbolje prakse
+            Saveti za održavanje i zanimljivosti iz sveta čistoće – vaš centar za edukaciju i najbolje&nbsp;prakse
           </p>
         </div>
 

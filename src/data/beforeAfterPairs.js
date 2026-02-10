@@ -3,8 +3,8 @@
  * Hero uses the first pair; more sections can be added later.
  * Images are imported so Vite resolves paths correctly in dev and build.
  */
-import heroBefore from '../assets/hero/hero-before-option-2-flipped.webp';
-import heroAfter from '../assets/hero/hero-after-option-2-flipped.webp';
+import heroBefore from '../assets/hero/hero-3-before.webp';
+import heroAfter from '../assets/hero/hero-3-after.webp';
 import beforeGarage from '../assets/services/garage-before.webp';
 import afterGarage from '../assets/services/garage-after.webp';
 import beforeStorage from '../assets/services/storage-before.webp';
