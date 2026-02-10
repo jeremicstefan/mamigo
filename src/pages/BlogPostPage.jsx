@@ -121,14 +121,15 @@ const BlogPostPage = () => {
           <p className="text-base text-text-600 mb-6 max-w-xl mx-auto leading-relaxed">
             Kontaktirajte nas za stručni savet ili zakažite besplatan uvid u objekat.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/#contact">
-              <MarketingButton>Zatražite besplatnu ponudu</MarketingButton>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md sm:max-w-none mx-auto">
+            <Link to="/#contact" className="w-full sm:w-auto">
+              <MarketingButton className="w-full sm:w-auto">Zatražite besplatnu ponudu</MarketingButton>
             </Link>
             <MarketingButton
               variant="secondary"
               href={SERBIA_CONTACT.phone.href}
               icon={<LuPhone className="w-5 h-5 text-brand-500" />}
+              className="w-full sm:w-auto"
             >
               {SERBIA_CONTACT.phone.display}
             </MarketingButton>
