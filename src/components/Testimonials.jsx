@@ -16,10 +16,10 @@ const Testimonials = () => (
       {/* Header */}
       <div className="text-center mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-4 sm:mb-6 leading-tight">
-          Zašto nam klijenti veruju
+          Poverenje koje se gradi godinama
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
-          Poverenje gradimo profesionalnim radom, poštovanjem rokova i dokazanim rezultatima
+          Tokom više od decenije rada, postali smo partneri brojnim kompanijama. Naša najbolja reklama su čisti prostori i zadovoljni klijenti.
         </p>
       </div>
 

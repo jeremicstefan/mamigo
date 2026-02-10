@@ -1,27 +1,31 @@
 export const FAQ_ITEMS = [
   {
     question: 'Koje vrste objekata čistite?',
-    answer: 'Specijalizovani smo za kancelarije, stambene zgrade, industrijske hale, magacine, garaže, maloprodajne objekte, hotele, restorane, teretane i medicinske ordinacije. Imamo razvijene protokole za svaku od ovih niša.',
+    answer: 'Specijalizovani smo za širok spektar komercijalnih prostora – moderne kancelarije, stambene zgrade (održavanje ulaza i stepeništa), industrijske hale, magacine, hotele, restorane, teretane, garaže i maloprodajne objekte. Zahvaljujući iskustvu od 2014. godine, imamo razvijene protokole za svaku od ovih niša.',
   },
   {
     question: 'Šta podrazumeva "nemačko iskustvo" u vašem radu?',
-    answer: 'Precizni procesi sa jasnim ček-listama, vrhunska oprema koja je standard u Nemačkoj, isključivo ekološki sertifikovana hemija i strogo poštovanje dogovorenih rokova i termina.',
+    answer: 'To znači da ne improvizujemo. Naš pristup se zasniva na četiri stuba: precizni procesi gde svaki radnik ima jasnu ček-listu zadataka, vrhunska oprema i alati koji su standard u Nemačkoj, isključivo biorazgradiva i ekološki sertifikovana hemija, i strogo poštovanje rokova i termina koje je za nas svetinja.',
   },
   {
     question: 'Da li moram da obezbedim opremu i sredstva za čišćenje?',
-    answer: 'Ne. Naš tim dolazi potpuno opremljen – profesionalni industrijski usisivači, mašine za podove i ekološka sredstva su uključeni u cenu usluge.',
+    answer: 'Ne. Naš tim dolazi potpuno opremljen. Koristimo profesionalne industrijske usisivače, mašine za podove i ekološka sredstva koja su uključena u cenu usluge. Vi se fokusirate na svoj posao, a mi na higijenu.',
   },
   {
-    question: 'Da li su vaša sredstva bezbedna za zaposlene sa alergijama?',
-    answer: 'Apsolutno. Koristimo ekološka sredstva bez oštrih hemijskih mirisa koja ne iritiraju disajne puteve, idealna za prostore gde ljudi borave 8 ili više sati.',
+    question: 'Kako garantujete bezbednost naših poslovnih tajni i imovine?',
+    answer: 'Kao odgovorna porodična firma, poverenje klijenata smatramo svojim najvećim kapitalom. Svi naši zaposleni prolaze rigorozne bezbednosne provere, svaki član tima potpisuje ugovor o tajnosti podataka, primenjujemo nemačke standarde zaštite, a naš tim prolazi obuku o diskreciji u zonama visokog rizika. Naša desetogodišnja reputacija je bez ijednog bezbednosnog incidenta.',
   },
   {
     question: 'Koliko često preporučujete profesionalno čišćenje?',
-    answer: 'Za kancelarije sa više od 10 zaposlenih preporučujemo dnevno održavanje, za stambene zgrade jednom do dva puta nedeljno, a za industrijske objekte pravimo specifičan plan nakon besplatnog uvida.',
+    answer: 'Frekvencija zavisi od tipa objekta. Za kancelarije sa više od 10 zaposlenih preporučujemo dnevno održavanje, dok je za stambene zgrade optimalno čišćenje jednom do dva puta nedeljno. Industrijski objekti se obično održavaju prema specifičnom planu koji pravimo nakon besplatnog uvida u stanje terena.',
+  },
+  {
+    question: 'Da li su vaša sredstva bezbedna za zaposlene sa alergijama?',
+    answer: 'Apsolutno. To je jedan od razloga zašto smo uveli ekološke materijale. Naša sredstva nemaju oštre hemijske mirise koji mogu iritirati disajne puteve ili izazvati alergijske reakcije, što ih čini idealnim za prostore gde ljudi borave 8 ili više sati.',
   },
   {
     question: 'Da li radite vikendom?',
-    answer: 'Da, po dogovoru radimo i vikendom. Termine prilagođavamo vašim smenama i radnom vremenu.',
+    answer: 'Da, po dogovoru radimo i vikendom. Termine prilagođavamo vašim smenama i radnom vremenu kako bismo minimalno ometali vaše poslovanje.',
   },
   {
     question: 'Da li izdajete fakturu?',

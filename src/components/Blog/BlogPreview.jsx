@@ -14,7 +14,7 @@ const BlogPreview = () => (
             Blog
           </h2>
           <p className="text-base sm:text-lg text-text-600 font-light leading-relaxed">
-            Stručni saveti iz sveta profesionalnog čišćenja
+            Saveti za održavanje i zanimljivosti iz sveta čistoće
           </p>
         </div>
         <Link

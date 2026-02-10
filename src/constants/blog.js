@@ -48,42 +48,42 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'psihologija-cistoce',
-    title: 'Psihologija čistoće – Kako uredna kancelarija povećava produktivnost?',
+    title: 'Psihologija čistoće – Kako uredna kancelarija povećava produktivnost za 20%?',
     excerpt:
-      'Nauka potvrđuje da fizičko okruženje direktno utiče na kognitivni fokus, nivo stresa i profitabilnost kompanije.',
+      'Nauka potvrđuje da fizičko okruženje direktno utiče na kognitivni fokus, nivo stresa i profitabilnost kompanije. Saznajte zašto je profesionalno održavanje jedna od najboljih investicija u vaše zaposlene.',
     image: blogPsihologija,
     date: '2025-02-03',
     readTime: '5 min čitanja',
     seoTitle: 'Psihologija čistoće – uticaj na produktivnost | MAMIGO',
     seoDescription:
-      'Saznajte kako čista kancelarija direktno utiče na fokus zaposlenih i zašto vodeće firme ulažu u profesionalnu higijenu.',
+      'Saznajte kako čista kancelarija direktno utiče na fokus zaposlenih i zašto vodeće svetske firme ulažu u profesionalnu higijenu.',
     sections: [
       {
         heading: 'Vizuelni haos crpi energiju mozga',
         paragraphs: [
-          'Da li ste ikada osetili nagli pad koncentracije dok sedite za stolom zatrpanim papirima ili u prostoriji gde se na policama vidi sloj prašine? Niste sami. Istraživanja pokazuju da vizuelni „šum" – prašina, mrlje na staklu, puni koševi – aktivno odvlači pažnju mozga.',
-          'Čist prostor omogućava zaposlenima da usmeravaju mentalnu energiju na zadatke umesto da podsvesno registruju nered u okruženju. Profesionalno održavanje uklanja te „sitne smetnje" koje se kumulativno pretvaraju u značajan gubitak produktivnosti.',
+          'Da li ste ikada osetili nagli pad koncentracije dok sedite za stolom zatrpanim papirima ili u prostoriji gde se na policama vidi sloj prašine? Niste sami. Istraživanja su pokazala da ljudski mozak teže obrađuje informacije u neurednom okruženju. Vizuelni „šum" – prašina na monitorima, mrlje na tepisima, puni koševi za smeće – stalno odvlači pažnju, čak i kada toga niste svesni.',
+          'Čist prostor omogućava zaposlenima da svu svoju mentalnu energiju usmere na zadatke, umesto na nesvesno ignorisanje nereda. Profesionalno održavanje uklanja te „sitne smetnje" koje se kumulativno pretvaraju u značajan gubitak produktivnosti.',
         ],
       },
       {
         heading: 'Manje bolovanja, više radnih sati',
         paragraphs: [
-          'Pravilno održavanje kritičnih tačaka – tastature, kvake, zajedničke kuhinje, sanitarni čvorovi – smanjuje širenje virusa i bakterija. Prosečna kancelarijska tastatura sadrži višestruko više bakterija nego što biste očekivali.',
-          'Rešenje nije samo u redovnom čišćenju, već i u izboru pravih sredstava. Eko-sredstva koja sterilišu bez iritacije disajnih puteva su idealan balans između higijene i komfora zaposlenih, naročito u otvorenim kancelarijama.',
+          'Pravilno održavanje kritičnih tačaka – tastature, kvake, zajedničke kuhinje, sanitarni čvorovi – može smanjiti širenje sezonskih virusa i bakterija do 80%. Prosečna kancelarijska tastatura može biti dom za hiljade bakterija – činjenica koja iznenađuje mnoge.',
+          'Rešenje nije samo u redovnom čišćenju, već i u izboru pravih sredstava. Naš tim koristi ekološka, ali moćna sredstva koja sterilišu prostor bez iritacije disajnih puteva zaposlenih – idealan balans između higijene i komfora, naročito u otvorenim kancelarijama.',
         ],
       },
       {
         heading: 'Vazduh koji podstiče kreativnost',
         paragraphs: [
-          'Loš kvalitet vazduha u kancelariji je povezan sa takozvanim „sindromom bolesne zgrade" – stanje u kome zaposleni osećaju umor, glavobolje i pad koncentracije bez jasnog medicinskog uzroka.',
-          'Redovno mašinsko čišćenje podova i površina uz upotrebu HEPA filtera značajno poboljšava kvalitet vazduha. Uklanjanje prašine, grinja i alergena sa tepiha i mekih površina direktno utiče na svežinu prostora i energiju tima.',
+          'Loš kvalitet vazduha u zatvorenim prostorima često je posledica nakupljene prašine u tepisima i ventilacionim sistemima. To dovodi do takozvanog „sindroma bolesne zgrade" – stanja u kome se zaposleni osećaju umorno, imaju glavobolje i pad koncentracije bez jasnog medicinskog uzroka.',
+          'Redovno mašinsko čišćenje i upotreba usisivača sa HEPA filterima značajno podižu nivo kiseonika i svežine u prostoriji. Uklanjanje prašine, grinja i alergena sa tepiha i mekih površina direktno utiče na energiju tima i kvalitet rada.',
         ],
       },
       {
         heading: 'Poruka koju šaljete klijentima',
         paragraphs: [
-          'Kancelarija je „lična karta" firme. Kada klijent uđe u čist, svež i organizovan prostor, podsvesno gradi poverenje u vašu kompetentnost. Nasuprot tome, zastarela ili prljava recepcija može narušiti utisak pre nego što se sastanak i započne.',
-          'Profesionalno održavanje nije samo operativni trošak – to je investicija u imidž kompanije. Kao firma sa nemačkim iskustvom, primećujemo da klijenti koji ulažu u higijenu prostora imaju značajno bolje rezultate u zadržavanju poslovnih partnera.',
+          'Vaša kancelarija je vaša „lična karta". Prvi utisak koji klijent stekne ulaskom u čisto i namirisano predvorje gradi poverenje pre nego što uopšte izgovorite prvu reč. Profesionalno održavano stepenište i blistavi prozori signaliziraju da ste kompanija koja obraća pažnju na detalje i drži do kvaliteta.',
+          'Profesionalno održavanje nije samo operativni trošak – to je investicija u imidž kompanije. Kao porodična firma koja od 2014. godine održava vrhunske poslovne prostore, uočili smo jasnu korelaciju između higijene radnog mesta i uspeha tima.',
         ],
       },
     ],

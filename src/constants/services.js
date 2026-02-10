@@ -1,6 +1,8 @@
 import { LuStore, LuBuilding2, LuWarehouse, LuCar, LuHotel, LuDumbbell, LuHeartPulse } from 'react-icons/lu';
 import shopBefore from '../assets/services/shop-before.webp';
 import shopAfter from '../assets/services/shop-after.webp';
+import officeBefore from '../assets/services/office-before.webp';
+import officeAfter from '../assets/services/office-after.webp';
 import residentialBefore from '../assets/services/residential-building-before.webp';
 import residentialAfter from '../assets/services/residential-building-after.webp';
 import storageUnitBefore from '../assets/services/storage-unit-before.webp';
@@ -36,7 +38,7 @@ export const SERVICES = [
     id: 'commercial',
     title: 'Poslovni prostori',
     subtitle: 'Office & Commercial Cleaning',
-    description: 'Dva modela saradnje za kancelarije i poslovne objekte: dugoročno ugovorno održavanje sa stalnim terminima ili jednokratno dubinsko čišćenje i čišćenje nakon adaptacija.',
+    description: 'Dva modela saradnje za kancelarije i poslovne objekte: dugoročno ugovorno održavanje sa stalnim terminima ili jednokratno dubinsko čišćenje nakon adaptacija. Prilagođavamo se vašem radnom ritmu i osiguravamo besprekoran prostor za zaposlene i posetioce.',
     features: [
       'Redovno dnevno, nedeljno ili mesečno održavanje kancelarija',
       'Dubinsko čišćenje i priprema prostora nakon građevinskih radova',
@@ -44,8 +46,8 @@ export const SERVICES = [
       'Ekološki sertifikovana sredstva bezbedna za zaposlene i posetioce',
     ],
     icon: LuStore,
-    beforeSrc: shopBefore,
-    afterSrc: shopAfter,
+    beforeSrc: officeBefore,
+    afterSrc: officeAfter,
   },
   {
     id: 'residential-buildings',
@@ -96,7 +98,7 @@ export const SERVICES = [
     id: 'restaurants',
     title: 'Restorani i ugostiteljski objekti',
     subtitle: 'Restaurant & Catering Cleaning',
-    description: 'Dubinska higijena profesionalnih kuhinja, trpezarija i kafića – sredstvima bezbednim za kontakt sa hranom i prema protokolima za pripremu HACCP inspekcija.',
+    description: 'Dubinska higijena profesionalnih kuhinja, trpezarija i kafića – sredstvima bezbednim za kontakt sa hranom i prema protokolima za pripremu HACCP inspekcija. Radimo u noćnim terminima da ne ometamo vaš dnevni ritam poslovanja.',
     features: [
       'Temeljno čišćenje kuhinja, radnih površina i priprema za inspekciju',
       'Odmašćivanje napa, ventilacije, roštilja i friteza profesionalnom hemijom',
@@ -111,7 +113,7 @@ export const SERVICES = [
     id: 'fitness',
     title: 'Teretane i sportski centri',
     subtitle: 'Gym & Sports Facility Cleaning',
-    description: 'Eliminacija bakterija, alergena i neprijatnih mirisa sa sprava, podova i svlačionica – sredstvima bez agresivnih hemikalija, bezbednim za korisnike.',
+    description: 'Eliminacija bakterija, alergena i neprijatnih mirisa sa sprava, podova i svlačionica – sredstvima bez agresivnih hemikalija, bezbednim za korisnike. Visokofrekventna dezinfekcija svih dodirnih površina za bezbrižno vežbanje.',
     features: [
       'Kompletna dezinfekcija sprava, tegova i svih dodirnih površina',
       'Dubinsko čišćenje svlačionica, tuš kabina i mokrog čvora',

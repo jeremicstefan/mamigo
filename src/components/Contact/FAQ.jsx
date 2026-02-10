@@ -17,9 +17,12 @@ const FAQ = () => {
 
   return (
     <div className="max-w-container w-full mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 lg:pt-16 pb-0 mt-10 sm:mt-12 lg:mt-16 mb-10 sm:mb-12 lg:mb-16 border-t border-border-200">
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-6 sm:mb-8 lg:mb-10 text-left">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-text-900 mb-2 sm:mb-3 text-left">
         Često postavljana pitanja
       </h2>
+      <p className="text-base text-text-600 font-light leading-relaxed mb-6 sm:mb-8 lg:mb-10">
+        Dobijamo mnogo pitanja o tome kako radimo i šta nas izdvaja. Ovde su odgovori na ona najučestalija.
+      </p>
       <div className="w-full max-w-full divide-y divide-border-200">
         {FAQ_ITEMS.map((item, index) => (
           <details

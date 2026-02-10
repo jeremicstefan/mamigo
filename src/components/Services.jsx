@@ -24,7 +24,7 @@ const Services = () => (
           return (
             <div
               key={service.id}
-              className="bg-surface-0 rounded-card shadow-card border border-border-200 overflow-hidden hover:shadow-card-hover transition-all duration-300 group"
+              className="bg-surface-0 rounded-card shadow-card border border-border-200 overflow-hidden hover:shadow-card-hover transition-all duration-300 group flex flex-col"
             >
               {/* Service header: before/after slider or icon */}
               {hasBeforeAfter ? (
@@ -47,7 +47,7 @@ const Services = () => (
               )}
 
               {/* Service Content */}
-              <div className="p-4 sm:p-5 lg:p-6 xl:p-8">
+              <div className="p-4 sm:p-5 lg:p-6 xl:p-8 flex flex-col flex-1">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-text-900 mb-3 sm:mb-4 leading-tight">
                   {service.title}
                 </h3>
@@ -68,7 +68,7 @@ const Services = () => (
                 </ul>
 
                 {/* CTA Button */}
-                <MarketingButton className="w-full">
+                <MarketingButton className="w-full mt-auto">
                   Zatraži ponudu
                 </MarketingButton>
               </div>

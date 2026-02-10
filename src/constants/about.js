@@ -42,15 +42,27 @@ export const TESTIMONIALS = [
     source: 'Stambena zajednica',
   },
   {
-    quote: 'Pouzdan partner na duge staze. Diskrecija, tačnost i pedantnost.',
+    quote: 'Higijena po najvišim standardima.',
+    source: 'Event centar',
+  },
+  {
+    quote: 'Efikasno uklanjanje industrijskih nečistoća bez ometanja proizvodnje. Bezbednosni protokoli su im na prvom mestu.',
+    source: 'Proizvodni pogon',
+  },
+  {
+    quote: 'Pouzdan partner na duge staze. Diskrecija, tačnost i pedantnost koju je teško naći na našem tržištu.',
     source: 'Advokatska kancelarija',
   },
   {
-    quote: 'Savršena priprema prostora nakon adaptacije. Uklonili su najsitniju prašinu bez tragova.',
+    quote: 'Savršena priprema prostora nakon adaptacije. Uklonili su najsitniju građevinsku prašinu sa osetljivih površina i stakala bez tragova.',
     source: 'Arhitektonski biro',
   },
   {
-    quote: 'Efikasno održavanje prodajnog prostora pre otvaranja.',
+    quote: 'Efikasno održavanje prodajnog prostora. Njihov tim osigurava besprekoran izgled radnji pre otvaranja.',
     source: 'Maloprodajni lanac',
+  },
+  {
+    quote: 'Izuzetan nivo higijene i stroga dezinfekcija čekaonica.',
+    source: 'Specijalistička klinika',
   },
 ];
