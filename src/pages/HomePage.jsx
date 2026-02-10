@@ -6,6 +6,7 @@ import Services from '../components/Services';
 import ServiceTypeSection from '../components/ServiceTypeSection';
 import About from '../components/About';
 import Testimonials from '../components/Testimonials';
+import BlogPreview from '../components/Blog/BlogPreview';
 import Contact from '../components/Contact/Contact';
 import LazySection from '../components/UI/LazySection';
 
@@ -26,6 +27,9 @@ const HomePage = ({ onContactClick }) => (
     </LazySection>
     <LazySection placeholderClassName="min-h-[320px]">
       <Testimonials />
+    </LazySection>
+    <LazySection placeholderClassName="min-h-[280px]">
+      <BlogPreview />
     </LazySection>
     <LazySection id="contact" className="scroll-mt-14 md:scroll-mt-20" placeholderClassName="min-h-[520px]">
       <Contact />
