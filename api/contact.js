@@ -46,11 +46,12 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log('Contact form: sending to', TO_EMAIL);
     const { data, error } = await resend.emails.send({
       from: 'Mamigo Sajt <onboarding@resend.dev>',
       to: [TO_EMAIL],
       replyTo: email.trim(),
-      subject: `Nova poruka sa sajta – ${name.trim()}`,
+      subject: `Mamigo – nova poruka od ${name.trim()}`,
       html: `
         <h2>Nova poruka sa kontakt forme</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif;">
