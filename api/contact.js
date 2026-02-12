@@ -40,8 +40,13 @@ export default async function handler(req, res) {
     message: escapeHtml(message.trim()),
   };
 
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY is not set in Vercel environment variables');
+    return res.status(500).json({ error: 'Email servis nije podešen. Kontaktirajte administratora.' });
+  }
+
   try {
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: 'Mamigo Sajt <onboarding@resend.dev>',
       to: [TO_EMAIL],
       replyTo: email.trim(),
@@ -73,7 +78,12 @@ export default async function handler(req, res) {
       `,
     });
 
-    return res.status(200).json({ success: true });
+    if (error) {
+      console.error('Resend API error:', error.message, error.name);
+      return res.status(500).json({ error: 'Greška pri slanju poruke. Pokušajte ponovo.' });
+    }
+
+    return res.status(200).json({ success: true, id: data?.id });
   } catch (err) {
     console.error('Resend error:', err);
     return res.status(500).json({ error: 'Greška pri slanju poruke. Pokušajte ponovo.' });
