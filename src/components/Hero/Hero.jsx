@@ -12,21 +12,11 @@ const Hero = ({ onContactClick }) => {
 
   const heroContent = (
     <>
-      {/* German standard above headline */}
-      <div className="inline-flex items-center justify-center gap-2 mb-4 px-4 py-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-md drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]">
-        <span className="text-xl" aria-hidden>🇩🇪</span>
-        <span className="text-sm font-semibold text-white/90 tracking-wide">
-          Nemački standard
-        </span>
-      </div>
-
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white mb-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-        Besprekorna higijena po <span className="text-brand-500">najvišim standardima</span><span className="text-brand-500">.</span>
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+        Profesionalno Čišćenje Poslovnih Prostora i Industrijskih Objekata – <span className="text-brand-500">Besprekorna Higijena po Nemačkim Standardima</span>
       </h1>
       <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed mb-2 max-w-xl [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Obezbedite svom timu radni prostor koji zaslužuju.
-        <br className="hidden sm:block" />
-        Porodična tradicija od 2014. – Beograd i cela Srbija.
+        Profesionalno čišćenje sa porodičnom tradicijom od 2014.&nbsp;godine.
       </p>
 
       {/* CTAs */}
@@ -44,7 +34,7 @@ const Hero = ({ onContactClick }) => {
         </MarketingButton>
       </div>
       <p className="text-sm text-white font-bold [text-shadow:0_2px_4px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.8)]">
-        Dolazak za 24h · Besplatna procena · Izdajemo fakturu
+        Obezbedite svom timu radni prostor koji zaslužuju. Zakažite besplatan uvid u objekat već danas.
       </p>
     </>
   );

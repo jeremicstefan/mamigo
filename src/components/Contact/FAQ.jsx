@@ -21,7 +21,7 @@ const FAQ = () => {
         Često postavljana pitanja
       </h2>
       <p className="text-base text-text-600 font-light leading-relaxed mb-6 sm:mb-8 lg:mb-10">
-        Dobijamo mnogo pitanja o tome kako radimo i šta nas izdvaja. Ovde su odgovori na ona najučestalija.
+        Dobijamo mnogo pitanja o tome kako radimo i šta nas izdvaja. Ovde su odgovori na ona najučestalija, kako biste lakše odlučili o saradnji sa nama.
       </p>
       <div className="w-full max-w-full divide-y divide-border-200">
         {FAQ_ITEMS.map((item, index) => (

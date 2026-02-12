@@ -110,16 +110,25 @@ const BlogPostPage = () => {
           </span>
         </div>
 
+        {/* Intro */}
+        {post.intro && (
+          <div className="text-base sm:text-lg text-text-600 leading-relaxed mb-8 sm:mb-10 space-y-4">
+            {post.intro.split('\n\n').map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        )}
+
         {/* Content */}
         <BlogContent sections={post.sections} />
 
         {/* CTA */}
         <div className="mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-border-200 text-center">
           <h3 className="text-xl sm:text-2xl font-bold text-text-900 mb-3">
-            Želite čistiji i zdraviji prostor?
+            Želite čistiji i zdraviji prostor, ali niste sigurni odakle da počnete?
           </h3>
           <p className="text-base text-text-600 mb-6 max-w-xl mx-auto leading-relaxed">
-            Kontaktirajte nas za stručni savet ili zakažite besplatan uvid u objekat.
+            Pročitajte naše vodiče ili nas kontaktirajte za stručni savet.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md sm:max-w-none mx-auto">
             <Link to="/#contact" className="w-full sm:w-auto">

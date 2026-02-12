@@ -21,7 +21,7 @@ const Contact = () => (
       {/* Section header */}
       <div className="text-center mb-8 sm:mb-10 lg:mb-ds-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-4 sm:mb-6 leading-tight">
-          Dogovorite besplatnu konsultaciju
+          Dogovorite Besplatnu Konsultaciju
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
           Spremni ste da vaš prostor zablista? Naš tim stručnjaka je spreman da napravi plan održavanja specifično za vaše potrebe.

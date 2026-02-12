@@ -13,32 +13,16 @@ const About = () => (
           </h2>
 
           <h3 className="text-lg sm:text-xl md:text-2xl text-brand-600 font-semibold mb-3 sm:mb-4 leading-snug">
-            Tradicija, sigurnost i nemačka preciznost
+            Tradicija, Sigurnost i Nemačka Preciznost
           </h3>
 
           <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-text-600 mb-4 sm:mb-6 leading-relaxed">
             <p>
-              Osnovani kao porodična firma 2014. godine, na put smo krenuli
-              vođeni jednom vizijom: podići standarde čišćenja na Balkanu na nivo
-              zapadnoevropskog kvaliteta.
+              Osnovani kao <strong>porodična firma 2014. godine</strong>, naš put je bio vođen jednom vizijom: podići standarde čišćenja na Balkanu na nivo zapadnoevropskog kvaliteta.
             </p>
             <p>
-              Ono što nas izdvaja od konkurencije je implementacija direktnog
-              nemačkog iskustva u svakom segmentu našeg poslovanja – od najsavremenije
-              opreme renomiranih nemačkih proizvođača, preko rigoroznih protokola
-              zaštite na radu, do isključive upotrebe biorazgradivih i ekološki
-              sertifikovanih sredstava. Svaki proces je dokumentovan i proveren,
-              garantujući konstantan nivo kvaliteta bez obzira na veličinu objekta.
+              Ono što nas izdvaja od konkurencije je <strong>implementacija direktnog nemačkog iskustva</strong> u svakom segmentu našeg poslovanja:
             </p>
-          </div>
-
-          {/* Trust Statement */}
-          <div className="p-4 sm:p-5 lg:p-6 rounded-card mb-4 sm:mb-6 border-l-4 border-l-brand-500 bg-surface-0">
-            <blockquote className="text-base text-text-900 font-medium italic leading-relaxed">
-              &ldquo;Klijentima obezbeđujemo nivo čistoće koji su navikli da vide
-              samo u Nemačkoj – sa istom opremom, istim standardima i istom
-              odgovornošću.&rdquo;
-            </blockquote>
           </div>
 
           {/* Key Values */}

@@ -22,10 +22,10 @@ export const ACHIEVEMENTS = [
 ];
 
 export const VALUES = [
-  { title: 'Napredna tehnologija', desc: 'Oprema renomiranih nemačkih proizvođača' },
-  { title: 'Bezbednost na prvom mestu', desc: 'Rigorozni protokoli zaštite na radu' },
-  { title: 'Ekološka svest', desc: 'Biorazgradiva i sertifikovana sredstva' },
-  { title: 'Sistematizacija rada', desc: 'Svaki proces dokumentovan i proveren' },
+  { title: 'Napredna Tehnologija', desc: 'Koristimo najsavremenije mašine i opremu renomiranih nemačkih proizvođača.' },
+  { title: 'Bezbednost na Prvom Mestu', desc: 'Primenjujemo rigorozne protokole zaštite na radu, obezbeđujući maksimalnu sigurnost naših zaposlenih i vaših objekata.' },
+  { title: 'Ekološka Svest', desc: 'Isključivo koristimo biorazgradiva i ekološki sertifikovana sredstva koja su bezbedna za ljude i okolinu, prateći najstrože EU norme.' },
+  { title: 'Sistematizacija rada', desc: 'Svaki proces je dokumentovan i proveren, čime garantujemo konstantan nivo kvaliteta bez obzira na veličinu objekta.' },
 ];
 
 export const TESTIMONIALS = [

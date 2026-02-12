@@ -8,7 +8,7 @@ export const BLOG_POSTS = [
     slug: 'ekolosko-ciscenje',
     title: 'Zašto je ekološko čišćenje investicija, a ne trošak?',
     excerpt:
-      'Saznajte kako eko-materijali produžavaju životni vek nameštaja, čuvaju zdravlje zaposlenih i smanjuju dugoročne troškove održavanja.',
+      'Saznajte kako eko-materijali produžavaju životni vek vašeg nameštaja i čuvaju zdravlje zaposlenih.',
     image: blogEkolosko,
     date: '2025-01-20',
     readTime: '4 min čitanja',
@@ -50,40 +50,39 @@ export const BLOG_POSTS = [
     slug: 'psihologija-cistoce',
     title: 'Psihologija čistoće – Kako uredna kancelarija povećava produktivnost za 20%?',
     excerpt:
-      'Nauka potvrđuje da fizičko okruženje direktno utiče na kognitivni fokus, nivo stresa i profitabilnost kompanije. Saznajte zašto je profesionalno održavanje jedna od najboljih investicija u vaše zaposlene.',
+      'Istraživanja pokazuju direktnu vezu između higijene i fokusa zaposlenih.',
     image: blogPsihologija,
     date: '2025-02-03',
     readTime: '5 min čitanja',
     seoTitle: 'Psihologija čistoće – uticaj na produktivnost | MAMIGO',
     seoDescription:
       'Saznajte kako čista kancelarija direktno utiče na fokus zaposlenih i zašto vodeće svetske firme ulažu u profesionalnu higijenu.',
+    intro: 'Da li ste ikada osetili nagli pad koncentracije dok sedite za stolom zatrpanim papirima ili u prostoriji gde se na policama vidi sloj prašine? Niste sami. Nauka potvrđuje da fizičko okruženje direktno utiče na naš kognitivni fokus, nivo stresa i, na kraju, na profitabilnost kompanije.\n\nKao porodična firma koja od 2014. godine održava vrhunske poslovne prostore, uočili smo jasnu korelaciju između higijene radnog mesta i uspeha tima. U nastavku saznajte zašto je profesionalno održavanje prostora jedna od najboljih investicija u vaše zaposlene.',
     sections: [
       {
         heading: 'Vizuelni haos crpi energiju mozga',
         paragraphs: [
-          'Da li ste ikada osetili nagli pad koncentracije dok sedite za stolom zatrpanim papirima ili u prostoriji gde se na policama vidi sloj prašine? Niste sami. Istraživanja su pokazala da ljudski mozak teže obrađuje informacije u neurednom okruženju. Vizuelni „šum" – prašina na monitorima, mrlje na tepisima, puni koševi za smeće – stalno odvlači pažnju, čak i kada toga niste svesni.',
-          'Čist prostor omogućava zaposlenima da svu svoju mentalnu energiju usmere na zadatke, umesto na nesvesno ignorisanje nereda. Profesionalno održavanje uklanja te „sitne smetnje" koje se kumulativno pretvaraju u značajan gubitak produktivnosti.',
+          'Univerzitet Princeton je sproveo istraživanje koje je pokazalo da ljudski mozak teže obrađuje informacije u neurednom okruženju. Vizuelni „šum" (prašina na monitorima, mrlje na tepisima, puni koševi za smeće) stalno odvlači pažnju, čak i kada toga niste svesni. Čist prostor omogućava zaposlenima da svu svoju mentalnu energiju usmere na zadatke, umesto na nesvesno ignorisanje nereda.',
         ],
       },
       {
         heading: 'Manje bolovanja, više radnih sati',
         paragraphs: [
-          'Pravilno održavanje kritičnih tačaka – tastature, kvake, zajedničke kuhinje, sanitarni čvorovi – može smanjiti širenje sezonskih virusa i bakterija do 80%. Prosečna kancelarijska tastatura može biti dom za hiljade bakterija – činjenica koja iznenađuje mnoge.',
-          'Rešenje nije samo u redovnom čišćenju, već i u izboru pravih sredstava. Naš tim koristi ekološka, ali moćna sredstva koja sterilišu prostor bez iritacije disajnih puteva zaposlenih – idealan balans između higijene i komfora, naročito u otvorenim kancelarijama.',
+          'Prema podacima koje smo prikupili implementirajući tehnologiju dezinfekcije, pravilno održavanje kritičnih tačaka (tastature, kvake, zajedničke kuhinje) može smanjiti širenje sezonskih virusa i bakterija do 80%.',
+          'Činjenica: Prosečna kancelarijska tastatura može biti dom za hiljade bakterija.',
+          'Rešenje: Naš tim koristi ekološka, ali moćna sredstva koja sterilišu prostor bez iritacije disajnih puteva zaposlenih.',
         ],
       },
       {
         heading: 'Vazduh koji podstiče kreativnost',
         paragraphs: [
-          'Loš kvalitet vazduha u zatvorenim prostorima često je posledica nakupljene prašine u tepisima i ventilacionim sistemima. To dovodi do takozvanog „sindroma bolesne zgrade" – stanja u kome se zaposleni osećaju umorno, imaju glavobolje i pad koncentracije bez jasnog medicinskog uzroka.',
-          'Redovno mašinsko čišćenje i upotreba usisivača sa HEPA filterima značajno podižu nivo kiseonika i svežine u prostoriji. Uklanjanje prašine, grinja i alergena sa tepiha i mekih površina direktno utiče na energiju tima i kvalitet rada.',
+          'Loš kvalitet vazduha u zatvorenim prostorima često je posledica nakupljene prašine u tepisima i ventilacionim sistemima. To dovodi do takozvanog „sindroma bolesne zgrade" (Sick Building Syndrome), gde se zaposleni osećaju umorno i imaju glavobolje. Redovno mašinsko čišćenje i upotreba usisivača sa HEPA filterima značajno podižu nivo kiseonika i svežine u prostoriji.',
         ],
       },
       {
         heading: 'Poruka koju šaljete klijentima',
         paragraphs: [
           'Vaša kancelarija je vaša „lična karta". Prvi utisak koji klijent stekne ulaskom u čisto i namirisano predvorje gradi poverenje pre nego što uopšte izgovorite prvu reč. Profesionalno održavano stepenište i blistavi prozori signaliziraju da ste kompanija koja obraća pažnju na detalje i drži do kvaliteta.',
-          'Profesionalno održavanje nije samo operativni trošak – to je investicija u imidž kompanije. Kao porodična firma koja od 2014. godine održava vrhunske poslovne prostore, uočili smo jasnu korelaciju između higijene radnog mesta i uspeha tima.',
         ],
       },
     ],
@@ -92,7 +91,7 @@ export const BLOG_POSTS = [
     slug: 'odrzavanje-industrijskih-podova',
     title: 'Vodič za održavanje industrijskih podova',
     excerpt:
-      'Kako sprečiti habanje i uštedeti na skupim reparacijama pomoću pravilnih tehnika i hemijskih sredstava.',
+      'Kako sprečiti habanje i uštedeti na skupim reparacijama pomoću pravilnih hemijskih sredstava.',
     image: blogIndustrijski,
     date: '2025-02-10',
     readTime: '5 min čitanja',
@@ -134,7 +133,7 @@ export const BLOG_POSTS = [
     slug: 'bakterije-na-tastaturi',
     title: 'Bakterije na tastaturi – skrivene opasnosti u kancelariji',
     excerpt:
-      'Da li ste znali da se na prosečnoj kancelarijskoj tastaturi nalazi više bakterija nego na većini površina u toaletu?',
+      'Da li ste znali da se na prosečnoj kancelarijskoj tastaturi nalazi više bakterija nego na toaletnoj šolji? Saznajte kako to da promenite.',
     image: blogBakterije,
     date: '2025-01-10',
     readTime: '4 min čitanja',

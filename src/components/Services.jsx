@@ -2,6 +2,7 @@ import React from 'react';
 import { LuCheckCircle } from 'react-icons/lu';
 import MarketingButton from './MarketingButton';
 import BeforeAfterSlider from './BeforeAfterSlider';
+import RotatingBeforeAfter from './RotatingBeforeAfter';
 import { SERVICES } from '../constants/services';
 
 const Services = () => (
@@ -9,10 +10,10 @@ const Services = () => (
     <div className="relative z-10 max-w-container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-8 sm:mb-10 lg:mb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-4 sm:mb-6 leading-tight">
-          Naše usluge čišćenja
+          Naše usluge
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed px-0">
-          Specijalizovani za industrijske, poslovne i stambene objekte – sa opremom i standardima iz Nemačke
+          Sveobuhvatna higijenska rešenja
         </p>
       </div>
 
@@ -26,8 +27,12 @@ const Services = () => (
               key={service.id}
               className="bg-surface-0 rounded-card shadow-card border border-border-200 overflow-hidden hover:shadow-card-hover transition-all duration-300 group flex flex-col"
             >
-              {/* Service header: before/after slider or icon */}
-              {hasBeforeAfter ? (
+              {/* Service header: rotating slides, before/after slider, or icon */}
+              {service.slides ? (
+                <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 bg-surface-50 overflow-hidden rounded-t-card">
+                  <RotatingBeforeAfter slides={service.slides} />
+                </div>
+              ) : hasBeforeAfter ? (
                 <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 bg-surface-50 overflow-hidden rounded-t-card">
                   <BeforeAfterSlider
                     beforeSrc={service.beforeSrc}
@@ -69,7 +74,7 @@ const Services = () => (
 
                 {/* CTA Button */}
                 <MarketingButton href="#contact" className="w-full mt-auto">
-                  Zatraži ponudu
+                  {service.cta || 'Zatraži ponudu'}
                 </MarketingButton>
               </div>
             </div>

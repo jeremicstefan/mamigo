@@ -10,10 +10,10 @@ const BlogPreview = () => (
     <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="mb-8 sm:mb-10 lg:mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-900 mb-2 sm:mb-3 leading-tight">
-          Blog
+          Saveti za Održavanje i Zanimljivosti iz Sveta Čistoće
         </h2>
         <p className="text-base sm:text-lg text-text-600 font-light leading-relaxed">
-          Želite čistiji i zdraviji prostor? Pročitajte naše vodiče ili nas kontaktirajte za stručni savet.
+          Vaš centar za edukaciju i najbolje prakse.
         </p>
       </div>
 

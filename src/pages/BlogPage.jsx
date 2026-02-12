@@ -13,10 +13,10 @@ const BlogPage = () => (
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-14">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-text-900 mb-4 sm:mb-6 leading-tight">
-            Blog
+            Saveti za Održavanje i Zanimljivosti iz Sveta Čistoće
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
-            Saveti za održavanje i zanimljivosti iz sveta čistoće – vaš centar za edukaciju i najbolje&nbsp;prakse
+            Vaš centar za edukaciju i najbolje&nbsp;prakse.
           </p>
         </div>
 
@@ -30,10 +30,10 @@ const BlogPage = () => (
         {/* CTA */}
         <div className="mt-12 sm:mt-16 text-center py-10 sm:py-12 bg-surface-50 rounded-card border border-border-200">
           <h2 className="text-xl sm:text-2xl font-bold text-text-900 mb-3">
-            Želite čistiji i zdraviji prostor?
+            Želite čistiji i zdraviji prostor, ali niste sigurni odakle da počnete?
           </h2>
           <p className="text-base text-text-600 mb-6 max-w-xl mx-auto leading-relaxed">
-            Kontaktirajte nas za stručni savet ili zakažite besplatan uvid u objekat.
+            Pročitajte naše vodiče ili nas kontaktirajte za stručni savet.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md sm:max-w-none mx-auto px-2 sm:px-0">
             <Link to="/#contact" className="w-full sm:w-auto">

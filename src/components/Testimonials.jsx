@@ -19,7 +19,7 @@ const Testimonials = () => (
           Poverenje koje se gradi godinama
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-text-600 max-w-3xl mx-auto font-light leading-relaxed">
-          Tokom više od decenije rada, postali smo partneri brojnim kompanijama. Naša najbolja reklama su čisti prostori i zadovoljni klijenti.
+          Tokom više od decenije rada, postali smo partneri brojnim kompanijama, od malih preduzeća do velikih industrijskih kompleksa. Naša najbolja reklama su čisti prostori i zadovoljni klijenti.
         </p>
       </div>
 
