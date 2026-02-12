@@ -3,6 +3,16 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 const TO_EMAIL = process.env.CONTACT_EMAIL || 'stejer28@gmail.com';
 
+function escapeHtml(str) {
+  if (str == null || str === '') return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export default async function handler(req, res) {
   // Only allow POST
   if (req.method !== 'POST') {
@@ -22,34 +32,42 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Poruka je obavezna' });
   }
 
+  const safe = {
+    name: escapeHtml(name.trim()),
+    email: escapeHtml(email.trim()),
+    phone: escapeHtml((phone || '').trim()) || 'Nije unet',
+    service: escapeHtml((service || '').trim()) || 'Nije izabrano',
+    message: escapeHtml(message.trim()),
+  };
+
   try {
     await resend.emails.send({
       from: 'Mamigo Sajt <onboarding@resend.dev>',
       to: [TO_EMAIL],
-      replyTo: email,
-      subject: `Nova poruka sa sajta – ${name}`,
+      replyTo: email.trim(),
+      subject: `Nova poruka sa sajta – ${name.trim()}`,
       html: `
         <h2>Nova poruka sa kontakt forme</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif;">
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;width:140px;">Ime i prezime</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${name}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${safe.name}</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Email</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;"><a href="mailto:${email}">${email}</a></td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;"><a href="mailto:${safe.email}">${safe.email}</a></td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Telefon</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${phone || 'Nije unet'}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${safe.phone}</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Usluga</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${service || 'Nije izabrano'}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${safe.service}</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;vertical-align:top;">Poruka</td>
-            <td style="padding:8px 12px;white-space:pre-wrap;">${message}</td>
+            <td style="padding:8px 12px;white-space:pre-wrap;">${safe.message}</td>
           </tr>
         </table>
       `,

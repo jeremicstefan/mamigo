@@ -9,7 +9,7 @@ const INPUT_CLASSES =
 const INPUT_ERROR_CLASSES = 'border-red-500 focus:ring-red-500 focus:border-red-500';
 
 const ContactForm = () => {
-  const { formData, errors, status, handleChange, handleSubmit, resetStatus } =
+  const { formData, errors, status, serverError, handleChange, handleSubmit, resetStatus } =
     useContactForm();
 
   if (status === 'success') {
@@ -146,7 +146,7 @@ const ContactForm = () => {
 
         {status === 'error' && (
           <p className="text-sm text-red-600 text-center" role="alert">
-            Došlo je do greške pri slanju. Molimo pokušajte ponovo.
+            {serverError || 'Došlo je do greške pri slanju. Molimo pokušajte ponovo.'}
           </p>
         )}
 

@@ -24,6 +24,7 @@ export const useContactForm = () => {
   const [formData, setFormData] = useState(INITIAL_STATE);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');
+  const [serverError, setServerError] = useState(null);
 
   const handleChange = useCallback((e) => {
     const { name, value } = e.target;
@@ -47,6 +48,7 @@ export const useContactForm = () => {
         return;
       }
       setStatus('submitting');
+      setServerError(null);
 
       try {
         const res = await fetch('/api/contact', {
@@ -55,9 +57,12 @@ export const useContactForm = () => {
           body: JSON.stringify(formData),
         });
 
+        const data = await res.json().catch(() => ({}));
+
         if (!res.ok) {
-          const data = await res.json().catch(() => ({}));
-          throw new Error(data.error || 'Greška pri slanju');
+          setServerError(data.error || 'Greška pri slanju');
+          setStatus('error');
+          return;
         }
 
         setStatus('success');
@@ -65,13 +70,17 @@ export const useContactForm = () => {
         setErrors({});
       } catch (err) {
         console.error('Submit error:', err);
+        setServerError('Greška pri slanju. Proverite internet konekciju i pokušajte ponovo.');
         setStatus('error');
       }
     },
     [formData]
   );
 
-  const resetStatus = useCallback(() => setStatus('idle'), []);
+  const resetStatus = useCallback(() => {
+    setStatus('idle');
+    setServerError(null);
+  }, []);
 
-  return { formData, errors, status, handleChange, handleSubmit, resetStatus };
+  return { formData, errors, status, serverError, handleChange, handleSubmit, resetStatus };
 };
