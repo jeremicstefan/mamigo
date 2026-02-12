@@ -79,7 +79,17 @@ export default async function handler(req, res) {
     });
 
     if (error) {
-      console.error('Resend API error:', error.message, error.name);
+      console.error('Resend API error:', JSON.stringify({ name: error.name, message: error.message, statusCode: error.statusCode }));
+      const code = error.name || '';
+      if (code === 'invalid_api_key' || code === 'missing_api_key' || code === 'restricted_api_key') {
+        return res.status(500).json({ error: 'Neispravan API ključ. Proverite Resend i Vercel podešavanja.' });
+      }
+      if (code === 'invalid_from_address') {
+        return res.status(500).json({ error: 'Resend ne prihvata pošiljaoca. Dodajte i verifikujte domen u Resend.' });
+      }
+      if (code === 'daily_quota_exceeded' || code === 'monthly_quota_exceeded' || code === 'rate_limit_exceeded') {
+        return res.status(500).json({ error: 'Limit slanja je dostignut. Pokušajte ponovo kasnije.' });
+      }
       return res.status(500).json({ error: 'Greška pri slanju poruke. Pokušajte ponovo.' });
     }
 
