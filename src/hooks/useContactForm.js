@@ -16,6 +16,7 @@ const validateForm = (data) => {
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
     errors.email = 'Unesite ispravan email';
   }
+  if (!data.message.trim()) errors.message = 'Poruka je obavezna';
   return errors;
 };
 
@@ -38,7 +39,7 @@ export const useContactForm = () => {
   }, []);
 
   const handleSubmit = useCallback(
-    (e) => {
+    async (e) => {
       e.preventDefault();
       const validationErrors = validateForm(formData);
       if (Object.keys(validationErrors).length > 0) {
@@ -46,12 +47,26 @@ export const useContactForm = () => {
         return;
       }
       setStatus('submitting');
-      setTimeout(() => {
-        console.log('Form submitted:', formData);
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || 'Greška pri slanju');
+        }
+
         setStatus('success');
         setFormData(INITIAL_STATE);
         setErrors({});
-      }, 800);
+      } catch (err) {
+        console.error('Submit error:', err);
+        setStatus('error');
+      }
     },
     [formData]
   );

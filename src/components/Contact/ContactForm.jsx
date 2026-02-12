@@ -123,18 +123,32 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-text-900 mb-1">
-            Poruka
+            Poruka *
           </label>
           <textarea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
+            required
             rows={4}
-            className={INPUT_CLASSES}
+            className={`${INPUT_CLASSES} ${errors.message ? INPUT_ERROR_CLASSES : ''}`}
             placeholder="Opišite Vaše potrebe čišćenja..."
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? 'message-error' : undefined}
           ></textarea>
+          {errors.message && (
+            <p id="message-error" className="mt-1 text-sm text-red-600" role="alert">
+              {errors.message}
+            </p>
+          )}
         </div>
+
+        {status === 'error' && (
+          <p className="text-sm text-red-600 text-center" role="alert">
+            Došlo je do greške pri slanju. Molimo pokušajte ponovo.
+          </p>
+        )}
 
         <MarketingButton type="submit" className="w-full" disabled={status === 'submitting'}>
           {status === 'submitting' ? 'Slanje...' : 'Pošalji poruku'}
