@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { LuMenu, LuX } from 'react-icons/lu';
 import { SERBIA_CONTACT } from '../../constants/contact';
 import { NAV_LINKS, LANGUAGES } from '../../constants/navigation';
-import logo from '../../assets/hero/mamigo-hausmeister-logo.png';
+import logo from '../../assets/hero/mamigo-hausmeister-logo.webp';
 
 const NavLink = ({ href, label }) => {
   const navigate = useNavigate();
@@ -73,6 +73,8 @@ const Navbar = ({ lang, onLangChange, mobileMenuOpen, onToggleMobileMenu }) => (
               src={logo}
               alt="MAMIGO Hausmeister"
               className="h-12 sm:h-14 md:h-20 w-auto object-contain"
+              width={256}
+              height={171}
               loading="eager"
             />
           </Link>

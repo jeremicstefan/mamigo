@@ -1,6 +1,6 @@
 import React from 'react';
 import { SERBIA_CONTACT, GERMANY_CONTACT } from '../../constants/contact';
-import logo from '../../assets/hero/mamigo-hausmeister-logo.png';
+import logo from '../../assets/hero/mamigo-hausmeister-logo.webp';
 
 const ContactInfo = () => (
   <div className="flex flex-col justify-start gap-5 sm:gap-6 lg:gap-8 w-full lg:max-w-md lg:flex-shrink-0 text-left">
@@ -66,6 +66,8 @@ const ContactInfo = () => (
         src={logo}
         alt="MAMIGO Hausmeister"
         className="h-24 sm:h-28 lg:h-[140px] w-auto object-contain mx-auto"
+        width={256}
+        height={171}
         loading="lazy"
         onError={(e) => { e.target.style.opacity = '0.3'; }}
       />

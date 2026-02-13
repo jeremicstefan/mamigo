@@ -196,6 +196,9 @@ const BeforeAfterSlider = ({
           alt="Prostor posle čišćenja"
           className={`w-full h-full object-cover ${objectPos}`}
           loading={loading}
+          fetchPriority={isHero ? 'high' : undefined}
+          width={800}
+          height={534}
           draggable={false}
           onError={handleImageError}
         />
@@ -219,6 +222,8 @@ const BeforeAfterSlider = ({
           alt="Prostor pre čišćenja"
           className={`w-full h-full object-cover ${objectPos}`}
           loading={loading}
+          width={800}
+          height={534}
           draggable={false}
           onError={handleImageError}
         />
